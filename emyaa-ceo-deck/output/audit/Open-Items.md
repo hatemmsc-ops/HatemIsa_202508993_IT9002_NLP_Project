@@ -4,7 +4,6 @@ Status: **deck built** in the Board visual language. The items below are still o
 
 | # | Item | Why it matters | Needed from | By |
 |---|---|---|---|---|
-| 1 | Gross deposits of $12,206 rest on Malek's message (29 Sep); no written export. The dashboard's $10,029.69 is AUM, a different measure | The Board deposit figure needs a file of record | Malek: written export | 8 Oct |
 | 2 | September exports for Instagram, LinkedIn, X and TikTok (the LinkedIn export ends 28 Aug) | Social results are screenshot-only | Marketing / 24F | 8 Oct |
 | 3 | GA daily export for 14-27 Sep to confirm the 793%; LinkedIn export for 13-27 Sep to confirm +118% / +155% | These are headline claims | Marketing | 8 Oct |
 | 4 | Ignite spend by campaign, cost per key event, LinkedIn leads; definition of the GA4 key event | Needed to judge against Board CAC targets | Ignite | 15 Oct |
@@ -16,5 +15,7 @@ Status: **deck built** in the Board visual language. The items below are still o
 | 11 | Market Pulse: in-app feature in discussion (Exante data access); no performance data for the content series | Scope and reporting | IT / Marketing | Next cycle |
 | 12 | Abdulelah Al Harbi video: no link or view count | The pipeline slide shows a gap | Marketing / 24F | 8 Oct |
 
+
+**Resolved:** Gross deposits. $12,206 is the total recorded on the platform to date, confirmed by management on 29 Sep 2026. It matches Board pages 7 and 8, so no Board change is needed. The dashboard's $10,029.69 is AUM, a separate measure.
 
 **Resolved:** Board client count. The Board figures (61 clients, $12,206, $200.10) are as at 28 Sep and match Board slide 10 and the dashboard trend (60 on 27 Sep). The only error was the date label on Board slide 3 ("as at 17 September"). A corrected slide is in `output/board-updates/`.
