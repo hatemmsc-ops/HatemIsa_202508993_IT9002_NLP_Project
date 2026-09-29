@@ -5,14 +5,14 @@ Rebuild of the 1 Oct 2026 CEO marketing update in the Board of Directors Update 
 ## Outputs
 
 ```
-output/final-deck/eMYAA-Marketing-Update-01.10.2026-CEO-Redesigned.pptx   4 slides, Exo 2 embedded
+output/final-deck/eMYAA-Marketing-Update-01.10.2026-CEO-Redesigned.pptx   6 slides, Exo 2 embedded
 output/final-deck/eMYAA-Marketing-Update-01.10.2026-CEO-Redesigned.pdf
 output/audit/CEO-Audit.md             audit memo for the CEO
 output/audit/Slide-Change-Log.md      slide-by-slide changes
 output/audit/Percentage-Audit.csv     every percentage: numerator, denominator, period, recalculation, status
 output/audit/Source-Traceability.csv  every claim and its evidence file
 output/audit/Open-Items.md            what is still open
-output/previews/slide-1..4.png      rendered slides
+output/previews/slide-1..6.png      rendered slides
 output/board-updates/                Board slide 3 with the corrected date (separate file) and change note
 ```
 

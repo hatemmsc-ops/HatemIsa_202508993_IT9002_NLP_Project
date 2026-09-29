@@ -162,10 +162,87 @@ function card(s, x, y, w, h, top) {
   }));
 }
 
-// ---------- 4. Decisions and open items ----------
+// ---------- 4. Google Ads and installs ----------
 {
   const s = contentSlide({
-    kicker: "Decisions and open items", n: 4,
+    kicker: "Google Ads and installs", n: 4,
+    title: "Google Ads went live on 22 September; installs then grew at their fastest weekly pace of the month",
+    takeaway: "Paid search is moving installs, but installs are not yet tracked back to the ads. Connect ad clicks to the app link so cost per install can be reported.",
+    source: "App installs: eMYAA Daily Performance Dashboards (Android + iOS, cumulative, on report dates 1-27 Sep 2026). Ads: GA4 Reports snapshot and Google Ads campaigns exports, 1-28 Sep 2026.",
+    notes: "Installs (Android + iOS, cumulative) on dashboard report dates: 1 Sep 373, 2 Sep 389, 3 Sep 395, 8 Sep 403, 9 Sep 410, 10 Sep 414, 13 Sep 419, 14 Sep 423, 16 Sep 430, 17 Sep 432, 20 Sep 437, 21 Sep 437, 22 Sep 452, 23 Sep 454, 24 Sep 455, 27 Sep 473. Report dates are irregular, so the line is spaced by report, not by calendar day. Pace: +36 in the six days 21-27 Sep (6 a day) vs +30 in 1-8 Sep (4.3 a day, when the Ali Sabeel video and baseline sponsor ads were running) and +14 in 14-21 Sep. Split 21-27 Sep: Android +17, iOS +19. Funnel: 409 google / cpc sessions and 400 key events in GA4 (1-28 Sep); the key event is not defined in the export. Installs and onboarding come from the platform dashboard and cover all sources; there is no link yet from an ad click to an install. The app link (onelink.to/gpbwrg) already exists and can carry campaign tags. Onboarded users 57 to 60 over 21-27 Sep.",
+  });
+  const labels = ["1 Sep", "2", "3", "8", "9", "10", "13", "14", "16", "17", "20", "21", "22 Sep: ads live", "23", "24", "27 Sep"];
+  const installs = [373, 389, 395, 403, 410, 414, 419, 423, 430, 432, 437, 437, 452, 454, 455, 473];
+  s.addChart(pres.charts.LINE, [{ name: "App installs, cumulative", labels, values: installs }], Object.assign(chartBase("App installs, cumulative (Android + iOS), by dashboard report date"), {
+    x: 0.62, y: 1.65, w: 7.35, h: 4.45, chartColors: [C.navy], lineSize: 2.5, lineDataSymbol: "circle", lineDataSymbolSize: 6,
+    valAxisHidden: false, valAxisMinVal: 360, valAxisMaxVal: 480, valAxisMajorUnit: 30, valAxisLabelColor: C.muted, valAxisLabelFontSize: 9, valAxisLabelFontFace: F,
+    valGridLine: { color: "E6EAF2", size: 0.5 }, catAxisLabelFontSize: 8.5, catAxisLabelColor: C.muted,
+    showValue: false, showLegend: false,
+  }));
+  // callouts on the chart
+  txt(s, [{ text: "+36 in 6 days", options: { bold: true, color: C.green, breakLine: true } }, { text: "21-27 Sep, after launch", options: { color: C.muted } }], { x: 5.35, y: 2.2, w: 2.4, h: 0.5, fontSize: 10.5 });
+  txt(s, [{ text: "+14 in 7 days", options: { bold: true, color: C.navy, breakLine: true } }, { text: "14-21 Sep, before launch", options: { color: C.muted } }], { x: 4.45, y: 4.05, w: 2.3, h: 0.5, fontSize: 10.5 });
+
+  // funnel diagram
+  const fx = 8.3, fw = 4.42;
+  txt(s, "FROM AD TO ACCOUNT", { x: fx, y: 1.62, w: fw, h: 0.25, fontSize: 9, bold: true, color: C.goldText, charSpacing: 2 });
+  const steps = [
+    ["409", "Google Ads sessions", "GA4, 1-28 Sep", C.navy, 4.42],
+    ["400", "key events on those sessions", "event not yet defined", C.navy, 3.9],
+    ["+36", "app installs, 21-27 Sep", "all sources", C.gold, 3.38],
+    ["+3", "onboarded, 21-27 Sep", "all sources", C.red, 2.86],
+  ];
+  steps.forEach((st, i) => {
+    const y = 1.98 + i * 0.98 + (i >= 2 ? 0.22 : 0), w = st[4], x = fx + (fw - w) / 2;
+    s.addShape(pres.shapes.RECTANGLE, { x, y, w, h: 0.78, fill: { color: i < 2 ? C.navy : C.white }, line: { color: st[3], width: 1.5 } });
+    txt(s, st[0], { x: x + 0.15, y, w: 0.95, h: 0.78, fontSize: 22, bold: true, color: i < 2 ? C.white : st[3], valign: "middle" });
+    txt(s, [{ text: st[1], options: { bold: true, breakLine: true } }, { text: st[2], options: { fontSize: 8.5 } }], { x: x + 1.1, y, w: w - 1.2, h: 0.78, fontSize: 10, color: i < 2 ? C.white : C.navy, valign: "middle" });
+  });
+  s.addShape(pres.shapes.LINE, { x: fx, y: 3.97, w: fw, h: 0, line: { color: C.red, width: 1, dashType: "dash" } });
+  txt(s, "Tracking gap: installs not yet linked to ad clicks", { x: fx, y: 3.99, w: fw, h: 0.2, fontSize: 8.5, bold: true, color: C.red, align: "center" });
+}
+
+// ---------- 5. English vs Arabic ----------
+{
+  const s = contentSlide({
+    kicker: "English vs Arabic", n: 5,
+    title: "English ads lead Arabic on traffic and engagement; Arabic still logs more key events per session",
+    takeaway: "English is ahead on 8 of 9 measures. Refresh the Arabic creative to lift engagement, but keep it live: it converts slightly better per session.",
+    source: "GA4 Google Ads campaigns export, 1-28 Sep 2026: 'Website conversion - Saudi - English' vs '... - Arabic'. Campaigns live from 22 Sep. Key event not defined in the export.",
+    notes: "English vs Arabic, 1-28 Sep: sessions 212 vs 176 (+20.5%); active users 208 vs 175 (+18.9%); engaged sessions 206 vs 153 (+34.6%); engagement rate 97.2% vs 86.9% (+10.2 points, +11.8% relative); average engagement time per session 19.9s vs 16.0s (+24.2%); events per session 6.49 vs 5.44 (+19.2%); event count 1,376 vs 958 (+43.6%); key events 200 vs 185 (+8.1%); key events per session 0.94 vs 1.05 (Arabic ahead by 10.2%). Early data from about one week of spend, and spend per campaign is not in the export, so this compares engagement, not cost efficiency. The previous draft's claim that English leads 'on every measured metric' is not correct.",
+  });
+  const cardRows = [
+    ["English", C.navy, [["212", "sessions"], ["97.2%", "engagement rate"], ["19.9s", "per session"], ["0.94", "key events per session"]]],
+    ["Arabic", C.gold, [["176", "sessions"], ["86.9%", "engagement rate"], ["16.0s", "per session"], ["1.05", "key events per session"]]],
+  ];
+  cardRows.forEach((c, i) => {
+    const x = 0.62, y = 1.72 + i * 2.2, w = 4.6, h = 2.0;
+    card(s, x, y, w, h, c[1]);
+    txt(s, c[0].toUpperCase() + " CAMPAIGN", { x: x + 0.25, y: y + 0.2, w: 3, h: 0.25, fontSize: 9, bold: true, color: C.goldText, charSpacing: 2 });
+    c[2].forEach((m, j) => {
+      const mx = x + 0.25 + (j % 2) * 2.2, my = y + 0.55 + Math.floor(j / 2) * 0.7;
+      const win = (j < 3 && i === 0) || (j === 3 && i === 1);
+      txt(s, m[0], { x: mx, y: my, w: 2.1, h: 0.38, fontSize: 20, bold: true, color: win ? C.green : C.navy });
+      txt(s, m[1], { x: mx, y: my + 0.36, w: 2.1, h: 0.25, fontSize: 9, color: C.muted });
+    });
+  });
+  const metrics = ["Sessions", "Active users", "Engaged sessions", "Engagement rate", "Time per session", "Events per session", "Total events", "Key events", "Key events per session"];
+  const diff = [20.5, 18.9, 34.6, 11.8, 24.2, 19.2, 43.6, 8.1, -10.2];
+  s.addChart(pres.charts.BAR, [
+    { name: "English ahead", labels: metrics, values: diff.map((v) => (v > 0 ? v : 0)) },
+    { name: "Arabic ahead", labels: metrics, values: diff.map((v) => (v < 0 ? v : 0)) },
+  ], Object.assign(chartBase("English relative to Arabic, % difference, 1-28 Sep"), {
+    x: 5.55, y: 1.65, w: 7.17, h: 4.45, barDir: "bar", barGrouping: "stacked", barGapWidthPct: 40, catAxisOrientation: "maxMin",
+    chartColors: [C.navy, C.gold], showValue: true, dataLabelPosition: "inEnd", dataLabelColor: C.white, dataLabelFontBold: true,
+    dataLabelFormatCode: '+0.0"%";-0.0"%";;', valAxisMinVal: -20, valAxisMaxVal: 50, catAxisLabelPos: "low",
+    showLegend: true, legendPos: "b",
+  }));
+}
+
+// ---------- 6. Decisions and open items ----------
+{
+  const s = contentSlide({
+    kicker: "Decisions and open items", n: 6,
     title: "Five decisions for today; one open data item blocks the 20 October call",
     takeaway: "Ignite must supply spend and lead data before 20 October. Decision 4 closes most of the other open items.",
     source: "Proposed by Marketing based on this update; owners and dates are proposals for CEO confirmation. CAC targets from the Board update, 17 Sep 2026. Detail in Open-Items.md and Percentage-Audit.csv.",
