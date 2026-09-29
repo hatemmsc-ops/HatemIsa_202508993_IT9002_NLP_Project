@@ -13,7 +13,7 @@ output/audit/Percentage-Audit.csv     every percentage: numerator, denominator, 
 output/audit/Source-Traceability.csv  every claim and its evidence file
 output/audit/Open-Items.md            what is still open
 output/previews/slide-1..6.png      rendered slides
-output/board-updates/                Board slide 3 with the corrected date (separate file) and change note
+output/board-updates/                Board pages 3, 7 and 8 updated to 29 Sep (separate file) and change note
 ```
 
 ## Inputs (all read-only, never edited)

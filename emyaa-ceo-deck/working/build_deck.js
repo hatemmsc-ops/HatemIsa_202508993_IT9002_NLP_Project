@@ -162,8 +162,8 @@ function card(s, x, y, w, h, top) {
   txt(s, "Marketing Performance Update", { x: 0.75, y: 2.8, w: 11.9, h: 0.95, fontSize: 40, bold: true, color: C.white });
   txt(s, "CEO UPDATE", { x: 0.75, y: 3.8, w: 11, h: 0.45, fontSize: 20, bold: true, color: C.gold, charSpacing: 1 });
   txt(s, "1 October 2026", { x: 0.75, y: 4.3, w: 8, h: 0.4, fontSize: 16, color: C.white });
-  txt(s, "Web: GA4, 1-28 Sep 2026  |  Platform: daily dashboard, 27 Sep 2026  |  Plan and budget: Board update, 17 Sep 2026", { x: 0.75, y: 6.7, w: 11.9, h: 0.3, fontSize: 10, color: C.soft });
-  s.addNotes("Sources: GA4 exports 1-28 Sep 2026; GA4 home card 21-27 Sep; daily performance dashboards to 27 Sep; eMYAA Board of Directors Update 17 Sep 2026 (plan, budget, segments, CAC targets); content calendars Sep and Oct 2026 (V2); Instagram profile grid screenshot; $5,000 campaign T&Cs, approval checklist and 24F briefing. Anything without a source file is labelled 'reported' or 'per team'.");
+  txt(s, "Web: GA4, 1-28 Sep 2026  |  Platform: daily dashboard, 29 Sep 2026  |  Plan and budget: Board update, 17 Sep 2026", { x: 0.75, y: 6.7, w: 11.9, h: 0.3, fontSize: 10, color: C.soft });
+  s.addNotes("Sources: GA4 exports 1-28 Sep 2026; GA4 home card 21-27 Sep; daily performance dashboards to 29 Sep; eMYAA Board of Directors Update 17 Sep 2026 (plan, budget, segments, CAC targets); content calendars Sep and Oct 2026 (V2); Instagram profile grid screenshot; $5,000 campaign T&Cs, approval checklist and 24F briefing. Anything without a source file is labelled 'reported' or 'per team'.");
 }
 
 // ---------- 2. What we did ----------
@@ -205,13 +205,13 @@ function card(s, x, y, w, h, top) {
     kicker: "Results", n: 3,
     title: "Paid search lifted traffic and downloads; onboarding did not follow",
     takeaway: "The constraint is onboarding, not traffic. Fix KYC completion before spend is scaled.",
-    source: "GA4 exports 1-28 Sep 2026; eMYAA Daily Performance Dashboards, cumulative figures on report dates 1, 8, 14, 21 and 27 Sep 2026 (periods of 6 to 7 days).",
-    notes: "Traffic: 587 sessions 1-28 Sep; google / cpc 409 (69.7%), direct 92, organic 39, referral 32 (incl. 7 Tag Assistant test sessions), ChatGPT 9, not available 6. 403 of 542 active users (74.4%) had Google Ads as first source. The GA home card reports 384 active users for 21-27 Sep, +793% vs the previous week; the prior week (about 43) is implied, not exported, so the figure stays 'reported'. Downloads (Android + iOS) on dashboard dates: 373, 403, 423, 437, 473; onboarded 48, 49, 52, 57, 60; funded accounts 13 on 21 Sep, 15 on 27 Sep; 54 trades. English vs Arabic Google Ads (1-28 Sep): engagement 97.2% vs 86.9%, key events per session 0.94 vs 1.05; the key event is not defined, so keep both live until it is defined and costed.",
+    source: "GA4 exports 1-28 Sep 2026; eMYAA Daily Performance Dashboards, cumulative figures on report dates 1, 8, 14, 21 and 29 Sep 2026 (periods of 6 to 8 days).",
+    notes: "Traffic: 587 sessions 1-28 Sep; google / cpc 409 (69.7%), direct 92, organic 39, referral 32 (incl. 7 Tag Assistant test sessions), ChatGPT 9, not available 6. 403 of 542 active users (74.4%) had Google Ads as first source. The GA home card reports 384 active users for 21-27 Sep, +793% vs the previous week; the prior week (about 43) is implied, not exported, so the figure stays 'reported'. Downloads (Android + iOS) on dashboard dates 1, 8, 14, 21 and 29 Sep: 373, 403, 423, 437, 490; onboarded 48, 49, 52, 57, 61; funded accounts 13 on 21 Sep, 15 on 29 Sep; 55 trades on 29 Sep. English vs Arabic Google Ads (1-28 Sep): engagement 97.2% vs 86.9%, key events per session 0.94 vs 1.05; the key event is not defined, so keep both live until it is defined and costed.",
   });
   const stats = [
     ["70%", "of September site sessions came from Google Ads", "409 of 587 sessions, 1-28 Sep", C.navy],
-    ["+36", "app downloads in the six days after launch", "vs +14 the week before", C.navy],
-    ["+3", "users onboarded in the same six days", "60 onboarded, 15 funded, as of 27 Sep", C.red],
+    ["+53", "app downloads in the eight days after launch", "vs +14 the week before", C.navy],
+    ["+4", "users onboarded in the same eight days", "61 onboarded, 15 funded, as of 29 Sep", C.red],
   ];
   stats.forEach((v, i) => {
     const y = 1.72 + i * 1.47;
@@ -221,10 +221,10 @@ function card(s, x, y, w, h, top) {
     txt(s, v[2], { x: 2.15, y: y + 0.82, w: 2.25, h: 0.35, fontSize: 9.5, color: C.muted });
   });
   colBars(s, {
-    x: 4.85, y: 1.65, w: 7.87, h: 4.45, max: 40,
+    x: 4.85, y: 1.65, w: 7.87, h: 4.45, max: 58,
     title: "Net new app downloads and onboarded users between dashboard dates",
-    cats: ["1-8 Sep", "8-14 Sep", "14-21 Sep", "21-27 Sep (paid live)"],
-    series: [{ name: "App downloads added", color: C.navy, values: [30, 20, 14, 36] }, { name: "Users onboarded", color: C.green, values: [1, 3, 5, 3] }],
+    cats: ["1-8 Sep", "8-14 Sep", "14-21 Sep", "21-29 Sep (paid live)"],
+    series: [{ name: "App downloads added", color: C.navy, values: [30, 20, 14, 53] }, { name: "Users onboarded", color: C.green, values: [1, 3, 5, 4] }],
   });
 }
 
@@ -234,18 +234,18 @@ function card(s, x, y, w, h, top) {
     kicker: "Google Ads and installs", n: 4,
     title: "Google Ads went live on 22 September; installs then grew at their fastest weekly pace of the month",
     takeaway: "Paid search is moving installs, but installs are not yet tracked back to the ads. Connect ad clicks to the app link so cost per install can be reported.",
-    source: "App installs: eMYAA Daily Performance Dashboards (Android + iOS, cumulative, on report dates 1-27 Sep 2026). Ads: GA4 Reports snapshot and Google Ads campaigns exports, 1-28 Sep 2026.",
-    notes: "Installs (Android + iOS, cumulative) on dashboard report dates: 1 Sep 373, 2 Sep 389, 3 Sep 395, 8 Sep 403, 9 Sep 410, 10 Sep 414, 13 Sep 419, 14 Sep 423, 16 Sep 430, 17 Sep 432, 20 Sep 437, 21 Sep 437, 22 Sep 452, 23 Sep 454, 24 Sep 455, 27 Sep 473. Report dates are irregular, so the line is spaced by report, not by calendar day. Pace: +36 in the six days 21-27 Sep (6 a day) vs +30 in 1-8 Sep (4.3 a day, when the Ali Sabeel video and baseline sponsor ads were running) and +14 in 14-21 Sep. Split 21-27 Sep: Android +17, iOS +19. Funnel: 409 google / cpc sessions and 400 key events in GA4 (1-28 Sep); the key event is not defined in the export. Installs and onboarding come from the platform dashboard and cover all sources; there is no link yet from an ad click to an install. The app link (onelink.to/gpbwrg) already exists and can carry campaign tags. Onboarded users 57 to 60 over 21-27 Sep.",
+    source: "App installs: eMYAA Daily Performance Dashboards (Android + iOS, cumulative, on report dates 1-29 Sep 2026). Ads: GA4 Reports snapshot and Google Ads campaigns exports, 1-28 Sep 2026.",
+    notes: "Installs (Android + iOS, cumulative) on dashboard report dates: 1 Sep 373, 2 Sep 389, 3 Sep 395, 8 Sep 403, 9 Sep 410, 10 Sep 414, 13 Sep 419, 14 Sep 423, 16 Sep 430, 17 Sep 432, 20 Sep 437, 21 Sep 437, 22 Sep 452, 23 Sep 454, 24 Sep 455, 27 Sep 473, 28 Sep 480, 29 Sep 490. Report dates are irregular, so the line is spaced by report, not by calendar day. Pace: +53 in the eight days 21-29 Sep (6.6 a day) vs +30 in 1-8 Sep (4.3 a day, when the Ali Sabeel video and baseline sponsor ads were running) and +14 in 14-21 Sep. Split 21-29 Sep: Android +20, iOS +33. Funnel: 409 google / cpc sessions and 400 key events in GA4 (1-28 Sep); the key event is not defined in the export. Installs and onboarding come from the platform dashboard and cover all sources; there is no link yet from an ad click to an install. The app link (onelink.to/gpbwrg) already exists and can carry campaign tags. Onboarded users 57 to 61 over 21-29 Sep.",
   });
-  const labels = ["1 Sep", "2", "3", "8", "9", "10", "13", "14", "16", "17", "20", "21", "22 Sep", "23", "24", "27 Sep"];
-  const installs = [373, 389, 395, 403, 410, 414, 419, 423, 430, 432, 437, 437, 452, 454, 455, 473];
+  const labels = ["1 Sep", "2", "3", "8", "9", "10", "13", "14", "16", "17", "20", "21", "22 Sep", "23", "24", "27", "28", "29 Sep"];
+  const installs = [373, 389, 395, 403, 410, 414, 419, 423, 430, 432, 437, 437, 452, 454, 455, 473, 480, 490];
   lineShape(s, {
-    x: 0.62, y: 1.65, w: 7.35, h: 4.45, min: 360, max: 480, step: 30, marker: 12,
+    x: 0.62, y: 1.65, w: 7.35, h: 4.45, min: 360, max: 510, step: 30, marker: 12,
     title: "App installs, cumulative (Android + iOS), by dashboard report date",
     cats: labels, values: installs,
   });
   // callouts on the chart
-  txt(s, [{ text: "+36 in 6 days", options: { bold: true, color: C.green, breakLine: true } }, { text: "21-27 Sep, after launch", options: { color: C.muted } }], { x: 6.6, y: 3.45, w: 1.35, h: 0.7, fontSize: 10.5 });
+  txt(s, [{ text: "+53 in 8 days", options: { bold: true, color: C.green, breakLine: true } }, { text: "21-29 Sep, after launch", options: { color: C.muted } }], { x: 6.6, y: 3.45, w: 1.35, h: 0.7, fontSize: 10.5 });
   txt(s, [{ text: "+14 in 7 days", options: { bold: true, color: C.navy, breakLine: true } }, { text: "14-21 Sep, before launch", options: { color: C.muted } }], { x: 4.45, y: 4.05, w: 2.3, h: 0.5, fontSize: 10.5 });
 
   // funnel diagram
@@ -254,8 +254,8 @@ function card(s, x, y, w, h, top) {
   const steps = [
     ["409", "Google Ads sessions", "GA4, 1-28 Sep", C.navy, 4.42],
     ["400", "key events on those sessions", "event not yet defined", C.navy, 3.9],
-    ["+36", "app installs, 21-27 Sep", "all sources", C.gold, 3.38],
-    ["+3", "onboarded, 21-27 Sep", "all sources", C.red, 2.86],
+    ["+53", "app installs, 21-29 Sep", "all sources", C.gold, 3.38],
+    ["+4", "onboarded, 21-29 Sep", "all sources", C.red, 2.86],
   ];
   steps.forEach((st, i) => {
     const y = 1.98 + i * 0.98 + (i >= 2 ? 0.22 : 0), w = st[4], x = fx + (fw - w) / 2;
@@ -307,7 +307,7 @@ function card(s, x, y, w, h, top) {
     title: "Five decisions for today; one open data item blocks the 20 October call",
     takeaway: "Ignite must supply spend and lead data before 20 October. Decision 4 closes most of the other open items.",
     source: "Proposed by Marketing based on this update; owners and dates are proposals for CEO confirmation. CAC targets from the Board update, 17 Sep 2026. Detail in Open-Items.md and Percentage-Audit.csv.",
-    notes: "Decision 2 follows from the GA4 campaign export: Arabic has a lower engagement rate (86.9% vs 97.2%) but more key events per session (1.05 vs 0.94). Decision 3 follows from the dashboards: +36 downloads but +3 onboarded in the first six days of paid testing. Gross deposits: $12,206 is the total recorded on the platform to date, confirmed by management on 29 Sep (the dashboard's $10,029.69 is assets under management, a different measure; the Board shows both). Open items: the Board figures (61 clients, $12,206) are as at 28 Sep, and Board slide 3 wrongly says 'as at 17 September', corrected in the separate Board update file; no Ignite spend, cost per key event or LinkedIn lead data, and the key event is undefined; no September social exports; the 793% active-user rise (GA card, prior week implied) and LinkedIn +118% / +155% are not traceable to an export; LinkedIn followers 531 vs 586; $5,000 campaign T&Cs sent for approval on 20 Jul with no sign-off on file. Market Pulse: in-app feature in discussion (Exante data access).",
+    notes: "Decision 2 follows from the GA4 campaign export: Arabic has a lower engagement rate (86.9% vs 97.2%) but more key events per session (1.05 vs 0.94). Decision 3 follows from the dashboards: +53 downloads but +4 onboarded in the first six days of paid testing. Gross deposits: $12,206 is the total recorded on the platform to date, confirmed by management on 29 Sep (the dashboard's $10,029.69 is assets under management, a different measure; the Board shows both). Open items: the Board figures (61 clients, $12,206) are as at 28 Sep, and Board slide 3 wrongly says 'as at 17 September', corrected in the separate Board update file; no Ignite spend, cost per key event or LinkedIn lead data, and the key event is undefined; no September social exports; the 793% active-user rise (GA card, prior week implied) and LinkedIn +118% / +155% are not traceable to an export; LinkedIn followers 531 vs 586; $5,000 campaign T&Cs sent for approval on 20 Jul with no sign-off on file. Market Pulse: in-app feature in discussion (Exante data access).",
   });
   const num = (t) => ({ text: t, options: { bold: true, color: C.gold, fontSize: 14 } });
   const rows = [

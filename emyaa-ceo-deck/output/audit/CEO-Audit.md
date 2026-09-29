@@ -7,8 +7,8 @@
 
 The redesigned deck (6 slides, Board visual language) keeps only figures we can trace. Everything else is labelled "reported" or "per team", and the errors in the earlier drafts are corrected. Three findings matter most:
 
-1. **Paid search is working at the top of the funnel.** 409 of 587 September sessions (69.7%, 1-28 Sep) came from Google Ads. Downloads rose by 36 in the six days after the 22 Sep launch, against 14 the week before.
-2. **Onboarding is not keeping pace.** Over the same six days only 3 users onboarded (57 to 60). The constraint is KYC and onboarding completion, not traffic.
+1. **Paid search is working at the top of the funnel.** 409 of 587 September sessions (69.7%, 1-28 Sep) came from Google Ads. Downloads rose by 53 in the eight days after the 22 Sep launch (to 29 Sep), against 14 the week before.
+2. **Onboarding is not keeping pace.** Over the same eight days only 4 users onboarded (57 to 61). The constraint is KYC and onboarding completion, not traffic.
 3. **"English beats Arabic on every metric" is false.** English ads engage more (97.2% vs 86.9%). Arabic ads log more key events per session (1.05 vs 0.94). The key event is not defined yet.
 
 The 793% active-user rise stays "reported". GA shows 384 users for 21-27 Sep, but the prior week (about 43) is implied, not exported. It is not credited to the Saudi launch.
