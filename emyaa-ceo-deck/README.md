@@ -5,7 +5,7 @@ Rebuild of the 1 Oct 2026 CEO marketing update in the Board of Directors Update 
 ## Outputs
 
 ```
-output/final-deck/eMYAA-Marketing-Update-01.10.2026-CEO-Redesigned.pptx   6 slides, Exo 2 embedded
+output/final-deck/eMYAA-Marketing-Update-01.10.2026-CEO-Redesigned.pptx   6 slides, Exo 2 embedded, charts drawn from shapes (Canva-safe)
 output/final-deck/eMYAA-Marketing-Update-01.10.2026-CEO-Redesigned.pdf
 output/audit/CEO-Audit.md             audit memo for the CEO
 output/audit/Slide-Change-Log.md      slide-by-slide changes

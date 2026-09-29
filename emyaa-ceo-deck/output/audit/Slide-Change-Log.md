@@ -19,3 +19,6 @@
 - Creator dates and social figures
 
 **Removed as fluff or unsupported:** the separate timeline, status, paid-plan, website, campaign, content and social slides; the "all-time" Instagram views; the format-share charts; "orders of magnitude"; +6,075% as a follower figure.
+
+
+All charts are drawn from ordinary shapes (bars, lines, dots, text boxes), not native chart objects, so they import into Canva and Google Slides without being re-drawn, and stay editable.

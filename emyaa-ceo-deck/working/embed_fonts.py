@@ -30,6 +30,7 @@ if 'Extension="fntdata"' not in ct:
     ct = ct.replace('<Default ', '<Default Extension="fntdata" ContentType="application/x-fontdata"/><Default ', 1)
 zout = zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED)
 for n in names:
+    if n.startswith('ppt/charts') and n.endswith('/'): continue  # empty folders pptxgenjs writes
     data = zin.read(n)
     if n == 'ppt/_rels/presentation.xml.rels': data = rels.encode()
     elif n == 'ppt/presentation.xml': data = pres.encode()

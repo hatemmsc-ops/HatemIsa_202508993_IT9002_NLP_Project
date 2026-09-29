@@ -56,6 +56,74 @@ function chartBase(title) {
   };
 }
 
+
+// ---- Shape-drawn charts (import cleanly into Canva and Google Slides, like the Board deck's charts) ----
+function legend(s, items, x, y, w) {
+  let cx = x + w / 2 - items.reduce((a, it) => a + 0.3 + it[0].length * 0.075, 0) / 2;
+  items.forEach(([name, color]) => {
+    s.addShape(pres.shapes.RECTANGLE, { x: cx, y: y + 0.08, w: 0.14, h: 0.14, fill: { color }, line: { color, width: 0 } });
+    txt(s, name, { x: cx + 0.2, y, w: name.length * 0.075 + 0.1, h: 0.3, fontSize: 10, color: C.text, valign: "middle" });
+    cx += 0.3 + name.length * 0.075;
+  });
+}
+function colBars(s, o) {
+  const { x, y, w, h, title, cats, series, max } = o;
+  txt(s, title, { x, y, w, h: 0.3, fontSize: 11, color: C.navy, align: "center" });
+  const top = y + 0.55, bottom = y + h - 0.75, ph = bottom - top, gw = w / cats.length;
+  const bw = (gw * 0.62) / series.length;
+  s.addShape(pres.shapes.LINE, { x, y: bottom, w, h: 0, line: { color: C.soft, width: 1 } });
+  cats.forEach((c, i) => {
+    const gx = x + i * gw + (gw - bw * series.length) / 2;
+    series.forEach((se, k) => {
+      const v = se.values[i], bh = Math.max((v / max) * ph, 0.02), bx = gx + k * bw;
+      s.addShape(pres.shapes.RECTANGLE, { x: bx + 0.02, y: bottom - bh, w: bw - 0.04, h: bh, fill: { color: se.color }, line: { color: se.color, width: 0 } });
+      txt(s, String(v), { x: bx - 0.1, y: bottom - bh - 0.3, w: bw + 0.2, h: 0.28, fontSize: 11, bold: true, color: C.navy, align: "center", valign: "bottom" });
+    });
+    txt(s, c, { x: x + i * gw, y: bottom + 0.08, w: gw, h: 0.3, fontSize: 10.5, color: C.text, align: "center" });
+  });
+  legend(s, series.map((se) => [se.name, se.color]), x, y + h - 0.32, w);
+}
+function lineShape(s, o) {
+  const { x, y, w, h, title, cats, values, min, max, step, marker } = o;
+  txt(s, title, { x, y, w, h: 0.3, fontSize: 11, color: C.navy, align: "center" });
+  const lx = x + 0.5, top = y + 0.5, bottom = y + h - 0.6, pw = w - 0.6, ph = bottom - top;
+  const Y = (v) => bottom - ((v - min) / (max - min)) * ph;
+  for (let v = min; v <= max; v += step) {
+    s.addShape(pres.shapes.LINE, { x: lx, y: Y(v), w: pw, h: 0, line: { color: v === min ? C.soft : "E6EAF2", width: v === min ? 1 : 0.75 } });
+    txt(s, String(v), { x: x, y: Y(v) - 0.12, w: 0.42, h: 0.24, fontSize: 9, color: C.muted, align: "right", valign: "middle" });
+  }
+  const X = (i) => lx + 0.15 + (i * (pw - 0.3)) / (values.length - 1);
+  if (marker !== undefined) {
+    s.addShape(pres.shapes.LINE, { x: X(marker), y: top - 0.05, w: 0, h: bottom - top + 0.05, line: { color: C.gold, width: 1.25, dashType: "dash" } });
+  }
+  for (let i = 0; i < values.length - 1; i++) {
+    const x1 = X(i), x2 = X(i + 1), y1 = Y(values[i]), y2 = Y(values[i + 1]);
+    s.addShape(pres.shapes.LINE, { x: x1, y: Math.min(y1, y2), w: x2 - x1, h: Math.abs(y2 - y1), flipV: y2 < y1, line: { color: C.navy, width: 2.5 } });
+  }
+  values.forEach((v, i) => {
+    s.addShape(pres.shapes.OVAL, { x: X(i) - 0.05, y: Y(v) - 0.05, w: 0.1, h: 0.1, fill: { color: C.navy }, line: { color: C.navy, width: 0 } });
+    txt(s, cats[i], { x: X(i) - 0.3, y: bottom + 0.06, w: 0.6, h: 0.24, fontSize: 8.5, color: i === marker ? C.goldText : C.muted, bold: i === marker, align: "center" });
+  });
+  if (marker !== undefined) txt(s, "Ads live", { x: X(marker) - 0.5, y: bottom + 0.28, w: 1.0, h: 0.22, fontSize: 8.5, bold: true, color: C.goldText, align: "center" });
+}
+function divBars(s, o) {
+  const { x, y, w, h, title, cats, values, min, max, posColor, negColor, posName, negName } = o;
+  txt(s, title, { x, y, w, h: 0.3, fontSize: 11, color: C.navy, align: "center" });
+  const labW = 1.95, px = x + labW + 0.1, pw = w - labW - 0.15, top = y + 0.45, rowH = (h - 0.45 - 0.45) / cats.length;
+  const X = (v) => px + ((v - min) / (max - min)) * pw, zx = X(0);
+  s.addShape(pres.shapes.LINE, { x: zx, y: top - 0.05, w: 0, h: rowH * cats.length + 0.05, line: { color: C.soft, width: 1 } });
+  cats.forEach((c, i) => {
+    const ry = top + i * rowH, bh = rowH * 0.62, by = ry + (rowH - bh) / 2, v = values[i];
+    txt(s, c, { x, y: ry, w: labW, h: rowH, fontSize: 10.5, color: C.text, align: "right", valign: "middle" });
+    const bx = v >= 0 ? zx : X(v), bw = Math.abs(X(v) - zx), col = v >= 0 ? posColor : negColor;
+    s.addShape(pres.shapes.RECTANGLE, { x: bx, y: by, w: bw, h: bh, fill: { color: col }, line: { color: col, width: 0 } });
+    const lab = (v >= 0 ? "+" : "") + v.toFixed(1) + "%";
+    if (v >= 0) txt(s, lab, { x: bx + bw + 0.05, y: by, w: 0.8, h: bh, fontSize: 10, bold: true, color: C.navy, valign: "middle" });
+    else txt(s, lab, { x: bx - 0.85, y: by, w: 0.8, h: bh, fontSize: 10, bold: true, color: C.goldText, align: "right", valign: "middle" });
+  });
+  legend(s, [[posName, posColor], [negName, negColor]], x, y + h - 0.32, w);
+}
+
 // Board content-slide chrome
 function contentSlide({ kicker, title, source, takeaway, n, notes }) {
   const s = pres.addSlide();
@@ -152,14 +220,12 @@ function card(s, x, y, w, h, top) {
     txt(s, v[1], { x: 2.15, y: y + 0.2, w: 2.25, h: 0.6, fontSize: 11.5, bold: true, color: C.navy });
     txt(s, v[2], { x: 2.15, y: y + 0.82, w: 2.25, h: 0.35, fontSize: 9.5, color: C.muted });
   });
-  s.addChart(pres.charts.BAR, [
-    { name: "App downloads added", labels: ["1-8 Sep", "8-14 Sep", "14-21 Sep", "21-27 Sep (paid live)"], values: [30, 20, 14, 36] },
-    { name: "Users onboarded", labels: ["1-8 Sep", "8-14 Sep", "14-21 Sep", "21-27 Sep (paid live)"], values: [1, 3, 5, 3] },
-  ], Object.assign(chartBase("Net new app downloads and onboarded users between dashboard dates"), {
-    x: 4.85, y: 1.65, w: 7.87, h: 4.45, barDir: "col", barGrouping: "clustered", barGapWidthPct: 55, chartColors: [C.navy, C.green],
-    showValue: true, dataLabelPosition: "outEnd", dataLabelFontSize: 11, dataLabelFontBold: true, catAxisLabelFontSize: 10.5,
-    valAxisMaxVal: 42, showLegend: true, legendPos: "b",
-  }));
+  colBars(s, {
+    x: 4.85, y: 1.65, w: 7.87, h: 4.45, max: 40,
+    title: "Net new app downloads and onboarded users between dashboard dates",
+    cats: ["1-8 Sep", "8-14 Sep", "14-21 Sep", "21-27 Sep (paid live)"],
+    series: [{ name: "App downloads added", color: C.navy, values: [30, 20, 14, 36] }, { name: "Users onboarded", color: C.green, values: [1, 3, 5, 3] }],
+  });
 }
 
 // ---------- 4. Google Ads and installs ----------
@@ -171,16 +237,15 @@ function card(s, x, y, w, h, top) {
     source: "App installs: eMYAA Daily Performance Dashboards (Android + iOS, cumulative, on report dates 1-27 Sep 2026). Ads: GA4 Reports snapshot and Google Ads campaigns exports, 1-28 Sep 2026.",
     notes: "Installs (Android + iOS, cumulative) on dashboard report dates: 1 Sep 373, 2 Sep 389, 3 Sep 395, 8 Sep 403, 9 Sep 410, 10 Sep 414, 13 Sep 419, 14 Sep 423, 16 Sep 430, 17 Sep 432, 20 Sep 437, 21 Sep 437, 22 Sep 452, 23 Sep 454, 24 Sep 455, 27 Sep 473. Report dates are irregular, so the line is spaced by report, not by calendar day. Pace: +36 in the six days 21-27 Sep (6 a day) vs +30 in 1-8 Sep (4.3 a day, when the Ali Sabeel video and baseline sponsor ads were running) and +14 in 14-21 Sep. Split 21-27 Sep: Android +17, iOS +19. Funnel: 409 google / cpc sessions and 400 key events in GA4 (1-28 Sep); the key event is not defined in the export. Installs and onboarding come from the platform dashboard and cover all sources; there is no link yet from an ad click to an install. The app link (onelink.to/gpbwrg) already exists and can carry campaign tags. Onboarded users 57 to 60 over 21-27 Sep.",
   });
-  const labels = ["1 Sep", "2", "3", "8", "9", "10", "13", "14", "16", "17", "20", "21", "22 Sep: ads live", "23", "24", "27 Sep"];
+  const labels = ["1 Sep", "2", "3", "8", "9", "10", "13", "14", "16", "17", "20", "21", "22 Sep", "23", "24", "27 Sep"];
   const installs = [373, 389, 395, 403, 410, 414, 419, 423, 430, 432, 437, 437, 452, 454, 455, 473];
-  s.addChart(pres.charts.LINE, [{ name: "App installs, cumulative", labels, values: installs }], Object.assign(chartBase("App installs, cumulative (Android + iOS), by dashboard report date"), {
-    x: 0.62, y: 1.65, w: 7.35, h: 4.45, chartColors: [C.navy], lineSize: 2.5, lineDataSymbol: "circle", lineDataSymbolSize: 6,
-    valAxisHidden: false, valAxisMinVal: 360, valAxisMaxVal: 480, valAxisMajorUnit: 30, valAxisLabelColor: C.muted, valAxisLabelFontSize: 9, valAxisLabelFontFace: F,
-    valGridLine: { color: "E6EAF2", size: 0.5 }, catAxisLabelFontSize: 8.5, catAxisLabelColor: C.muted,
-    showValue: false, showLegend: false,
-  }));
+  lineShape(s, {
+    x: 0.62, y: 1.65, w: 7.35, h: 4.45, min: 360, max: 480, step: 30, marker: 12,
+    title: "App installs, cumulative (Android + iOS), by dashboard report date",
+    cats: labels, values: installs,
+  });
   // callouts on the chart
-  txt(s, [{ text: "+36 in 6 days", options: { bold: true, color: C.green, breakLine: true } }, { text: "21-27 Sep, after launch", options: { color: C.muted } }], { x: 5.35, y: 2.2, w: 2.4, h: 0.5, fontSize: 10.5 });
+  txt(s, [{ text: "+36 in 6 days", options: { bold: true, color: C.green, breakLine: true } }, { text: "21-27 Sep, after launch", options: { color: C.muted } }], { x: 6.6, y: 3.45, w: 1.35, h: 0.7, fontSize: 10.5 });
   txt(s, [{ text: "+14 in 7 days", options: { bold: true, color: C.navy, breakLine: true } }, { text: "14-21 Sep, before launch", options: { color: C.muted } }], { x: 4.45, y: 4.05, w: 2.3, h: 0.5, fontSize: 10.5 });
 
   // funnel diagram
@@ -228,15 +293,11 @@ function card(s, x, y, w, h, top) {
   });
   const metrics = ["Sessions", "Active users", "Engaged sessions", "Engagement rate", "Time per session", "Events per session", "Total events", "Key events", "Key events per session"];
   const diff = [20.5, 18.9, 34.6, 11.8, 24.2, 19.2, 43.6, 8.1, -10.2];
-  s.addChart(pres.charts.BAR, [
-    { name: "English ahead", labels: metrics, values: diff.map((v) => (v > 0 ? v : 0)) },
-    { name: "Arabic ahead", labels: metrics, values: diff.map((v) => (v < 0 ? v : 0)) },
-  ], Object.assign(chartBase("English relative to Arabic, % difference, 1-28 Sep"), {
-    x: 5.55, y: 1.65, w: 7.17, h: 4.45, barDir: "bar", barGrouping: "stacked", barGapWidthPct: 40, catAxisOrientation: "maxMin",
-    chartColors: [C.navy, C.gold], showValue: true, dataLabelPosition: "inEnd", dataLabelColor: C.white, dataLabelFontBold: true,
-    dataLabelFormatCode: '+0.0"%";-0.0"%";;', valAxisMinVal: -20, valAxisMaxVal: 50, catAxisLabelPos: "low",
-    showLegend: true, legendPos: "b",
-  }));
+  divBars(s, {
+    x: 5.55, y: 1.65, w: 7.17, h: 4.45, min: -20, max: 55, cats: metrics, values: diff,
+    title: "English relative to Arabic, % difference, 1-28 Sep",
+    posColor: C.navy, negColor: C.gold, posName: "English ahead", negName: "Arabic ahead",
+  });
 }
 
 // ---------- 6. Decisions and open items ----------
