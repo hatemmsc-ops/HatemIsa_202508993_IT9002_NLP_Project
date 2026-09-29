@@ -1,6 +1,6 @@
 # Open items after the redesign
 
-Status: **deck built** in the Board visual language. The items below are still open and are shown on slide 12 of the deck. Owners and dates are proposals.
+Status: **deck built** in the Board visual language. The items below are still open and are shown on slide 9 of the deck. Owners and dates are proposals.
 
 | # | Item | Why it matters | Needed from | By |
 |---|---|---|---|---|
