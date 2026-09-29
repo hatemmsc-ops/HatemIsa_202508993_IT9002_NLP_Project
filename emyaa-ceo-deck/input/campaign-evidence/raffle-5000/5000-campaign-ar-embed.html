@@ -1,0 +1,355 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Exo:wght@400;500;600;700;800;900&display=swap');
+:root {
+    --navy: #121A2F;
+    --navy-mid: #1e2d4f;
+    --gold: #C9A84C;
+    --gold-bright: #e0c274;
+    --green: #16a34a;
+    --muted: #5a6a85;
+    --border: #e8edf5;
+    --bg: #f7f9fc;
+    --ease: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.emy-5000-ar *, .emy-5000-ar *::before, .emy-5000-ar *::after { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Almarai', sans-serif !important; -webkit-tap-highlight-color: transparent; }
+.emy-5000-ar { color: var(--navy); background-color: #ffffff; background-image: radial-gradient(circle, rgba(18,26,47,0.06) 1px, transparent 1.6px); background-size: 26px 26px; -webkit-font-smoothing: antialiased; direction: rtl; text-align: right; max-width: 100%; overflow-x: hidden; }
+.emy-5000-ar img, .emy-5000-ar svg { display: block; max-width: 100%; }
+.emy-5000-ar a { color: inherit; }
+.emy-5000-ar button, .emy-5000-ar a, .emy-5000-ar summary { cursor: pointer; }
+.emy-5000-ar :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .emy-5000-ar *, .emy-5000-ar *::before, .emy-5000-ar *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* ── HERO ── */
+.emy-5000-ar .hero-section { position: relative; background-color: #ffffff; background-image: radial-gradient(circle, rgba(18,26,47,0.06) 1px, transparent 1.6px); background-size: 26px 26px; overflow: hidden; }
+.emy-5000-ar .hero-section::before, .emy-5000-ar .hero-section::after { content: ''; position: absolute; border-radius: 50%; z-index: 0; pointer-events: none; }
+.emy-5000-ar .hero-section::before { top: -140px; left: -120px; width: 460px; height: 460px; background: radial-gradient(circle, rgba(201,168,76,0.22) 0%, rgba(201,168,76,0) 68%); }
+.emy-5000-ar .hero-section::after { bottom: -160px; right: -140px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(18,26,47,0.09) 0%, rgba(18,26,47,0) 68%); }
+.emy-5000-ar .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 76px 32px 88px; max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+
+/* ── DECORATIVE BACKGROUND ── */
+.emy-5000-ar .bg-decor { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; direction: ltr; }
+.emy-5000-ar .bg-decor .decor { position: absolute; animation: emy5000arDecorFloat 9s ease-in-out infinite; }
+.emy-5000-ar .bg-decor .gold { color: var(--gold); }
+.emy-5000-ar .bg-decor .navy { color: var(--navy); }
+.emy-5000-ar .bg-decor .d1 { top: 8%; left: 6%; width: 46px; height: 46px; opacity: 0.16; animation-delay: 0s; }
+.emy-5000-ar .bg-decor .d2 { top: 18%; right: 9%; width: 34px; height: 34px; opacity: 0.14; animation-delay: 1.2s; }
+.emy-5000-ar .bg-decor .d3 { bottom: 14%; left: 11%; width: 58px; height: 58px; opacity: 0.1; animation-delay: 2.4s; }
+.emy-5000-ar .bg-decor .d4 { bottom: 22%; right: 6%; width: 40px; height: 40px; opacity: 0.15; animation-delay: 0.7s; }
+.emy-5000-ar .bg-decor .d5 { top: 42%; left: 3%; width: 30px; height: 30px; opacity: 0.12; animation-delay: 3.1s; }
+.emy-5000-ar .bg-decor .d6 { top: 6%; right: 22%; width: 26px; height: 26px; opacity: 0.18; animation-delay: 1.8s; }
+@keyframes emy5000arDecorFloat { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-16px) rotate(8deg); } }
+@media (max-width: 768px) { .emy-5000-ar .bg-decor .decor { opacity: 0.08 !important; } .emy-5000-ar .bg-decor .d3, .emy-5000-ar .bg-decor .d5 { display: none; } }
+.emy-5000-ar .trust-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 28px; }
+.emy-5000-ar .trust-badge { display: inline-flex; align-items: center; gap: 7px; background: rgba(18,26,47,0.06); border: 1px solid rgba(18,26,47,0.12); border-radius: 30px; padding: 7px 15px; font-size: 12.5px; font-weight: 700; color: var(--navy); }
+.emy-5000-ar .trust-badge svg { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; }
+
+.emy-5000-ar .hero-title { font-size: clamp(2.3rem, 6vw, 4rem); font-weight: 800; line-height: 1.35; margin-bottom: 20px; color: var(--navy); }
+.emy-5000-ar .hero-title .num { color: var(--gold); display: inline-block; animation: emy5000arGoldPulse 2.6s ease-in-out infinite; cursor: default; transition: transform 260ms var(--ease); transform-origin: center; }
+.emy-5000-ar .hero-title .num:hover { transform: scale(1.1); }
+@keyframes emy5000arGoldPulse { 0%, 100% { text-shadow: 0 0 0 rgba(201,168,76,0); } 50% { text-shadow: 0 0 22px rgba(201,168,76,0.35); } }
+.emy-5000-ar .hero-subtitle { font-size: 18px; color: var(--muted); line-height: 1.9; margin-bottom: 38px; max-width: 560px; font-weight: 400; }
+
+.emy-5000-ar .countdown { margin-top: 30px; display: flex; gap: 10px; justify-content: center; direction: ltr; }
+.emy-5000-ar .countdown-item { background: var(--navy); border-radius: 12px; padding: 10px 16px; min-width: 62px; text-align: center; }
+.emy-5000-ar .countdown-num { display: block; font-size: 21px; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; font-family: 'Exo', sans-serif !important; }
+.emy-5000-ar .countdown-label { display: block; font-size: 9px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: #b9c4dc; margin-top: 2px; font-family: 'Exo', sans-serif !important; }
+
+.emy-5000-ar .store-buttons { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.emy-5000-ar .store-btn { display: inline-flex; align-items: center; gap: 11px; background: var(--navy); color: #ffffff; padding: 13px 24px; border-radius: 50px; text-decoration: none; transition: var(--ease); border: 2px solid var(--navy); min-width: 170px; direction: ltr; text-align: left; }
+.emy-5000-ar .store-btn:hover { background: #ffffff; color: var(--navy); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(18,26,47,0.15); }
+.emy-5000-ar .store-icon { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.emy-5000-ar .store-icon svg { width: 100%; height: 100%; fill: currentColor; }
+.emy-5000-ar .store-text { display: flex; flex-direction: column; line-height: 1.1; }
+.emy-5000-ar .store-text-small { font-size: 10px; opacity: 0.8; font-weight: 500; text-transform: uppercase; font-family: 'Exo', sans-serif !important; }
+.emy-5000-ar .store-text-large { font-size: 15px; font-weight: 700; font-family: 'Exo', sans-serif !important; }
+
+.emy-5000-ar .hero-meta { margin-top: 36px; display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; }
+.emy-5000-ar .hero-meta-item { text-align: center; }
+.emy-5000-ar .hero-meta-label { font-size: 11px; font-weight: 800; color: var(--muted); margin-bottom: 4px; }
+.emy-5000-ar .hero-meta-val { font-size: 15px; font-weight: 700; color: var(--navy); }
+.emy-5000-ar .hero-meta-divider { width: 1px; align-self: stretch; background: var(--border); }
+
+/* ── SECTION SHARED ── */
+.emy-5000-ar .section { padding: 96px 32px; max-width: 1180px; margin: 0 auto; }
+.emy-5000-ar .section-head { max-width: 640px; margin-bottom: 52px; }
+.emy-5000-ar .eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 800; color: var(--gold); margin-bottom: 16px; }
+.emy-5000-ar .eyebrow::before { content: ''; width: 16px; height: 2px; background: var(--gold); border-radius: 2px; }
+.emy-5000-ar .section-title { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 14px; line-height: 1.3; }
+.emy-5000-ar .section-sub { font-size: 16.5px; color: var(--muted); line-height: 1.9; }
+
+/* ── SCROLL REVEAL ── */
+.emy-5000-ar .reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+.emy-5000-ar .reveal.in-view { opacity: 1; transform: translateY(0); }
+.emy-5000-ar .steps .step-card:nth-child(1) { transition-delay: 0ms; }
+.emy-5000-ar .steps .step-card:nth-child(2) { transition-delay: 90ms; }
+.emy-5000-ar .steps .step-card:nth-child(3) { transition-delay: 180ms; }
+.emy-5000-ar .steps .step-card:nth-child(4) { transition-delay: 270ms; }
+
+/* ── STEPS ── */
+.emy-5000-ar .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.emy-5000-ar .step-card { position: relative; background: #ffffff; border: 1px solid var(--border); border-radius: 20px; padding: 30px 26px; transition: transform 220ms var(--ease), box-shadow 220ms var(--ease), border-color 220ms var(--ease), opacity 600ms var(--ease); }
+.emy-5000-ar .step-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(18,26,47,0.09); border-color: transparent; }
+.emy-5000-ar .step-icon { width: 46px; height: 46px; border-radius: 13px; background: var(--navy); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+.emy-5000-ar .step-icon svg { width: 22px; height: 22px; color: var(--gold); }
+.emy-5000-ar .step-num { position: absolute; top: 26px; left: 26px; font-size: 13px; font-weight: 800; color: #c7d0e0; direction: ltr; }
+.emy-5000-ar .step-text { font-size: 15px; line-height: 1.9; font-weight: 700; color: var(--navy); }
+
+/* ── PRIZE TABLE ── */
+.emy-5000-ar .prize-wrap { background: #ffffff; border: 1px solid var(--border); border-radius: 24px; overflow-x: auto; -webkit-overflow-scrolling: touch; box-shadow: 0 4px 24px rgba(18,26,47,0.04); transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+.emy-5000-ar table.prize-table { width: 100%; min-width: 560px; border-collapse: collapse; }
+.emy-5000-ar table.prize-table th { background: var(--navy); color: #ffffff; text-align: right; padding: 18px 26px; font-size: 12.5px; font-weight: 800; }
+.emy-5000-ar table.prize-table th:last-child, .emy-5000-ar table.prize-table td:last-child { text-align: left; }
+.emy-5000-ar table.prize-table td { padding: 19px 26px; font-size: 15px; border-top: 1px solid var(--border); transition: background 150ms var(--ease); }
+.emy-5000-ar table.prize-table tbody tr:hover td { background: var(--bg); }
+.emy-5000-ar table.prize-table .prize-val { font-weight: 800; color: var(--navy); font-size: 16px; }
+.emy-5000-ar .prize-note { display: flex; align-items: center; gap: 10px; margin-top: 20px; padding: 16px 20px; background: var(--bg); border-radius: 14px; font-size: 13.5px; color: var(--muted); font-weight: 700; }
+.emy-5000-ar .prize-note svg { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+
+/* ── T&C ACCORDION ── */
+.emy-5000-ar .tc-section { background: var(--bg); }
+.emy-5000-ar .tc-list { display: flex; flex-direction: column; gap: 10px; max-width: 900px; }
+.emy-5000-ar details.tc-item { background: #ffffff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+.emy-5000-ar details.tc-item[open] { box-shadow: 0 8px 24px rgba(18,26,47,0.06); }
+.emy-5000-ar summary.tc-summary { list-style: none; display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; font-weight: 700; font-size: 15.5px; }
+.emy-5000-ar summary.tc-summary::-webkit-details-marker { display: none; }
+.emy-5000-ar summary.tc-summary .chevron { width: 18px; height: 18px; color: var(--muted); transition: transform 220ms var(--ease); flex-shrink: 0; margin-right: 16px; }
+.emy-5000-ar details.tc-item[open] summary .chevron { transform: rotate(180deg); }
+.emy-5000-ar .tc-body { padding: 0 24px 22px; font-size: 14.5px; color: var(--muted); line-height: 2; }
+.emy-5000-ar .tc-body ul { padding-right: 20px; margin-top: 8px; }
+.emy-5000-ar .tc-body li { margin-bottom: 6px; }
+
+@media (max-width: 1024px) {
+    .emy-5000-ar .steps { grid-template-columns: repeat(2, 1fr); }
+    .emy-5000-ar .hero { padding: 64px 28px 72px; }
+}
+@media (max-width: 640px) {
+    .emy-5000-ar .steps { grid-template-columns: 1fr; }
+    .emy-5000-ar .section { padding: 56px 20px; }
+    .emy-5000-ar .hero { padding: 52px 20px 60px; }
+    .emy-5000-ar .hero-meta { gap: 18px; }
+    .emy-5000-ar table.prize-table th, .emy-5000-ar table.prize-table td { padding: 14px 14px; font-size: 13px; }
+    .emy-5000-ar .store-buttons { flex-direction: column; width: 100%; max-width: 260px; margin: 0 auto; }
+    .emy-5000-ar .store-btn { width: 100%; justify-content: center; min-width: 0; }
+}
+@media (max-width: 380px) {
+    .emy-5000-ar .trust-badge { font-size: 11.5px; padding: 6px 12px; }
+}
+</style>
+
+<div class="emy-5000-ar">
+
+<div class="hero-section">
+    <div class="bg-decor" aria-hidden="true">
+        <svg class="decor gold d1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10.5"/><path d="M12 6.5v11M15 9.3c0-1.4-1.4-2.3-3-2.3s-3 .9-3 2.3 1.4 1.9 3 2.3 3 .9 3 2.3-1.4 2.3-3 2.3-3-.9-3-2.3"/></svg>
+        <svg class="decor navy d2" viewBox="0 0 32 20" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1" width="30" height="18" rx="3"/><circle cx="16" cy="10" r="5"/><path d="M6 6h.01M26 14h.01"/></svg>
+        <svg class="decor gold d3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><ellipse cx="12" cy="18" rx="8" ry="3"/><ellipse cx="12" cy="13" rx="8" ry="3"/><ellipse cx="12" cy="8" rx="8" ry="3"/></svg>
+        <svg class="decor navy d4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>
+        <svg class="decor gold d5" viewBox="0 0 32 20" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1" width="30" height="18" rx="3"/><circle cx="16" cy="10" r="5"/><path d="M6 6h.01M26 14h.01"/></svg>
+        <svg class="decor navy d6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10.5"/><path d="M12 6.5v11M15 9.3c0-1.4-1.4-2.3-3-2.3s-3 .9-3 2.3 1.4 1.9 3 2.3 3 .9 3 2.3-1.4 2.3-3 2.3-3-.9-3-2.3"/></svg>
+    </div>
+    <section class="hero">
+        <div class="trust-row">
+            <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M12 3l7 4v5c0 5-3.4 8.4-7 9-3.6-.6-7-4-7-9V7l7-4z"/></svg>متوافق مع الشريعة الإسلامية</span>
+            <span class="trust-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>مرخص من مصرف البحرين المركزي</span>
+        </div>
+
+        <h1 class="hero-title">تداول واربح ما يصل إلى <span class="num"><span data-countup="5000" style="direction:ltr; display:inline-block;">0</span> دولار</span><br>مع eMYAA</h1>
+        <p class="hero-subtitle">كل 500 دولار تتداولها تمنحك فرصة إضافية للفوز. الحملة متاحة لجميع متداولي eMYAA.</p>
+
+        <div class="store-buttons">
+            <a href="https://apps.apple.com/bh/app/emyaa/id6752009905" target="_blank" rel="noopener noreferrer" class="store-btn">
+                <div class="store-icon"><svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg></div>
+                <div class="store-text"><span class="store-text-small">Download on the</span><span class="store-text-large">App Store</span></div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.ajyadcapital.emyaa" target="_blank" rel="noopener noreferrer" class="store-btn">
+                <div class="store-icon"><svg viewBox="0 0 24 24"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg></div>
+                <div class="store-text"><span class="store-text-small">Get it on</span><span class="store-text-large">Google Play</span></div>
+            </a>
+        </div>
+
+        <div class="hero-meta">
+            <div class="hero-meta-item"><div class="hero-meta-label">فترة الحملة</div><div class="hero-meta-val">1 أغسطس حتى 31 ديسمبر 2026</div></div>
+            <div class="hero-meta-divider"></div>
+            <div class="hero-meta-item"><div class="hero-meta-label">تاريخ الإعلان</div><div class="hero-meta-val">10 يناير 2027</div></div>
+        </div>
+
+        <div class="countdown" data-countdown-target="2027-01-10T00:00:00+03:00" aria-label="الوقت المتبقي حتى الإعلان">
+            <div class="countdown-item"><span class="countdown-num" data-cd="d">00</span><span class="countdown-label">يوم</span></div>
+            <div class="countdown-item"><span class="countdown-num" data-cd="h">00</span><span class="countdown-label">ساعة</span></div>
+            <div class="countdown-item"><span class="countdown-num" data-cd="m">00</span><span class="countdown-label">دقيقة</span></div>
+            <div class="countdown-item"><span class="countdown-num" data-cd="s">00</span><span class="countdown-label">ثانية</span></div>
+        </div>
+    </section>
+</div>
+
+<section class="section">
+    <div class="section-head">
+        <span class="eyebrow">كيفية المشاركة في الحملة؟</span>
+        <h2 class="section-title">كل عملية تداول تزيد من فرصك في الفوز.</h2>
+        <p class="section-sub">بدون تسجيل، وبدون أي خطوات إضافية. فرصك تُحتسب تلقائياً بمجرد أن تتداول.</p>
+    </div>
+    <div class="steps">
+        <div class="step-card reveal">
+            <div class="step-num">01</div>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
+            <div class="step-text">افتح حساباً في eMYAA أو احتفظ بحسابك نشطاً خلال فترة الحملة.</div>
+        </div>
+        <div class="step-card reveal">
+            <div class="step-num">02</div>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg></div>
+            <div class="step-text">تداول بحجم إجمالي لا يقل عن 500 دولار بين 1 أغسطس و31 ديسمبر 2026 للتأهل.</div>
+        </div>
+        <div class="step-card reveal">
+            <div class="step-num">03</div>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h4v4H4zM16 16h4v4h-4zM14 4h6v6M4 20h6v-6"/><path d="M20 4L4 20"/></svg></div>
+            <div class="step-text">كل 500 دولار تتداولها تمنحك فرصة واحدة. كلما تداولت أكثر، زادت فرصك في الفوز.</div>
+        </div>
+        <div class="step-card reveal">
+            <div class="step-num">04</div>
+            <div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 01-10 0V4zM7 6H4a2 2 0 002 2M17 6h3a2 2 0 01-2 2"/></svg></div>
+            <div class="step-text">يتم اختيار فائز واحد في تاريخ 10 يناير 2027. وتعتمد قيمة الجائزة على إجمالي حجم تداولاتك التراكمية.</div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <span class="eyebrow">فئات الجوائز</span>
+        <h2 class="section-title">كلما زاد تداولك، كبرت جائزتك المحتملة.</h2>
+        <p class="section-sub">تُحدد جائزتك بناءً على فئة حجم تداولك التراكمي حتى 31 ديسمبر 2026.</p>
+    </div>
+    <div class="prize-wrap reveal">
+        <table class="prize-table">
+            <thead>
+                <tr><th>حجم التداول (أغسطس إلى ديسمبر 2026)</th><th>عدد الفرص</th><th>الجائزة إذا فزت</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>500 إلى 4,999 دولار</td><td>من 1 إلى 9 فرص</td><td class="prize-val">500 دولار</td></tr>
+                <tr><td>5,000 إلى 14,999 دولار</td><td>من 10 إلى 29 فرصة</td><td class="prize-val">1,000 دولار</td></tr>
+                <tr><td>15,000 إلى 49,999 دولار</td><td>من 30 إلى 99 فرصة</td><td class="prize-val">2,000 دولار</td></tr>
+                <tr><td>50,000 إلى 99,999 دولار</td><td>من 100 إلى 199 فرصة</td><td class="prize-val">3,000 دولار</td></tr>
+                <tr><td>100,000 إلى 499,999 دولار</td><td>من 200 إلى 999 فرصة</td><td class="prize-val">4,000 دولار</td></tr>
+                <tr><td>500,000 دولار فأكثر</td><td>1,000 فرصة فأكثر</td><td class="prize-val">5,000 دولار</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="prize-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>يتم اختيار فائز واحد فقط. تُحدد فئة جائزتك بناءً على حجم تداولك حتى 31 ديسمبر 2026.</div>
+</section>
+
+<section class="section" id="join">
+    <div class="section-head">
+        <span class="eyebrow">من يمكنه المشاركة</span>
+        <h2 class="section-title">متاحة لكل متداولي eMYAA.</h2>
+        <p class="section-sub">الحملة متاحة لجميع متداولي eMYAA. كل من يمتلك حساباً في المنصة يمكنه التداول وكسب فرص الفوز، بشرط أن يكون الحساب موثقاً بالكامل ونشطاً طوال فترة الحملة.</p>
+    </div>
+</section>
+
+<section class="section tc-section">
+    <div class="section-head">
+        <span class="eyebrow">التفاصيل الكاملة</span>
+        <h2 class="section-title">الشروط والأحكام</h2>
+        <p class="section-sub">حملة جائزة الـ 5,000 دولار من منصة eMYAA، 2026. تُعد المشاركة في هذه الحملة بمثابة قبول كامل لهذه الشروط والأحكام.</p>
+    </div>
+    <div class="tc-list">
+        <details class="tc-item reveal in-view" open><summary class="tc-summary">1. الجهة المنظمة<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">يتم تنظيم هذه الحملة من قبل شركة أجياد كابيتال ش.م.ب (مقفلة)، التي تُشغّل منصة eMYAA للتداول، المرخصة والخاضعة لرقابة مصرف البحرين المركزي.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">2. الأهلية<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body"><ul>
+            <li>متاحة لجميع أصحاب حسابات eMYAA المسجلين.</li>
+            <li>يجب أن يكون لدى المشارك حساب eMYAA موثّق بالكامل ونشط طوال فترة الحملة.</li>
+            <li>لا يحق لموظفي ومديري وأقارب الدرجة الأولى للعاملين في شركة أجياد كابيتال وأي كيانات تابعة لها المشاركة.</li>
+            <li>تخضع المشاركة لقوانين وأنظمة بلد إقامة المشارك.</li>
+        </ul></div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">3. فترة الحملة<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">تمتد فترة الحملة من الساعة 00:00 بتوقيت آست يوم 1 أغسطس 2026 حتى الساعة 23:59 بتوقيت آست يوم 31 ديسمبر 2026. يُحتسب فقط النشاط التداولي المسجل على منصة eMYAA خلال هذه الفترة ضمن فرص المسابقة.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">4. طريقة المشاركة<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body"><ul>
+            <li>لا يتطلب الأمر أي تسجيل منفصل. يحصل تلقائياً كل صاحب حساب مؤهل على فرص المشاركة.</li>
+            <li>يُشترط حجم تداول تراكمي لا يقل عن 500 دولار أمريكي خلال فترة الحملة للتأهل.</li>
+            <li>يحصل المشارك على فرصة واحدة عن كل 500 دولار من حجم التداول التراكمي. لا تمنح المضاعفات الجزئية لمبلغ 500 دولار فرصة إضافية.</li>
+            <li>يُحتسب حجم التداول بناءً على عمليات الشراء والبيع المنفذة على منصة eMYAA، بالدولار الأمريكي. تُستبعد المعاملات الملغاة أو المعكوسة أو المتنازع عليها.</li>
+        </ul></div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">5. هيكل الجائزة<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">يتم اختيار فائز واحد عبر سحب عشوائي من بين جميع الفرص المؤهلة في 10 يناير 2027. تُحدد الجائزة بناءً على فئة حجم تداول الفائز التراكمي حتى 31 ديسمبر 2026، وفقاً للجدول أعلاه. تُودع الجائزة في حساب الفائز على eMYAA وفقاً لتقدير شركة أجياد كابيتال، خلال 14 يوم عمل من تاريخ السحب. الجائزة غير قابلة للتحويل ولا يمكن استبدالها بمبلغ نقدي بأي وسيلة غير ما هو منصوص عليه. تخضع الجوائز للضرائب المعمول بها في بلد إقامة الفائز. تخضع قيمة الجائزة، فور إيداعها في حساب الفائز على eMYAA، لفترة قفل للسحب مدتها شهر واحد من تاريخ الإيداع. خلال هذه الفترة، يجوز للفائز الاستمرار في التداول بمبلغ الجائزة، ولكن لا يجوز له سحبها.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">6. إجراءات السحب<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">يُجرى السحب إلكترونياً باستخدام آلية اختيار عشوائي موثقة في 10 يناير 2027. يُخطر الفائز عبر البريد الإلكتروني ورقم الهاتف المسجلين في حسابه على eMYAA خلال 3 أيام عمل من تاريخ السحب. في حال تعذر التواصل مع الفائز خلال 14 يوماً من محاولة الإخطار الأولى، تحتفظ شركة أجياد كابيتال بالحق في إجراء سحب جديد.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">7. حدود المسؤولية<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">لا تتحمل شركة أجياد كابيتال أي مسؤولية عن أي خسارة أو ضرر أو خيبة أمل يتعرض لها المشاركون نتيجة المشاركة أو قبول الجائزة، ولا تتحمل مسؤولية أي أعطال تقنية أو انقطاع في الشبكة أو أخطاء في المنصة. لا تتجاوز المسؤولية الإجمالية لشركة أجياد كابيتال قيمة الجائزة الممنوحة للفائز المؤكد.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">8. مكافحة التلاعب<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">يُحظر تماماً التداول الوهمي، أو التداول الدائري، أو التواطؤ بين الحسابات، أو أي شكل آخر من أشكال توليد حجم تداول اصطناعي، وسيؤدي ذلك إلى الاستبعاد الفوري. تحتفظ شركة أجياد كابيتال بالحق في تدقيق نشاط التداول واستبعاد أي حجم تراه اصطناعياً.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">9. القوة القاهرة<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">لا تتحمل شركة أجياد كابيتال مسؤولية أي تقصير أو تأخير ناتج عن ظروف خارجة عن إرادتها المعقولة، بما في ذلك القرارات التنظيمية أو أعطال الأنظمة أو القوة القاهرة، وتحتفظ بالحق في تعديل العرض أو تعليقه أو إلغائه في هذه الحالات.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">10. أحكام عامة<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">تحتفظ شركة أجياد كابيتال بالحق في تعديل هذه الحملة أو تعليقها أو إنهائها في أي وقت، وفقاً للمتطلبات التنظيمية المعمول بها، وفي استبعاد أي مشارك يتلاعب بآلية المشاركة أو يتصرف بسوء نية. يُعد تحديد شركة أجياد كابيتال لحجم التداول وجميع قراراتها بشأن هذه الحملة نهائياً وملزماً. تخضع هذه الشروط لقوانين مملكة البحرين، وتختص محاكم مملكة البحرين حصرياً بالنظر في أي نزاع.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">11. البيانات والخصوصية<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">تُعالج البيانات الشخصية التي تُجمع في إطار هذه الحملة وفقاً لسياسة الخصوصية الخاصة بشركة أجياد كابيتال وقوانين حماية البيانات المعمول بها. بمشاركته، يوافق المتسابق على نشر اسمه وبلد إقامته في حال اختياره فائزاً، للإعلان عن النتيجة عبر قنوات eMYAA الرسمية. يجوز للمشارك سحب هذه الموافقة في أي وقت بالتواصل مع support@emyaa.com.</div></details>
+
+        <details class="tc-item reveal"><summary class="tc-summary">12. التواصل<svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></summary><div class="tc-body">لأي استفسارات بخصوص هذه الحملة، يرجى التواصل مع فريق دعم عملاء eMYAA عبر support@emyaa.com.</div></details>
+    </div>
+</section>
+
+</div>
+
+<script>
+(function () {
+    var root = document.querySelector('.emy-5000-ar');
+    if (!root) return;
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var countEl = root.querySelector('[data-countup]');
+    if (countEl) {
+        var target = parseInt(countEl.getAttribute('data-countup'), 10);
+        if (reduced) {
+            countEl.textContent = target.toLocaleString('en-US');
+        } else {
+            var start = null, duration = 1200;
+            var frame = function (ts) {
+                if (!start) start = ts;
+                var p = Math.min((ts - start) / duration, 1);
+                var eased = 1 - Math.pow(1 - p, 3);
+                countEl.textContent = Math.floor(eased * target).toLocaleString('en-US');
+                if (p < 1) requestAnimationFrame(frame);
+                else countEl.textContent = target.toLocaleString('en-US');
+            };
+            requestAnimationFrame(frame);
+        }
+    }
+
+    var cdWrap = root.querySelector('[data-countdown-target]');
+    if (cdWrap) {
+        var targetTime = new Date(cdWrap.getAttribute('data-countdown-target')).getTime();
+        var pad = function (n) { return String(n).padStart(2, '0'); };
+        var tick = function () {
+            var diff = Math.max(0, targetTime - Date.now());
+            var d = Math.floor(diff / 86400000);
+            var h = Math.floor((diff % 86400000) / 3600000);
+            var m = Math.floor((diff % 3600000) / 60000);
+            var s = Math.floor((diff % 60000) / 1000);
+            var dEl = cdWrap.querySelector('[data-cd="d"]');
+            var hEl = cdWrap.querySelector('[data-cd="h"]');
+            var mEl = cdWrap.querySelector('[data-cd="m"]');
+            var sEl = cdWrap.querySelector('[data-cd="s"]');
+            if (dEl) dEl.textContent = pad(d);
+            if (hEl) hEl.textContent = pad(h);
+            if (mEl) mEl.textContent = pad(m);
+            if (sEl) sEl.textContent = pad(s);
+        };
+        tick();
+        setInterval(tick, 1000);
+    }
+
+    var revealEls = root.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)) {
+        revealEls.forEach(function (el) { el.classList.add('in-view'); });
+    } else {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { observer.observe(el); });
+    }
+})();
+</script>

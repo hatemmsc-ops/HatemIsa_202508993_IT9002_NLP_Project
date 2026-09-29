@@ -1,0 +1,58 @@
+# ----------------------------------------
+# Reports snapshot
+# Account: eMYAA Trading Platform
+# Property: eMYAA Trading Platform
+# ----------------------------------------
+#  
+# Start date: 20260901
+# End date: 20260928
+Active users,New users,Average engagement time per active user,Sessions
+542,558,23.361623616236162,587
+
+#  
+# Start date: 20260901
+# End date: 20260928
+Session source / medium,Sessions,Key events,Total revenue
+google / cpc,409,400,0
+(direct) / (none),92,54,0
+google / organic,39,24,0
+ajyadcapital.com / referral,12,2,0
+l.instagram.com / referral,11,6,0
+chatgpt.com / ai-assistant,9,6,0
+tagassistant.google.com / referral,7,7,0
+(data not available),6,6,0
+facebook.com / referral,2,1,0
+
+#  
+# Start date: 20260901
+# End date: 20260928
+First user source / medium,Active users
+google / cpc,403
+(direct) / (none),84
+google / organic,24
+ajyadcapital.com / referral,8
+l.instagram.com / referral,8
+chatgpt.com / ai-assistant,7
+(data not available),6
+facebook.com / referral,2
+
+#  
+# Start date: 20260901
+# End date: 20260928
+Session source / medium,Sessions
+google / cpc,409
+(direct) / (none),92
+google / organic,39
+ajyadcapital.com / referral,12
+l.instagram.com / referral,11
+chatgpt.com / ai-assistant,9
+tagassistant.google.com / referral,7
+(data not available),6
+facebook.com / referral,2
+
+#  
+# Start date: 20260901
+# End date: 20260928
+Session Google Ads campaign,Sessions
+Website conversion - Saudi - English,212
+Website conversion - Saudi - Arabic,176

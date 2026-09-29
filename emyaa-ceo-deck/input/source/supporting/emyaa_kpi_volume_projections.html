@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eMYAA KPI & Volume Projections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* CORE SETUP */
+        * { box-sizing: border-box; }
+        body {
+            background-color: #111;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            min-height: 100vh;
+            padding: 20px 0;
+            place-items: center;
+        }
+        
+        .slide-container {
+            align-items: flex-start;
+            background-color: #04091A;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Urbanist', sans-serif;
+            height: 720px;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding: 50px 60px;
+            position: relative;
+            width: 1280px;
+        }
+
+        /* BACKGROUND STYLING */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 90%, rgba(222, 255, 154, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 10%, rgba(222, 255, 154, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+        .slide-container::after {
+            background: linear-gradient(90deg, transparent, rgba(222, 255, 154, 0.3), transparent);
+            bottom: 30px;
+            content: '';
+            height: 1px;
+            left: 60px;
+            position: absolute;
+            right: 60px;
+        }
+        
+        .slide-container > * { position: relative; z-index: 1; }
+
+        /* TYPOGRAPHY */
+        h2 {
+            color: #f5f5f5;
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            border-left: 4px solid #deff9a;
+            padding-left: 20px;
+        }
+        .subtitle {
+            color: #daffde;
+            font-size: 20px;
+            margin: 0 0 30px 24px;
+            font-weight: 500;
+        }
+
+        h3 {
+            color: #deff9a;
+            font-size: 22px;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p, li {
+            color: #E0E0E0;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0 0 10px 0;
+        }
+
+        /* TABLE LAYOUT */
+        .table-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(222, 255, 154, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th {
+            background: rgba(0, 0, 0, 0.4);
+            color: #deff9a;
+            padding: 15px 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(222, 255, 154, 0.2);
+        }
+        th.current-col {
+            background: rgba(222, 255, 154, 0.1);
+            color: #fff;
+        }
+        td {
+            padding: 15px 10px;
+            color: #fff;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        td:first-child, th:first-child {
+            text-align: left;
+            padding-left: 25px;
+            font-weight: 600;
+            color: #daffde;
+        }
+        td.current-col {
+            background: rgba(222, 255, 154, 0.05);
+            font-weight: 700;
+            color: #deff9a;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* BOTTOM CARDS */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+        }
+        .card {
+            background: #0a0e17;
+            border: 1px solid rgba(222, 255, 154, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+        }
+        .formula {
+            display: block;
+            background: rgba(0,0,0,0.5);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #aaa;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .highlight-text {
+            color: #deff9a;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <div>
+        <h2>Key Performance Indicators & Volume Projections</h2>
+        <p class="subtitle">Aggressive Growth Path vs. Current Standing (As of June 10, 2026)</p>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th class="current-col">Current Standing<br><span style="font-size: 11px; text-transform: none;">(Mid-May – Jun 10)</span></th>
+                    <th>Jun<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Jul<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Aug<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Sep<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Oct<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Nov<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Dec<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cumulative Clients (END)</td>
+                    <td class="current-col">8</td>
+                    <td>24</td>
+                    <td>28</td>
+                    <td>33</td>
+                    <td>39</td>
+                    <td>46</td>
+                    <td>54</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td>Avg. Investment per Client</td>
+                    <td class="current-col">$261.07</td>
+                    <td>$5,250</td>
+                    <td>$5,513</td>
+                    <td>$5,788</td>
+                    <td>$6,078</td>
+                    <td>$6,381</td>
+                    <td>$6,700</td>
+                    <td>$7,036</td>
+                </tr>
+                <tr>
+                    <td>1. Number of Trades</td>
+                    <td class="current-col">8</td>
+                    <td>24</td>
+                    <td>28</td>
+                    <td>33</td>
+                    <td>39</td>
+                    <td>46</td>
+                    <td>54</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td>2. Total Amount Traded</td>
+                    <td class="current-col">$2,088.57</td>
+                    <td>$126,000</td>
+                    <td>$154,364</td>
+                    <td>$191,004</td>
+                    <td>$237,042</td>
+                    <td>$293,526</td>
+                    <td>$361,800</td>
+                    <td>$450,304</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="two-column">
+        <div class="card">
+            <h3><i class="fa-solid fa-chart-line"></i> 1. Number of Trades</h3>
+            <span class="formula">f(x) = 1 Trade/Month × Cumulative Clients (END)</span>
+            <p><strong>Current Standing:</strong> Logged <span class="highlight-text">8 total trades</span> from 8 onboarded users, maintaining a perfect <span class="highlight-text">100% active trading ratio</span>.</p>
+            <p><strong>Strategic Focus:</strong> Drive client ingestion toward the June target of 24 active trades via the tactical conversion campaigns launching tomorrow.</p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-money-bill-trend-up"></i> 2. Total Amount Traded</h3>
+            <span class="formula">f(x) = Cumulative Clients (END) × Avg. Investment per Client</span>
+            <p><strong>Current Standing:</strong> Total deposits scaled to <span class="highlight-text">$2,088.57</span>, shifting our average ticket size upward to <span class="highlight-text">$261.07</span>.</p>
+            <p><strong>Strategic Focus:</strong> Bridge the gap to the $126K target by utilizing the Portfolio Kickstart and high-intent sponsor ads to capture GCC mass affluents.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

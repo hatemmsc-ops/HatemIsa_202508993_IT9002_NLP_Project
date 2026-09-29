@@ -1,0 +1,21 @@
+Board Reference Deck, Candidate Ranking
+=========================================
+
+Four plausible Board deck candidates were found and copied here. Based on the date in each filename and file modification date, the most likely finalized and current Board deck is:
+
+  eMYAA Board of Directors Update - 17.09.2026.pptx
+
+Reasoning: this file carries the most recent date of the four (17.09.2026) and is the most recently saved on disk. Use this one as the primary visual reference for theme, colors, typography, and slide hierarchy.
+
+Other candidates, in descending likely relevance:
+
+2. BEC eMYAA Board Update (Appendix) - 14.09.2026.pptx
+   Dated 14.09.2026, three days earlier than the primary candidate above. Likely an appendix to a related Board update cycle. Useful as a secondary style reference, especially if it contains appendix-style tables or charts not present in the primary deck.
+
+3. eMYAA Board Update - Funding Mitigation Plan Draft - Repaired.pptx.pptx
+   No date in the filename, modified 10 September 2026. The "Draft" and "Repaired" labels suggest this is not a finalized deck, and it covers a narrower topic (funding mitigation) rather than a general Board update. Treat as lowest priority for general visual reference, but potentially useful if the CEO deck needs to reflect funding-related content.
+
+4. eMYAA Presentation for Board Members.pptx (plus matching .pdf)
+   Oldest of the four, last modified 22 June 2026. Likely superseded by the more recent Board Update decks above. Kept for reference only in case it contains an earlier but still-relevant visual treatment.
+
+This file is a note only. Per the brief, no Board deck should be edited; all four are copied here as read-only visual reference.

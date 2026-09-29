@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eMYAA Revenue & Yield Projections</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* CORE SETUP */
+        * { box-sizing: border-box; }
+        body {
+            background-color: #111;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+            margin: 0;
+            min-height: 100vh;
+            padding: 20px 0;
+            place-items: center;
+        }
+        
+        .slide-container {
+            align-items: flex-start;
+            background-color: #04091A;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            font-family: 'Urbanist', sans-serif;
+            height: 720px;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding: 50px 60px;
+            position: relative;
+            width: 1280px;
+        }
+
+        /* BACKGROUND STYLING */
+        .slide-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 10% 90%, rgba(222, 255, 154, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 10%, rgba(222, 255, 154, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+        .slide-container::after {
+            background: linear-gradient(90deg, transparent, rgba(222, 255, 154, 0.3), transparent);
+            bottom: 30px;
+            content: '';
+            height: 1px;
+            left: 60px;
+            position: absolute;
+            right: 60px;
+        }
+        
+        .slide-container > * { position: relative; z-index: 1; }
+
+        /* TYPOGRAPHY */
+        h2 {
+            color: #f5f5f5;
+            font-size: 42px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            border-left: 4px solid #deff9a;
+            padding-left: 20px;
+        }
+        .subtitle {
+            color: #daffde;
+            font-size: 20px;
+            margin: 0 0 30px 24px;
+            font-weight: 500;
+        }
+
+        h3 {
+            color: #deff9a;
+            font-size: 22px;
+            margin: 0 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p, li {
+            color: #E0E0E0;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0 0 10px 0;
+        }
+
+        /* TABLE LAYOUT */
+        .table-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            border: 1px solid rgba(222, 255, 154, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th {
+            background: rgba(0, 0, 0, 0.4);
+            color: #deff9a;
+            padding: 15px 10px;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(222, 255, 154, 0.2);
+        }
+        td {
+            padding: 15px 10px;
+            color: #fff;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        td:first-child, th:first-child {
+            text-align: left;
+            padding-left: 25px;
+            font-weight: 600;
+            color: #daffde;
+        }
+        .highlight-row td {
+            background: rgba(222, 255, 154, 0.05);
+            font-weight: 700;
+            color: #deff9a;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* BOTTOM CARDS */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+        }
+        .card {
+            background: #0a0e17;
+            border: 1px solid rgba(222, 255, 154, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .metric-box {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(222, 255, 154, 0.1);
+        }
+        .metric-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+        .metric-label {
+            color: #deff9a;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .growth-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .growth-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .growth-year { color: #daffde; font-size: 14px; margin-bottom: 5px; text-transform: uppercase;}
+        .growth-value { color: #fff; font-size: 22px; font-weight: 700; }
+        .growth-perc { color: #deff9a; font-size: 12px; font-weight: 700; background: rgba(222, 255, 154, 0.1); padding: 3px 8px; border-radius: 10px; display: inline-block; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="slide-container">
+    <div>
+        <h2>Strategic Revenue Projections & Monetization Yield</h2>
+        <p class="subtitle">Aggressive Track Algorithm (May – Dec 2026)</p>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric (Aggressive Track)</th>
+                    <th>May<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Jun<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Jul<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Aug<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Sep<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Oct<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Nov<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                    <th>Dec<br><span style="font-size: 11px; text-transform: none;">(Target)</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total Traded Volume Target</td>
+                    <td>$100,000</td>
+                    <td>$126,000</td>
+                    <td>$154,364</td>
+                    <td>$191,004</td>
+                    <td>$237,042</td>
+                    <td>$293,526</td>
+                    <td>$361,800</td>
+                    <td>$450,304</td>
+                </tr>
+                <tr class="highlight-row">
+                    <td>Total Gross Revenue Target</td>
+                    <td>$830</td>
+                    <td>$1,028</td>
+                    <td>$1,274</td>
+                    <td>$1,579</td>
+                    <td>$1,956</td>
+                    <td>$2,423</td>
+                    <td>$3,003</td>
+                    <td>$3,720</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 14px; color: #aaa;">Month-over-Month Growth (MoM)</td>
+                    <td style="font-size: 14px; color: #aaa;">Baseline</td>
+                    <td style="font-size: 14px; color: #aaa;">+23.9%</td>
+                    <td style="font-size: 14px; color: #aaa;">+23.9%</td>
+                    <td style="font-size: 14px; color: #aaa;">+24.0%</td>
+                    <td style="font-size: 14px; color: #aaa;">+23.9%</td>
+                    <td style="font-size: 14px; color: #aaa;">+23.9%</td>
+                    <td style="font-size: 14px; color: #aaa;">+23.9%</td>
+                    <td style="font-size: 14px; color: #aaa;">+23.9%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="two-column">
+        <div class="card">
+            <h3><i class="fa-solid fa-percent"></i> Platform Monetization Mechanics</h3>
+            <div class="metric-box">
+                <span class="metric-number">0.82%</span>
+                <span class="metric-label">Implied Take-Rate Yield</span>
+            </div>
+            <p><strong>Yield Formula:</strong> Calculated by dividing the Total Target Revenue by the Total Target Traded Volume.</p>
+            <p><strong>Strategic Insight:</strong> The algorithmic model dictates that eMYAA must consistently capture ~0.82% of the total traded volume in gross revenue to hit our Aggressive targets.</p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-rocket"></i> Multi-Year Hyper-Growth Trajectory</h3>
+            <div class="growth-grid">
+                <div class="growth-item">
+                    <div class="growth-year">Year 1 (2026)</div>
+                    <div class="growth-value">$15.8K</div>
+                    <div class="growth-perc">Baseline</div>
+                </div>
+                <div class="growth-item">
+                    <div class="growth-year">Year 2 (2027)</div>
+                    <div class="growth-value">$357K</div>
+                    <div class="growth-perc">+2,161%</div>
+                </div>
+                <div class="growth-item">
+                    <div class="growth-year">Year 3 (2028)</div>
+                    <div class="growth-value">$3.3M</div>
+                    <div class="growth-perc">+827%</div>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 14px;"><strong>Strategic Insight:</strong> Year 2 marks the hyper-growth phase, necessitating a transition from localized GCC pilot campaigns to widespread regional market penetration and AUM aggregation.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
