@@ -1,0 +1,1641 @@
+{
+ "file": "input/source/eMYAA-Marketing-Update-01.10.2026-Enhanced.pptx",
+ "slide_width_in": 20.0,
+ "slide_height_in": 11.25,
+ "slides": [
+  {
+   "n": 1,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 0.13,
+     "h": 11.25
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 1.42,
+     "y": 3.94,
+     "w": 16.4,
+     "h": 1.09,
+     "text": "eMYAA MARKETING UPDATE"
+    },
+    {
+     "name": "Rectangle 5",
+     "type": "AUTO_SHAPE (1)",
+     "x": 1.42,
+     "y": 5.09,
+     "w": 1.97,
+     "h": 0.04
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 1.42,
+     "y": 5.3,
+     "w": 15.31,
+     "h": 0.77,
+     "text": "Performance, Campaigns, Channel Activity, and Key Priorities"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 1.42,
+     "y": 9.41,
+     "w": 6.56,
+     "h": 0.44,
+     "text": "01 October 2026"
+    },
+    {
+     "name": "TextBox 8",
+     "type": "TEXT_BOX (17)",
+     "x": 1.42,
+     "y": 9.84,
+     "w": 6.56,
+     "h": 0.44,
+     "text": "Internal Management Update"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "OVERVIEW"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "Executive Summary"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "2"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "Rounded Rectangle 8",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "Rectangle 9",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 0.07
+    },
+    {
+     "name": "TextBox 10",
+     "type": "TEXT_BOX (17)",
+     "x": 0.95,
+     "y": 2.48,
+     "w": 5.75,
+     "h": 0.33,
+     "text": "LAUNCHED"
+    },
+    {
+     "name": "TextBox 11",
+     "type": "TEXT_BOX (17)",
+     "x": 0.95,
+     "y": 2.85,
+     "w": 5.75,
+     "h": 0.77,
+     "text": "Google Ads & LinkedIn"
+    },
+    {
+     "name": "TextBox 12",
+     "type": "TEXT_BOX (17)",
+     "x": 0.95,
+     "y": 3.66,
+     "w": 5.75,
+     "h": 2.3,
+     "text": "New paid channel went live 22 Sep, testing phase. Already 69.7% of website traffic."
+    },
+    {
+     "name": "Rounded Rectangle 13",
+     "type": "AUTO_SHAPE (1)",
+     "x": 7.27,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "Rectangle 14",
+     "type": "AUTO_SHAPE (1)",
+     "x": 7.27,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 0.07
+    },
+    {
+     "name": "TextBox 15",
+     "type": "TEXT_BOX (17)",
+     "x": 7.51,
+     "y": 2.48,
+     "w": 5.75,
+     "h": 0.33,
+     "text": "PERFORMING"
+    },
+    {
+     "name": "TextBox 16",
+     "type": "TEXT_BOX (17)",
+     "x": 7.51,
+     "y": 2.85,
+     "w": 5.75,
+     "h": 0.77,
+     "text": "Instagram Remains the Standout"
+    },
+    {
+     "name": "TextBox 17",
+     "type": "TEXT_BOX (17)",
+     "x": 7.51,
+     "y": 3.66,
+     "w": 5.75,
+     "h": 2.3,
+     "text": "2,116 followers, 2.27M all-time views; Reels drive 89.5% of interactions."
+    },
+    {
+     "name": "Rounded Rectangle 18",
+     "type": "AUTO_SHAPE (1)",
+     "x": 13.83,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "Rectangle 19",
+     "type": "AUTO_SHAPE (1)",
+     "x": 13.83,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 0.07
+    },
+    {
+     "name": "TextBox 20",
+     "type": "TEXT_BOX (17)",
+     "x": 14.07,
+     "y": 2.48,
+     "w": 5.75,
+     "h": 0.33,
+     "text": "GROWING"
+    },
+    {
+     "name": "TextBox 21",
+     "type": "TEXT_BOX (17)",
+     "x": 14.07,
+     "y": 2.85,
+     "w": 5.75,
+     "h": 0.77,
+     "text": "LinkedIn Momentum"
+    },
+    {
+     "name": "TextBox 22",
+     "type": "TEXT_BOX (17)",
+     "x": 14.07,
+     "y": 3.66,
+     "w": 5.75,
+     "h": 2.3,
+     "text": "531 followers, +247 in 30 days (+6,075%); impressions and reactions both up double digits."
+    },
+    {
+     "name": "Rounded Rectangle 23",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.71,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "Rectangle 24",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.71,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 0.07
+    },
+    {
+     "name": "TextBox 25",
+     "type": "TEXT_BOX (17)",
+     "x": 0.95,
+     "y": 6.67,
+     "w": 5.75,
+     "h": 0.33,
+     "text": "IN PROGRESS"
+    },
+    {
+     "name": "TextBox 26",
+     "type": "TEXT_BOX (17)",
+     "x": 0.95,
+     "y": 7.04,
+     "w": 5.75,
+     "h": 0.77,
+     "text": "Content Pipeline on Track"
+    },
+    {
+     "name": "TextBox 27",
+     "type": "TEXT_BOX (17)",
+     "x": 0.95,
+     "y": 7.85,
+     "w": 5.75,
+     "h": 2.3,
+     "text": "How-To video and Abdulelah Al Harbi posted; Manal Talal in production for mid-October."
+    },
+    {
+     "name": "Rounded Rectangle 28",
+     "type": "AUTO_SHAPE (1)",
+     "x": 7.27,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "Rectangle 29",
+     "type": "AUTO_SHAPE (1)",
+     "x": 7.27,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 0.07
+    },
+    {
+     "name": "TextBox 30",
+     "type": "TEXT_BOX (17)",
+     "x": 7.51,
+     "y": 6.67,
+     "w": 5.75,
+     "h": 0.33,
+     "text": "NEEDS ATTENTION"
+    },
+    {
+     "name": "TextBox 31",
+     "type": "TEXT_BOX (17)",
+     "x": 7.51,
+     "y": 7.04,
+     "w": 5.75,
+     "h": 0.77,
+     "text": "Arabic Underperforming English"
+    },
+    {
+     "name": "TextBox 32",
+     "type": "TEXT_BOX (17)",
+     "x": 7.51,
+     "y": 7.85,
+     "w": 5.75,
+     "h": 2.3,
+     "text": "Early Google Ads data: English leads on every metric, incl. 97% vs 87% engagement rate."
+    },
+    {
+     "name": "Rounded Rectangle 33",
+     "type": "AUTO_SHAPE (1)",
+     "x": 13.83,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "Rectangle 34",
+     "type": "AUTO_SHAPE (1)",
+     "x": 13.83,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 0.07
+    },
+    {
+     "name": "TextBox 35",
+     "type": "TEXT_BOX (17)",
+     "x": 14.07,
+     "y": 6.67,
+     "w": 5.75,
+     "h": 0.33,
+     "text": "OPEN ITEM"
+    },
+    {
+     "name": "TextBox 36",
+     "type": "TEXT_BOX (17)",
+     "x": 14.07,
+     "y": 7.04,
+     "w": 5.75,
+     "h": 0.77,
+     "text": "Deposits Reporting Gap"
+    },
+    {
+     "name": "TextBox 37",
+     "type": "TEXT_BOX (17)",
+     "x": 14.07,
+     "y": 7.85,
+     "w": 5.75,
+     "h": 2.3,
+     "text": "Gross deposits confirmed by Malek directly ($12,206); no export file yet restores this as a tracked metric."
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "DASHBOARD"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "KPI Snapshot"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "3"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "Rounded Rectangle 8",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "TextBox 9",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88,
+     "text": "480\nApp Downloads\nvs 414 prior pull"
+    },
+    {
+     "name": "Rounded Rectangle 10",
+     "type": "AUTO_SHAPE (1)",
+     "x": 7.27,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "TextBox 11",
+     "type": "TEXT_BOX (17)",
+     "x": 7.27,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88,
+     "text": "587\nWebsite Sessions\n69.7% from Google Ads, since 22 Sep"
+    },
+    {
+     "name": "Rounded Rectangle 12",
+     "type": "AUTO_SHAPE (1)",
+     "x": 13.83,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "TextBox 13",
+     "type": "TEXT_BOX (17)",
+     "x": 13.83,
+     "y": 2.24,
+     "w": 6.23,
+     "h": 3.88,
+     "text": "2,116\nInstagram Followers\nall-time"
+    },
+    {
+     "name": "Rounded Rectangle 14",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.71,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "TextBox 15",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88,
+     "text": "531\nLinkedIn Followers\n+247 in last 30 days"
+    },
+    {
+     "name": "Rounded Rectangle 16",
+     "type": "AUTO_SHAPE (1)",
+     "x": 7.27,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "TextBox 17",
+     "type": "TEXT_BOX (17)",
+     "x": 7.27,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88,
+     "text": "69.7%\nPaid Traffic Share\nof 587 tracked sessions"
+    },
+    {
+     "name": "Rounded Rectangle 18",
+     "type": "AUTO_SHAPE (1)",
+     "x": 13.83,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88
+    },
+    {
+     "name": "TextBox 19",
+     "type": "TEXT_BOX (17)",
+     "x": 13.83,
+     "y": 6.43,
+     "w": 6.23,
+     "h": 3.88,
+     "text": "97.2%\nEngagement Rate, EN Ads\nvs 86.9% Arabic, since 23 Sep"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.59,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "CHANNELS"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "Channel Performance: Instagram & LinkedIn"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "4"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "Chart 8",
+     "type": "CHART (3)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 8.86,
+     "h": 4.27,
+     "chart": {
+      "type": "COLUMN_CLUSTERED (51)",
+      "title": "Instagram: Views by Content Type",
+      "categories": [
+       "Reels",
+       "Stories",
+       "Posts"
+      ],
+      "series": [
+       {
+        "name": "Share of Views %",
+        "values": [
+         73.3,
+         25.9,
+         0.7
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "name": "Chart 9",
+     "type": "CHART (3)",
+     "x": 10.06,
+     "y": 2.24,
+     "w": 9.08,
+     "h": 4.27,
+     "chart": {
+      "type": "COLUMN_CLUSTERED (51)",
+      "title": "Instagram: Interactions by Content Type",
+      "categories": [
+       "Reels",
+       "Stories",
+       "Posts"
+      ],
+      "series": [
+       {
+        "name": "Share of Interactions %",
+        "values": [
+         89.5,
+         3.8,
+         6.8
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "name": "Chart 10",
+     "type": "CHART (3)",
+     "x": 0.71,
+     "y": 6.4,
+     "w": 8.86,
+     "h": 4.27,
+     "chart": {
+      "type": "COLUMN_CLUSTERED (51)",
+      "title": "LinkedIn: Follower Growth (30 Days)",
+      "categories": [
+       "30 Days Ago",
+       "Today"
+      ],
+      "series": [
+       {
+        "name": "LinkedIn Followers",
+        "values": [
+         284.0,
+         531.0
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "name": "Table 11",
+     "type": "TABLE (19)",
+     "x": 10.06,
+     "y": 6.4,
+     "w": 9.08,
+     "h": 4.27,
+     "table": [
+      [
+       "Metric",
+       "Value"
+      ],
+      [
+       "IG Total Views (all-time)",
+       "2,271,132"
+      ],
+      [
+       "IG Total Interactions (all-time)",
+       "8,311"
+      ],
+      [
+       "LinkedIn Impressions, 13-27 Sep",
+       "559 (+118%)"
+      ],
+      [
+       "LinkedIn Reactions, 13-27 Sep",
+       "28 (+155%)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "CAMPAIGNS"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "Campaign & Content Tracker"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "5"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "Table 8",
+     "type": "TABLE (19)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 18.54,
+     "h": 4.81,
+     "table": [
+      [
+       "Item",
+       "Status",
+       "Key Metric",
+       "Timing"
+      ],
+      [
+       "Mention & Win",
+       "Live",
+       "26.2K views, 1,129 likes on launch reel",
+       "23 Sep to 20 Oct, timed before salary days"
+      ],
+      [
+       "Ali Sabeel Video",
+       "Completed",
+       "1.3M views to date",
+       "Completed 18 Sep"
+      ],
+      [
+       "How-To Video (human presenter)",
+       "Posted",
+       "319 views, 28 interactions",
+       "Posted, Sep"
+      ],
+      [
+       "Abdulelah Al Harbi",
+       "Posted",
+       "Live on Instagram",
+       "Posted, Sep"
+      ],
+      [
+       "Manal Talal",
+       "In Production",
+       "Brief sent, production started",
+       "Targeting mid-October"
+      ],
+      [
+       "Monthly Content Calendar",
+       "Live",
+       "Being posted through September",
+       "Ongoing"
+      ]
+     ]
+    },
+    {
+     "name": "TextBox 9",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 6.94,
+     "w": 18.54,
+     "h": 0.55,
+     "text": "Q3 to Q4 2026 Rollout: One Creator per Month"
+    },
+    {
+     "name": "Table 10",
+     "type": "TABLE (19)",
+     "x": 0.71,
+     "y": 7.55,
+     "w": 18.54,
+     "h": 1.2,
+     "table": [
+      [
+       "Jul: Musheera",
+       "Aug: Ali Sabeel",
+       "Sep: Abdulelah",
+       "Oct: Manal Talal",
+       "Nov: Hamed Al Bloushi"
+      ],
+      [
+       "Posted",
+       "Posted",
+       "Posted",
+       "In Production",
+       "Scheduled"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "NEW CHANNEL"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "Paid Media: Google Ads & LinkedIn"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "6"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "TextBox 8",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 2.3,
+     "w": 18.54,
+     "h": 0.77,
+     "text": "Launched 22 September as a testing phase. Google Search targets Starter and Emerging investors; LinkedIn lead generation targets Affluent investors. $30,000 campaign, September to December, managed by Ignite (invoice TI7541). Interest targeting covers Saudi Arabia and Riyadh; location is restricted to Saudi Arabia residents only."
+    },
+    {
+     "name": "Chart 9",
+     "type": "CHART (3)",
+     "x": 0.71,
+     "y": 3.28,
+     "w": 8.2,
+     "h": 4.7,
+     "chart": {
+      "type": "DOUGHNUT (-4120)",
+      "title": "Website Traffic by Source, Since Launch",
+      "categories": [
+       "Paid (Google Ads)",
+       "Direct",
+       "Search",
+       "Referral"
+      ],
+      "series": [
+       {
+        "name": "Share",
+        "values": [
+         69.7,
+         15.7,
+         6.6,
+         6.6
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "name": "Rounded Rectangle 10",
+     "type": "AUTO_SHAPE (1)",
+     "x": 9.35,
+     "y": 3.28,
+     "w": 4.7,
+     "h": 1.64
+    },
+    {
+     "name": "TextBox 11",
+     "type": "TEXT_BOX (17)",
+     "x": 9.35,
+     "y": 3.28,
+     "w": 4.7,
+     "h": 1.64,
+     "text": "793%\nActive Users, Week over Week\nFollowing the Saudi test launch"
+    },
+    {
+     "name": "Rounded Rectangle 12",
+     "type": "AUTO_SHAPE (1)",
+     "x": 14.27,
+     "y": 3.28,
+     "w": 4.7,
+     "h": 1.64
+    },
+    {
+     "name": "TextBox 13",
+     "type": "TEXT_BOX (17)",
+     "x": 14.27,
+     "y": 3.28,
+     "w": 4.7,
+     "h": 1.64,
+     "text": "558\nNew Users Driven to Site\nSince campaign launch"
+    },
+    {
+     "name": "Picture 14",
+     "type": "PICTURE (13)",
+     "x": 10.94,
+     "y": 5.14,
+     "w": 6.44,
+     "h": 2.84,
+     "image": "image.png"
+    },
+    {
+     "name": "TextBox 15",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 8.15,
+     "w": 18.54,
+     "h": 0.55,
+     "text": "The four traffic sources above account for 579 of 587 tracked sessions (98.6%); the remaining 8 sessions fall outside GA’s top-source breakdown."
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "EARLY SIGNAL"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "English Is Outperforming Arabic in Saudi"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "7"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "TextBox 8",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 2.3,
+     "w": 18.54,
+     "h": 0.55,
+     "text": "In testing, the English version of the Google Ads campaign leads the Arabic version on every measured metric."
+    },
+    {
+     "name": "Table 9",
+     "type": "TABLE (19)",
+     "x": 0.71,
+     "y": 3.01,
+     "w": 8.86,
+     "h": 5.58,
+     "table": [
+      [
+       "Metric",
+       "English",
+       "Arabic"
+      ],
+      [
+       "Sessions",
+       "212 (54.5%)",
+       "176 (45.2%)"
+      ],
+      [
+       "Active users",
+       "208 (54.3%)",
+       "175 (45.7%)"
+      ],
+      [
+       "Engaged sessions",
+       "206 (57.4%)",
+       "153 (42.6%)"
+      ],
+      [
+       "Avg. engagement time",
+       "19s",
+       "16s"
+      ],
+      [
+       "Events per session",
+       "6.49",
+       "5.44"
+      ],
+      [
+       "Engagement rate",
+       "97.17%",
+       "86.93%"
+      ]
+     ]
+    },
+    {
+     "name": "Chart 10",
+     "type": "CHART (3)",
+     "x": 10.01,
+     "y": 3.01,
+     "w": 9.19,
+     "h": 5.58,
+     "chart": {
+      "type": "COLUMN_CLUSTERED (51)",
+      "title": "English vs Arabic, Key Metrics",
+      "categories": [
+       "Sessions",
+       "Engagement Rate %"
+      ],
+      "series": [
+       {
+        "name": "English",
+        "values": [
+         212.0,
+         97.17
+        ]
+       },
+       {
+        "name": "Arabic",
+        "values": [
+         176.0,
+         86.93
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "name": "TextBox 11",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 8.8,
+     "w": 18.54,
+     "h": 0.77,
+     "text": "This is early data (since 23 Sep) and may reflect ad copy or targeting rather than audience preference. Recommendation: review the Arabic creative and targeting with Ignite before scaling spend."
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "GOVERNANCE"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "Key Issues, Risks & Dependencies"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "8"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "Table 8",
+     "type": "TABLE (19)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 18.54,
+     "h": 5.8,
+     "table": [
+      [
+       "Item",
+       "Type",
+       "Detail"
+      ],
+      [
+       "LinkedIn follower count dropped 586 to 531",
+       "Unverified metric",
+       "No source explains the decrease; needs Ignite or a platform export to resolve"
+      ],
+      [
+       "Gross deposits reporting",
+       "Data gap",
+       "Confirmed by Malek directly ($12,206) but no spreadsheet export yet restores this as a tracked line"
+      ],
+      [
+       "Arabic ad performance",
+       "Campaign risk",
+       "Trailing English on every metric since 23 Sep; review creative and targeting before scaling spend"
+      ],
+      [
+       "Instagram/LinkedIn/X/TikTok exports",
+       "Reporting gap",
+       "No standing export or update cadence; each refresh this cycle relied on ad hoc screenshots"
+      ],
+      [
+       "Ali Sabeel \"Completed\" status",
+       "Inference, not confirmation",
+       "Based on no further Ignite invoice since 18 Sep, not a direct close-out confirmation"
+      ]
+     ]
+    },
+    {
+     "name": "TextBox 9",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 7.93,
+     "w": 18.54,
+     "h": 0.66,
+     "text": "None of the above represent a confirmed factual error — they are open items requiring a source, a decision, or a follow-up before the next reporting cycle."
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "MOVING FORWARD"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "Next Steps"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "9"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "Table 8",
+     "type": "TABLE (19)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 18.54,
+     "h": 5.8,
+     "table": [
+      [
+       "Item",
+       "Owner / Next Action",
+       "Timing"
+      ],
+      [
+       "Scale Google Ads & LinkedIn",
+       "Marketing, with Ignite; review Arabic creative first",
+       "September to December"
+      ],
+      [
+       "Manal Talal video",
+       "Production in progress",
+       "Mid October"
+      ],
+      [
+       "Hamed Al Bloushi video",
+       "Scheduled, per rollout plan",
+       "November"
+      ],
+      [
+       "Mention & Win",
+       "Continues, GCC-wide",
+       "Through 20 October"
+      ],
+      [
+       "Fresh KPI export",
+       "Requested from Malek, to restore gross deposits reporting",
+       "This week"
+      ],
+      [
+       "LinkedIn follower discrepancy",
+       "Follow up with Ignite for an explanation",
+       "Next reporting cycle"
+      ]
+     ]
+    },
+    {
+     "name": "TextBox 9",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 7.93,
+     "w": 18.54,
+     "h": 1.09,
+     "text": "The story so far: a new paid channel launched and already drives most of our website traffic, paired with a steady drumbeat of new content. The next phase is to scale what is working, resolve the Arabic underperformance and the open data gaps, and keep shipping one creator a month through year end."
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "layout": "Blank",
+   "shapes": [
+    {
+     "name": "Rectangle 1",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 11.25
+    },
+    {
+     "name": "Rectangle 2",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 0.0,
+     "w": 20.0,
+     "h": 2.24
+    },
+    {
+     "name": "Rectangle 3",
+     "type": "AUTO_SHAPE (1)",
+     "x": 0.0,
+     "y": 1.44,
+     "w": 20.0,
+     "h": 0.03
+    },
+    {
+     "name": "TextBox 4",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.35,
+     "w": 16.4,
+     "h": 0.33,
+     "text": "APPENDIX"
+    },
+    {
+     "name": "TextBox 5",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 0.71,
+     "w": 16.95,
+     "h": 0.71,
+     "text": "Best Performing Content & Supporting Detail"
+    },
+    {
+     "name": "TextBox 6",
+     "type": "TEXT_BOX (17)",
+     "x": 18.92,
+     "y": 10.88,
+     "w": 0.82,
+     "h": 0.31,
+     "text": "10"
+    },
+    {
+     "name": "TextBox 7",
+     "type": "TEXT_BOX (17)",
+     "x": 0.82,
+     "y": 10.88,
+     "w": 9.84,
+     "h": 0.31,
+     "text": "eMYAA Trading Platform  |  Marketing Update  |  Internal Management Update"
+    },
+    {
+     "name": "Table 8",
+     "type": "TABLE (19)",
+     "x": 0.71,
+     "y": 2.24,
+     "w": 8.86,
+     "h": 3.94,
+     "table": [
+      [
+       "Content",
+       "Views",
+       "Format"
+      ],
+      [
+       "Musheera Reel",
+       "5.3M",
+       "Video, presenter-led"
+      ],
+      [
+       "Ali Sabeel Reel",
+       "1.3M",
+       "Video, presenter-led"
+      ],
+      [
+       "Mention & Win $500",
+       "186K",
+       "Graphic, campaign"
+      ],
+      [
+       "Saudi Market Size Infographic",
+       "515",
+       "Graphic, static"
+      ]
+     ]
+    },
+    {
+     "name": "Picture 9",
+     "type": "PICTURE (13)",
+     "x": 10.4,
+     "y": 2.24,
+     "w": 8.41,
+     "h": 6.45,
+     "image": "image.png"
+    },
+    {
+     "name": "TextBox 10",
+     "type": "TEXT_BOX (17)",
+     "x": 0.71,
+     "y": 6.07,
+     "w": 8.86,
+     "h": 2.3,
+     "text": "Presenter-led video reels outperform static graphics by orders of magnitude — the basis for continued investment in human-led formats."
+    }
+   ]
+  }
+ ],
+ "colors_srgb": [
+  [
+   "2D3748",
+   120
+  ],
+  [
+   "FFFFFF",
+   97
+  ],
+  [
+   "F7F9FC",
+   60
+  ],
+  [
+   "121A2F",
+   39
+  ],
+  [
+   "C9A84C",
+   34
+  ],
+  [
+   "64748B",
+   11
+  ],
+  [
+   "101B3B",
+   10
+  ],
+  [
+   "22376F",
+   10
+  ],
+  [
+   "8A94A8",
+   10
+  ],
+  [
+   "1BA97C",
+   9
+  ],
+  [
+   "C53030",
+   6
+  ],
+  [
+   "1B2845",
+   4
+  ],
+  [
+   "C7CEDE",
+   1
+  ]
+ ],
+ "fonts": [
+  [
+   "Calibri",
+   213
+  ]
+ ],
+ "media": [
+  [
+   "ppt/media/image2.png",
+   1605940
+  ],
+  [
+   "ppt/media/image1.png",
+   179990
+  ]
+ ],
+ "notes_slides": []
+}

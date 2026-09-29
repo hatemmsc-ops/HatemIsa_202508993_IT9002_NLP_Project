@@ -1,0 +1,29 @@
+id,claim_or_figure,source_slide,evidence_found,evidence_file,status,note
+T01,"Instagram 2,116 followers","2,3",None beyond deck text,-,Unverified,Needs IG export
+T02,"Instagram 2,271,132 views, 8,311 interactions (""all-time"")",4,Deck table only,-,Unverified,Conflicts with 5.3M single-reel views (see P20)
+T03,LinkedIn 531 followers; 284 thirty days ago,"3,4",Deck chart only,-,Unverified,"Conflicts with ""dropped 586 to 531"" on slide 8"
+T04,"LinkedIn impressions 559, reactions 28 (13-27 Sep)",4,Deck table only,-,Unverified,Needs LinkedIn export
+T05,587 website sessions since 22 Sep,"3,6",Deck only,-,Unverified,Needs GA export
+T06,558 new users since campaign launch,6,Deck only,-,Unverified,"Higher than 384 active users on the 21-27 Sep GA card; windows differ, need export"
+T07,"384 active users, 21-27 Sep, +793%",6,GA home card screenshot,input/analytics/GA-home-card-21-27Sep-extracted-from-Enhanced-slide6.png,Figure verified on screenshot; % calc and attribution unverified,Screenshot legible
+T08,480 app downloads vs 414 prior pull,3,Deck only,-,Unverified,Pull dates missing
+T09,Paid media: Google Search to Starter/Emerging; LinkedIn lead gen to Affluent,6,Deck text only,-,Unverified,Needs Ignite media plan
+T10,"$30,000 budget Sep to Dec, managed by Ignite, invoice TI7541",6,Deck text only,-,Unverified,"TI7541 document not supplied; deck says ""invoice"", brief says ""budget or ticket"". TI7542 referenced in brief, not found anywhere"
+T11,Paid testing began 22 Sep; Saudi residents only,"2,6",Deck text only,-,Unverified,GA line rises from 24-25 Sep
+T12,EN vs AR ad metrics since 23 Sep,7,Deck table only,-,Arithmetic verified; source unverified,Needs GA or Google Ads export
+T13,"Mention & Win: 23 Sep to 20 Oct, timed before salary days, GCC-wide","5,9",Deck text only; no T&Cs,-,Unverified,"Mechanics, eligibility and prize terms not in review set"
+T14,Mention & Win $500 post: 186K views,10,Instagram grid screenshot,input/campaign-evidence/Instagram-grid-extracted-from-Enhanced-slide10.png,Verified (screenshot),Capture date unknown
+T15,"Mention & Win launch reel: 26.2K views, 1,129 likes",5,"Screenshot shows 26.3K on ""Open your account, chance to win $500"" post; likes not shown",Instagram grid screenshot,Views outdated (26.3K later); likes unverified,Confirm this post belongs to Mention & Win
+T16,"$5,000 trading campaign",brief,"Most Active Trader Raffle T&Cs: $500 to $5,000 prize by volume tier, 1 Aug to 31 Dec 2026",input/campaign-evidence/Most-Active-Trader-Raffle-TandC-EN-excerpt.md,Verified as separate campaign (T&Cs only),Live status not confirmed
+T17,"Ali Sabeel reel 1.3M views; ""Completed 18 Sep""","5,10",1.3M on screenshot (matched by view count); completion inferred from last Ignite invoice 18 Sep,Instagram grid screenshot,Views verified; completion unverified,Rollout row says Aug posted; label as Posted
+T18,Musheera reel 5.3M views,10,Screenshot 5.3M,Instagram grid screenshot,Verified (screenshot),-
+T19,"How-to video (human presenter) 319 views, 28 interactions",5,Screenshot tile shows 332 views (likely later capture),Instagram grid screenshot,Views outdated; interactions unverified,Tile match by view count only
+T20,Abdulelah Al Harbi video posted (Sep),5,Deck text only,-,Unverified,No link or metric
+T21,"Manal Talal in production, mid-October","5,9",Deck text only,-,Unverified,Needs brief/production tracker
+T22,Hamed Al Bloushi scheduled November,"5,9",Deck text only,-,Unverified,Needs content calendar
+T23,Saudi Market Size infographic 515 views,10,"No matching tile (grid shows 262, 347, 549 on graphics)",Instagram grid screenshot,Unverified,-
+T24,"Gross deposits $12,206 confirmed by Malek","2,8",Verbal confirmation only per deck; period not stated,-,Unverified,Needs Malek export
+T25,LinkedIn follower drop 586 to 531,8,Deck only,-,Unverified,Contradicts growth story
+T26,"""Presenter-led reels outperform static graphics by orders of magnitude""",10,Screenshot shows $500 static graphic at 186K and presenter how-to at 332,Instagram grid screenshot,Incorrect as a general claim,Top two posts are presenter-led; boost spend likely differs
+T27,X and TikTok performance,brief,Not present in any supplied file,-,Missing,Pending exports (slides 15-18)
+T28,Market Pulse data,brief,Not present in any supplied file,-,Missing,-
