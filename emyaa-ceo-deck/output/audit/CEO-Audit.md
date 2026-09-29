@@ -5,7 +5,7 @@
 
 ## Bottom line
 
-The redesigned deck (8 slides, Board visual language) keeps only figures we can trace. Everything else is labelled "reported" or "per team", and the errors in the earlier drafts are corrected. Three findings matter most:
+The redesigned deck (4 slides, Board visual language) keeps only figures we can trace. Everything else is labelled "reported" or "per team", and the errors in the earlier drafts are corrected. Three findings matter most:
 
 1. **Paid search is working at the top of the funnel.** 409 of 587 September sessions (69.7%, 1-28 Sep) came from Google Ads. Downloads rose by 36 in the six days after the 22 Sep launch, against 14 the week before.
 2. **Onboarding is not keeping pace.** Over the same six days only 3 users onboarded (57 to 60). The constraint is KYC and onboarding completion, not traffic.
@@ -91,7 +91,7 @@ The deck is rebuilt in the Board deck's language:
 
 ## QA performed
 
-- **Visual check:** all 8 slides rendered at 110 dpi (`output/previews/`) and inspected. No overlap, clipping or off-slide text.
+- **Visual check:** all 4 slides rendered at 110 dpi (`output/previews/`) and inspected. No overlap, clipping or off-slide text.
 - **Validator:** passed. The deck opens with charts intact.
 - **Fonts:** Exo 2 embedded in four styles.
 - **Text scan:** no placeholder text, long dashes, curly quotes, "launched", "successful" or "driven by".
