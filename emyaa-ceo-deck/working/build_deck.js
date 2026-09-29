@@ -166,10 +166,10 @@ function card(s, x, y, w, h, top) {
 {
   const s = contentSlide({
     kicker: "Decisions and open items", n: 4,
-    title: "Five decisions for today; three open data items must close before 20 October",
-    takeaway: "Decision 4 closes most of the open items. The three marked 'Blocks 20 Oct' must close before the paid-media call.",
+    title: "Five decisions for today; one open data item blocks the 20 October call",
+    takeaway: "Ignite must supply spend and lead data before 20 October. Decision 4 closes most of the other open items.",
     source: "Proposed by Marketing based on this update; owners and dates are proposals for CEO confirmation. CAC targets from the Board update, 17 Sep 2026. Detail in Open-Items.md and Percentage-Audit.csv.",
-    notes: "Decision 2 follows from the GA4 campaign export: Arabic has a lower engagement rate (86.9% vs 97.2%) but more key events per session (1.05 vs 0.94). Decision 3 follows from the dashboards: +36 downloads but +3 onboarded in the first six days of paid testing. Open items: deposits $12,206 (Board, verbal from Malek) vs $10,029.69 on the dashboard (relabelled 'Total AUM' from 20 Sep) vs $11,195.88 in the KPI workbook; clients 61 on the Board 'as at 17 Sep' vs 54 on the 17 Sep dashboard and 60 on 27 Sep; no Ignite spend, cost per key event or LinkedIn lead data, and the key event is undefined; no September social exports; the 793% active-user rise (GA card, prior week implied) and LinkedIn +118% / +155% are not traceable to an export; LinkedIn followers 531 vs 586; $5,000 campaign T&Cs sent for approval on 20 Jul with no sign-off on file. Market Pulse: in-app feature in discussion (Exante data access).",
+    notes: "Decision 2 follows from the GA4 campaign export: Arabic has a lower engagement rate (86.9% vs 97.2%) but more key events per session (1.05 vs 0.94). Decision 3 follows from the dashboards: +36 downloads but +3 onboarded in the first six days of paid testing. Open items: gross deposits of $12,206 rest on Malek's message of 29 Sep with no written export (the dashboard's $10,029.69 is assets under management, a different measure; the Board shows both); the Board figures (61 clients, $12,206) are as at 28 Sep, and Board slide 3 wrongly says 'as at 17 September', corrected in the separate Board update file; no Ignite spend, cost per key event or LinkedIn lead data, and the key event is undefined; no September social exports; the 793% active-user rise (GA card, prior week implied) and LinkedIn +118% / +155% are not traceable to an export; LinkedIn followers 531 vs 586; $5,000 campaign T&Cs sent for approval on 20 Jul with no sign-off on file. Market Pulse: in-app feature in discussion (Exante data access).",
   });
   const num = (t) => ({ text: t, options: { bold: true, color: C.gold, fontSize: 14 } });
   const rows = [
@@ -185,13 +185,13 @@ function card(s, x, y, w, h, top) {
   const opn = { text: "Open", options: { bold: true, color: C.goldText } };
   const orows = [
     hdr(["Open item", "Status"], 10.5),
-    row(["Deposits: three different figures; Board $12,206 is verbal", blk], 9.5),
-    row(["Clients: Board 61 vs dashboard 54 on 17 Sep", blk], 9.5),
     row(["No ad spend, LinkedIn leads or key-event definition", blk], 9.5),
+    row(["Deposits: $12,206 has no written export yet", opn], 9.5),
     row(["No September exports for social channels", opn], 9.5),
     row(["793% and LinkedIn +118% / +155% not exported", opn], 9.5),
     row(["LinkedIn followers: 531 vs 586", opn], 9.5),
     row(["$5,000 campaign T&C sign-off not on file", opn], 9.5),
+    row(["Board slide 3 date: 17 Sep should read 28 Sep", { text: "Fixed", options: { bold: true, color: C.green } }], 9.5),
   ];
   s.addTable(orows, { x: 8.2, y: 1.68, w: 4.52, colW: [3.3, 1.22], rowH: [0.36, 0.53, 0.53, 0.53, 0.53, 0.53, 0.53, 0.54], fontFace: F, margin: [2, 5, 2, 5] });
 }

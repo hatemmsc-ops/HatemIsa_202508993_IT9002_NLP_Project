@@ -74,8 +74,8 @@ The 793% active-user rise stays "reported". GA shows 384 users for 21-27 Sep, bu
 ## Still unverified or conflicting
 
 - **793%** (prior week implied), and **LinkedIn +118% / +155%** (no September export).
-- **Deposits:** Board $12,206 (verbal from Malek). Dashboard $10,029.69, relabelled "Total AUM" from 20 Sep. KPI workbook $11,195.88.
-- **Clients:** Board 61 "as at 17 Sep". The 17 Sep dashboard shows 54, the 27 Sep dashboard 60, and the KPI workbook 54.
+- **Deposits:** $12,206 gross deposits rests on Malek's message (29 Sep) with no written export. The dashboard's $10,029.69 is assets under management, a different measure (the Board shows both).
+- **Board slide 3 date label:** it says "as at 17 September" but its figures (61 clients, $12,206) are as at 28 September, matching Board slide 10 and the dashboard trend. Corrected in a separate one-slide file, `output/board-updates/eMYAA_Board_Update_-_Updated_Slides.pptx`. The Board numbers themselves recalculate correctly.
 - **LinkedIn total followers:** 531 now vs 586 in an earlier count.
 - **$5,000 campaign T&Cs:** sent for approval on 20 Jul; no sign-off on file.
 - **Other items:** Mention & Win round dates (23 Sep to 20 Oct per team) vs calendar posts on 15 Sep and 18 Oct; Hamed Al Bloushi November (rollout) vs 29 Sep (September calendar); key event definition; spend to date; TI7541 and TI7542 (cited by the prior audit, not supplied).
