@@ -292,5 +292,34 @@ for s in slides:
             par.replace(grad, bf)
             counts['grad_shape'] += 1
 
+# ---------- 4. slide 2 figures ----------
+# Revenue to date is $140.21 (management, 30 Sep); previous update $107.52, so +30.4%.
+# Every increase uses the green arrow (deposits and AUM were grey).
+def walk(g):
+    for sh in g.shapes:
+        if sh.shape_type == 6:
+            yield from walk(sh)
+        else:
+            yield sh
+GREEN_UP = '3DDC84'
+for sh in walk(slides[1]):
+    if not sh.has_text_frame:
+        continue
+    t = sh.text_frame.text.strip()
+    if t.startswith('\u25b2'):
+        for r in sh.text_frame.paragraphs[0].runs:
+            r._r.find('.//' + qn('a:srgbClr')).set('val', GREEN_UP)
+    elif t == '$107.52':
+        sh.text_frame.paragraphs[0].runs[0].text = '$140.21'
+    elif t.startswith('From 14 May 2026'):
+        p0 = sh.text_frame.paragraphs[0]
+        r0 = p0.runs[0]
+        r0.text = 'prev  '
+        for txt, col in (('$107.52', 'FFFFFF'), ('     \u25b2 +30.4%', GREEN_UP)):
+            nr = copy.deepcopy(r0._r)
+            nr.find(qn('a:t')).text = txt
+            nr.find('.//' + qn('a:srgbClr')).set('val', col)
+            p0._p.append(nr)
+
 prs.save(OUT)
 print('saved', OUT, counts)
