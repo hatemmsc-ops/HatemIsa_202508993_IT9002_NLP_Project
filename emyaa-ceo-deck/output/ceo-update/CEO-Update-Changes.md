@@ -1,7 +1,7 @@
 # CEO update deck (Performance Analysis): 29 Sep update
 
 - **Source:** `input/source/supporting/eMYAA_Performance_Analysis_-_01.10.2026_-_Audited.pptx`. It is unchanged and read-only.
-- **Output:** `eMYAA_Performance_Analysis_-_01.10.2026_-_Updated_29_Sep.pptx`. This is the full deck; only slides 2 and 3 change.
+- **Output:** `eMYAA_Performance_Analysis_-_01.10.2026_-_Updated_29_Sep.pptx`. This is the full deck; slides 2, 3, 9, 16 and 18 change.
 - **Data:** Daily Performance Dashboard, 29 Sep 2026. Deposits of $12,206 were confirmed by management on 29 Sep.
 - **"Prev" values** are the previous update (414, 51, $10,195.88, $8,529.69, 47).
 
@@ -40,3 +40,17 @@ These replace three earlier lines:
 - **September trades:** 8 becomes 9 (55 total, less 46 to end of August).
 - **Trades gap:** -31 becomes -30.
 - The rest of the table is unchanged.
+
+## Slides 9, 16 and 18
+
+| Slide | Was | Now | Basis |
+|---|---|---|---|
+| 9, Mention & Win note | 26.2K views, 1,129 likes on launch reel | 26.3K views, 1,129 likes on launch post | Later Instagram screenshot (views only go up) |
+| 9, Manal Talal | Scheduled for end of October | Scheduled for 22 October | October content calendar V2 |
+| 9, Google Ads and LinkedIn box | "Launched 22 Sep, testing phase" | "Testing since 22 Sep" | Still in testing (Board runway) |
+| 16, LinkedIn note | Followers up 247 in 30 days (+6,075%) | 247 new followers in 30 days (vs 4 before, +6,075%) | +6,075% is growth in new followers (LinkedIn export: 4 in August) |
+| 18, Paid row note | new campaign launched 22 Sep | campaign live since 22 Sep | Wording |
+| 18, Referral | 39 (6.6%); ajyadcapital.com, Instagram, ChatGPT, Google Tag Assistant | 32 (5.5%); ajyadcapital.com, Instagram, Facebook, Google Tag Assistant (7 test visits) | GA4 export: the referral medium does not include ChatGPT |
+| 18, Footnote | 579 of 587 (98.6%); 8 outside the breakdown | 572 of 587 (97.4%); the other 15 are ChatGPT (9) and source not available (6) | GA4 export, 1-28 Sep |
+
+**Not changed:** the "Q3-Q4 2026 Rollout Schedule" graphic on slide 9 is an image. It still shows Abdulelah Al Harbi as "Scheduled" and says "two live, four scheduled", while the table beside it says the video is live. It needs replacing at the source.
