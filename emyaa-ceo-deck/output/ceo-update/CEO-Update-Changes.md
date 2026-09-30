@@ -1,7 +1,7 @@
 # CEO update deck (Performance Analysis): 29 Sep update
 
 - **Source:** `input/source/supporting/eMYAA_Performance_Analysis_-_01.10.2026_-_Audited.pptx`. It is unchanged and read-only.
-- **Output:** `eMYAA_Performance_Analysis_-_01.10.2026_-_Updated_29_Sep.pptx`. This is the full deck; slides 2, 3, 9, 16 and 18 change.
+- **Output:** `eMYAA_Performance_Analysis_-_01.10.2026_-_Updated_29_Sep.pptx`. This is the full deck (now 23 slides). The 29 Sep figures stay. The IT update of 01 Oct is added, see the section at the end. Slide numbers in the sections before it refer to the original 19-slide order.
 - **Data:** Daily Performance Dashboard, 29 Sep 2026. Deposits of $12,206 were confirmed by management on 29 Sep.
 - **"Prev" values** are the previous update (414, 51, $10,195.88, $8,529.69, 47).
 
@@ -54,3 +54,39 @@ These replace three earlier lines:
 | 18, Footnote | 579 of 587 (98.6%); 8 outside the breakdown | 572 of 587 (97.4%); the other 15 are ChatGPT (9) and source not available (6) | GA4 export, 1-28 Sep |
 
 **Not changed:** the "Q3-Q4 2026 Rollout Schedule" graphic on slide 9 is an image. It still shows Abdulelah Al Harbi as "Scheduled" and says "two live, four scheduled", while the table beside it says the video is live. It needs replacing at the source.
+
+## IT update, 01 Oct 2026 (added after the 29 Sep update)
+
+**Source:** `input/source/it/IT_Status_Update_CEO_01_10_2026.pptx` (read-only), including the notes written into its table and its five review comments. **Build:** `working/build_ceo_it_update.py` from `working/ceo-update-base-29Sep.pptx`. New slides use plain shapes and tables, so they import into Canva.
+
+**New slide order (23 slides):** 1 Title, 2 Performance Update, 3 KPIs, 4 IT divider, **5 IT Status at a Glance (new)**, **6 Next App (new)**, **7 Android security update (new)**, 8 Product Roadmap, 9-15 Client Experience, Marketing, Thank You, Appendix, Platform Initiatives Roadmap, 16 Systems Planning, **17 Helpdesk backlog (new, appendix)**, 18-23 unchanged appendix slides.
+
+| Comment or note in the IT file | What was done |
+|---|---|
+| Google Play: say it is for security, so it is not confused with the new app | Row and slide named "Google Play security update (current app)"; slide 7 says "Not the Next App" |
+| Shufti KYC: say it is an internal demo that will not go live | "Internal demo only; it will not go live" |
+| Exante: give the sanity test date | **Left as "to be confirmed". The date was blank in the file.** |
+| Shufti billing: say the amount was given as compensation | "USD 50 production test credit given as compensation". Please check whether "compensation" should cover the USD 9,605 refund too |
+| Add CRM and the other platform in the same format | WealthTech CRM (29 Oct, Planned) and Reporting Dashboard (TBC, Exploring) added as rows |
+| Add a target date column | "Target / done" column added |
+| Helpdesk slide: remove names and IDs | Removed |
+| Helpdesk slide: appendix | Moved to the appendix (slide 17) |
+
+**Also fixed in the IT content:**
+- The Next App slide said testing starts when v1 arrives "on 09 Oct". Every other place says 08 Oct, so 08 Oct is used.
+- The empty table row was removed.
+- The tester names on the Android slide were removed, to match the Helpdesk comment.
+- The donut chart was replaced with a shape-drawn bar.
+- **Checked:** 158+19+4+1 = 182, and 158/159 = 99.4%. The module rows add up to the totals, the Helpdesk counts are 7 = 3+1+3, and 10,750 to 5,625 is -47.7%.
+
+**Existing slides brought in line with the IT file:**
+
+| Slide | Was | Now |
+|---|---|---|
+| 2, Key Highlights, IT line | Helpdesk in compliance review; new app build awaits Exante tests | Helpdesk live 17 Sep; Android security update live 29 Sep; Next App v1 due 08 Oct |
+| 8, IT Progress Update | "The Next Mobile App - In Development" | Retitled "Product Roadmap"; Next App "v1 due 08 Oct 2026", built by Exante and tested by QATestLab |
+| 15, Platform Initiatives Roadmap | Helpdesk IN PROGRESS, "Under review by the Compliance since 07.09.2026" | DONE, "Live since 17 Sep 2026" |
+| 16, Systems Planning | Helpdesk planning and deployment IN PROGRESS; "managed manually via Excel"; footer "Board Executive Committee Update", page "6" | All DONE; "Helpdesk is live"; footer "CEO Update", stray page number removed |
+| 18, Exante status | "Following up" on release and on sanity test results | v1 due 08 Oct, release plan next week; Android update passed two rounds and is live; Next App sanity test date to be confirmed |
+
+Long dashes in the edited text were replaced with short ones.
