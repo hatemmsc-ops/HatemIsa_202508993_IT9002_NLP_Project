@@ -397,7 +397,7 @@ set_text(find(s14, 26), 'Sanity / Smoke Tests', 0)
 set_text(find(s14, 26), 'The Android security update passed two internal test rounds (99.4%) and went live on Google Play on 29 Sep. Sanity test date for Next App v1: to be confirmed.', 1)
 
 
-# ---------- Client Experience (tracker weeks 8-9, 20 Sep to 1 Oct) ----------
+# ---------- Client Experience (17 Sep to 1 Oct; tracker weeks 8-9 hold every client in that period) ----------
 # Team figures: 21 called, 72 emailed, 4 WhatsApp, 6 completed onboarding.
 # Tracker weeks 8-9 (working/audit-data/cx-tracker-weekly.csv): 21 clients = 17 not onboarded + 4 funding gap;
 # 12 reached, 2 no answer, 7 not yet logged. The 6 who onboarded come from the 17, leaving 11.
@@ -413,7 +413,7 @@ def card(slide, x, y, w, h, value, label, vcol='FFFFFF'):
 
 
 e = clone_slide(tmpl, 'Client Experience Overview')
-text(e, 0.69, 1.72, 18.6, 0.4, 'SINCE THE LAST CEO UPDATE  |  20 SEP TO 1 OCT 2026', 13, True, BLUE)
+text(e, 0.69, 1.72, 18.6, 0.4, 'SINCE THE LAST CEO UPDATE  |  17 SEP TO 1 OCT 2026', 13, True, BLUE)
 kpis = [('21', 'Clients called', 'FFFFFF'), ('72', 'Clients emailed', 'FFFFFF'), ('4', 'WhatsApp clients', 'FFFFFF'),
         ('6', 'Completed onboarding', '4ADE9A'), ('15', 'Still pending', 'FF7A6B'), ('28.6%', 'Conversion (of clients called)', '4ADE9A')]
 kw = (18.62 - 5 * 0.22) / 6
@@ -445,7 +445,7 @@ text(e, 0.69, 7.9, 18.62, 1.6, [
      ('12 reached, 2 no answer, 7 not yet logged. Email (72) and WhatsApp (4) cover clients we could not reach by phone.', {})]],
      16, False, GREY, spacing=8)
 notes(e, 'Team figures to 1 Oct: 21 called, 72 emailed, 4 WhatsApp, 6 completed onboarding. Pending 21 - 6 = 15; '
-         'conversion 6 / 21 = 28.6%. Client types from the Client Monthly Tracker, weeks 8 and 9 (20 Sep to 1 Oct): '
+         'conversion 6 / 21 = 28.6%. Client types from the Client Monthly Tracker, weeks 8 and 9 (20 Sep to 1 Oct; no calls were logged on 17 Sep, and 18-19 Sep is the weekend): '
          '17 not onboarded (Potential Customer) and 4 funding gap (Funded Gap Customer). The 6 who completed onboarding '
          'are among the 17, which leaves 11. The previous Canva version said 6 of 20 = 20% and 14 = 80%; '
          'the correct figures for 20 would have been 30% and 70%.')

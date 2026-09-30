@@ -91,7 +91,7 @@ These replace three earlier lines:
 
 Long dashes in the edited text were replaced with short ones.
 
-## Client Experience update, 20 Sep to 1 Oct 2026
+## Client Experience update, 17 Sep to 1 Oct 2026
 
 **Sources:**
 - Team figures: 21 called, 72 emailed, 4 WhatsApp, 6 completed onboarding.
@@ -109,7 +109,7 @@ The tracker holds client names, phone numbers and emails. It is kept on the mach
 
 | Canva comment | What was done |
 |---|---|
-| From the last CEO meeting until now, update the numbers | Period 20 Sep to 1 Oct (tracker weeks 8 and 9, which hold exactly 21 clients); your figures used |
+| From the last CEO meeting until now, update the numbers | Period 17 Sep (last CEO meeting) to 1 Oct; your figures used. In the tracker this is weeks 8 and 9 (21 clients): week 7 has no first calls on 17 Sep, and 18-19 Sep is the weekend |
 | Email contacts and phone called | Boxes read "Clients called" and "Clients emailed" |
 | Segregate client types: funding gap, not onboarded, onboarded | Split of the 21: 6 / 11 / 4 |
 | Add a point on people needing support to fund | "Funding gap" feedback point and next step |
