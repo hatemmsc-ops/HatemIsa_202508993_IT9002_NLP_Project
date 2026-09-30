@@ -1,7 +1,7 @@
 # CEO update deck (Performance Analysis): 29 Sep update
 
 - **Source:** `input/source/supporting/eMYAA_Performance_Analysis_-_01.10.2026_-_Audited.pptx`. It is unchanged and read-only.
-- **Output:** `eMYAA_Performance_Analysis_-_01.10.2026_-_Updated_29_Sep.pptx`. This is the full deck (now 23 slides). The 29 Sep figures stay. The IT update of 01 Oct is added, see the section at the end. Slide numbers in the sections before it refer to the original 19-slide order.
+- **Output:** `eMYAA_Performance_Analysis_-_01.10.2026_-_Updated_29_Sep.pptx`. This is the full deck (now 24 slides). The 29 Sep figures stay. The IT update of 01 Oct is added, see the section at the end. Slide numbers in the sections before it refer to the original 19-slide order.
 - **Data:** Daily Performance Dashboard, 29 Sep 2026. Deposits of $12,206 were confirmed by management on 29 Sep.
 - **"Prev" values** are the previous update (414, 51, $10,195.88, $8,529.69, 47).
 
@@ -59,7 +59,7 @@ These replace three earlier lines:
 
 **Source:** `input/source/it/IT_Status_Update_CEO_01_10_2026.pptx` (read-only), including the notes written into its table and its five review comments. **Build:** `working/build_ceo_it_update.py` from `working/ceo-update-base-29Sep.pptx`. New slides use plain shapes and tables, so they import into Canva.
 
-**New slide order (23 slides):** 1 Title, 2 Performance Update, 3 KPIs, 4 IT divider, **5 IT Status at a Glance (new)**, **6 Next App (new)**, **7 Android security update (new)**, 8 Product Roadmap, 9-15 Client Experience, Marketing, Thank You, Appendix, Platform Initiatives Roadmap, 16 Systems Planning, **17 Helpdesk backlog (new, appendix)**, 18-23 unchanged appendix slides.
+**Slide order (24 slides):** 1 Title, 2 Performance Update, 3 KPIs, 4 IT divider, **5 IT Status at a Glance (new)**, **6 Next App (new)**, **7 Android security update (new)**, 8 Product Roadmap, 9 Client Experience divider, **10 Client Experience Overview (new)**, **11 Client Feedback and Next Steps (new)**, 12 Marketing divider, 13 Sponsored Ads, 14 Thank You, 15 Appendix, 16 Platform Initiatives Roadmap, 17 Systems Planning, **18 Helpdesk backlog (new, appendix)**, 19-24 unchanged appendix slides.
 
 | Comment or note in the IT file | What was done |
 |---|---|
@@ -70,7 +70,7 @@ These replace three earlier lines:
 | Add CRM and the other platform in the same format | WealthTech CRM (29 Oct, Planned) and Reporting Dashboard (TBC, Exploring) added as rows |
 | Add a target date column | "Target / done" column added |
 | Helpdesk slide: remove names and IDs | Removed |
-| Helpdesk slide: appendix | Moved to the appendix (slide 17) |
+| Helpdesk slide: appendix | Moved to the appendix (slide 18) |
 
 **Also fixed in the IT content:**
 - The Next App slide said testing starts when v1 arrives "on 09 Oct". Every other place says 08 Oct, so 08 Oct is used.
@@ -83,10 +83,39 @@ These replace three earlier lines:
 
 | Slide | Was | Now |
 |---|---|---|
-| 2, Key Highlights, IT line | Helpdesk in compliance review; new app build awaits Exante tests | Helpdesk live 17 Sep; Android security update live 29 Sep; Next App v1 due 08 Oct |
+| 2, Key Highlights, IT line | 8 of 31 contacted clients onboarded (25.8%); Helpdesk in compliance review; new app build awaits Exante tests | 6 of 21 clients called onboarded (28.6%); Helpdesk live 17 Sep; Android security update live 29 Sep; Next App v1 due 08 Oct |
 | 8, IT Progress Update | "The Next Mobile App - In Development" | Retitled "Product Roadmap"; Next App "v1 due 08 Oct 2026", built by Exante and tested by QATestLab |
-| 15, Platform Initiatives Roadmap | Helpdesk IN PROGRESS, "Under review by the Compliance since 07.09.2026" | DONE, "Live since 17 Sep 2026" |
-| 16, Systems Planning | Helpdesk planning and deployment IN PROGRESS; "managed manually via Excel"; footer "Board Executive Committee Update", page "6" | All DONE; "Helpdesk is live"; footer "CEO Update", stray page number removed |
-| 18, Exante status | "Following up" on release and on sanity test results | v1 due 08 Oct, release plan next week; Android update passed two rounds and is live; Next App sanity test date to be confirmed |
+| 16, Platform Initiatives Roadmap | Helpdesk IN PROGRESS, "Under review by the Compliance since 07.09.2026" | DONE, "Live since 17 Sep 2026" |
+| 17, Systems Planning | Helpdesk planning and deployment IN PROGRESS; "managed manually via Excel"; footer "Board Executive Committee Update", page "6" | All DONE; "Helpdesk is live"; footer "CEO Update", stray page number removed |
+| 19, Exante status | "Following up" on release and on sanity test results | v1 due 08 Oct, release plan next week; Android update passed two rounds and is live; Next App sanity test date to be confirmed |
 
 Long dashes in the edited text were replaced with short ones.
+
+## Client Experience update, 20 Sep to 1 Oct 2026
+
+**Sources:**
+- Team figures: 21 called, 72 emailed, 4 WhatsApp, 6 completed onboarding.
+- The Canva comments on the Overview slide (`input/source/client-experience/overview-slide-canva-comments.webp`).
+- The Client Monthly Tracker.
+
+The tracker holds client names, phone numbers and emails. It is kept on the machine only and is **not committed** (see `.gitignore`). Only counts are committed: `working/cx_tracker_summary.py` writes `working/audit-data/cx-tracker-weekly.csv`.
+
+**The old Overview slide (31 contacted, 8 onboarded, 25.8%) is replaced by two slides:**
+
+| Slide | What it holds |
+|---|---|
+| 10, Client Experience Overview | Six boxes: 21 called, 72 emailed, 4 WhatsApp, 6 completed onboarding, 15 still pending, 28.6% conversion. The 21 called are split by where they are now: onboarded 6, not onboarded 11, funding gap 4 (bar and cards). Summary with call results from the tracker: 12 reached, 2 no answer, 7 not logged |
+| 11, Client Feedback and Next Steps | Five feedback points, including the new funding-gap point. Proposed next step for each group. Clients followed up per week from the tracker. A note on the tracker fields to fill in |
+
+| Canva comment | What was done |
+|---|---|
+| From the last CEO meeting until now, update the numbers | Period 20 Sep to 1 Oct (tracker weeks 8 and 9, which hold exactly 21 clients); your figures used |
+| Email contacts and phone called | Boxes read "Clients called" and "Clients emailed" |
+| Segregate client types: funding gap, not onboarded, onboarded | Split of the 21: 6 / 11 / 4 |
+| Add a point on people needing support to fund | "Funding gap" feedback point and next step |
+
+**Checks:**
+- **Tracker split:** weeks 8-9 have 17 Potential Customer and 4 Funded Gap Customer rows, 21 in total. The 6 who onboarded come from the 17, which leaves 11.
+- **Onboarding in the tracker:** none of the 6 completions is marked in the tracker yet.
+- **Error in the old Canva version:** it said 6 of 20 = 20% and 14 = 80%. The right figures were 30% and 70%. With 21 called: 28.6% converted and 15 (71.4%) pending.
+- **Missing tracker fields:** no row in weeks 8-9 has an owner, due date, next follow-up or funding value. 7 rows in week 9 have no stage.

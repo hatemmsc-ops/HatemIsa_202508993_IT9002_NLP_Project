@@ -343,7 +343,6 @@ notes(d, 'Source: IT Status Update to CEO, 01 Oct 2026, slide 5. Names and IDs r
 
 # ---------- edits to existing slides ----------
 # Slide 2, Key Highlights: IT line
-set_text(find(slides[1], 140), '8 of 31 contacted clients onboarded (25.8%); Helpdesk live 17 Sep; Android security update live 29 Sep; Next App v1 due 08 Oct.', 1)
 
 # Slide 5, IT Progress Update: product roadmap
 s5 = slides[4]
@@ -397,11 +396,118 @@ set_text(find(s14, 22), 'First version of the Next App due 08 Oct 2026. Full rel
 set_text(find(s14, 26), 'Sanity / Smoke Tests', 0)
 set_text(find(s14, 26), 'The Android security update passed two internal test rounds (99.4%) and went live on Google Play on 29 Sep. Sanity test date for Next App v1: to be confirmed.', 1)
 
+
+# ---------- Client Experience (tracker weeks 8-9, 20 Sep to 1 Oct) ----------
+# Team figures: 21 called, 72 emailed, 4 WhatsApp, 6 completed onboarding.
+# Tracker weeks 8-9 (working/audit-data/cx-tracker-weekly.csv): 21 clients = 17 not onboarded + 4 funding gap;
+# 12 reached, 2 no answer, 7 not yet logged. The 6 who onboarded come from the 17, leaving 11.
+def card(slide, x, y, w, h, value, label, vcol='FFFFFF'):
+    s = box(slide, x, y, w, h, NAVY)
+    s.fill.gradient()
+    s.fill.gradient_angle = 45
+    st = s.fill.gradient_stops
+    st[0].color.rgb = rgb('2B4AA0'); st[0].position = 0
+    st[1].color.rgb = rgb(NAVY); st[1].position = 1.0
+    text(slide, x, y + 0.2, w, 0.8, value, 36, True, vcol, PP_ALIGN.CENTER)
+    text(slide, x + 0.15, y + 1.05, w - 0.3, 0.6, label, 14, False, 'FFFFFF', PP_ALIGN.CENTER)
+
+
+e = clone_slide(tmpl, 'Client Experience Overview')
+text(e, 0.69, 1.72, 18.6, 0.4, 'SINCE THE LAST CEO UPDATE  |  20 SEP TO 1 OCT 2026', 13, True, BLUE)
+kpis = [('21', 'Clients called', 'FFFFFF'), ('72', 'Clients emailed', 'FFFFFF'), ('4', 'WhatsApp clients', 'FFFFFF'),
+        ('6', 'Completed onboarding', '4ADE9A'), ('15', 'Still pending', 'FF7A6B'), ('28.6%', 'Conversion (of clients called)', '4ADE9A')]
+kw = (18.62 - 5 * 0.22) / 6
+for i, (v, l, col) in enumerate(kpis):
+    card(e, 0.69 + i * (kw + 0.22), 2.25, kw, 1.75, v, l, col)
+text(e, 0.69, 4.35, 18.6, 0.4, 'CLIENTS CALLED, BY WHERE THEY ARE NOW', 13, True, BLUE)
+groups = [(6, 'Onboarded', 'Completed onboarding after the call', GREEN),
+          (11, 'Not onboarded', 'KYC or documents not finished', AMBER),
+          (4, 'Funding gap', 'Onboarded, not yet funded: need support to fund', BLUE)]
+bx = 0.69
+for n, lbl, _, col in groups:
+    w = 18.62 * n / 21
+    box(e, bx, 4.8, w, 0.55, col)
+    text(e, bx, 4.8, w, 0.55, f'{lbl}  {n}', 14, True, 'FFFFFF', PP_ALIGN.CENTER, MSO_ANCHOR.MIDDLE)
+    bx += w
+gw = (18.62 - 2 * 0.3) / 3
+for i, (n, lbl, desc, col) in enumerate(groups):
+    x = 0.69 + i * (gw + 0.3)
+    box(e, x, 5.6, gw, 1.55, PANEL, PANEL_LINE)
+    box(e, x, 5.6, 0.08, 1.55, col)
+    text(e, x + 0.35, 5.72, 1.6, 0.8, str(n), 36, True, col)
+    text(e, x + 1.85, 5.8, gw - 2.1, 0.45, f'{lbl}  ({n / 21:.1%})', 18, True, NAVY)
+    text(e, x + 1.85, 6.3, gw - 2.1, 0.8, desc, 14, False, GREY)
+text(e, 0.69, 7.45, 18.6, 0.4, 'SUMMARY', 13, True, BLUE)
+text(e, 0.69, 7.9, 18.62, 1.6, [
+    [('Out of 21 clients called, 6 completed onboarding (28.6%). ', {'bold': True, 'color': NAVY}),
+     ('15 are still pending: 11 have not finished onboarding and 4 are onboarded but have not funded yet.', {})],
+    [('Call results in the tracker: ', {'bold': True, 'color': NAVY}),
+     ('12 reached, 2 no answer, 7 not yet logged. Email (72) and WhatsApp (4) cover clients we could not reach by phone.', {})]],
+     16, False, GREY, spacing=8)
+notes(e, 'Team figures to 1 Oct: 21 called, 72 emailed, 4 WhatsApp, 6 completed onboarding. Pending 21 - 6 = 15; '
+         'conversion 6 / 21 = 28.6%. Client types from the Client Monthly Tracker, weeks 8 and 9 (20 Sep to 1 Oct): '
+         '17 not onboarded (Potential Customer) and 4 funding gap (Funded Gap Customer). The 6 who completed onboarding '
+         'are among the 17, which leaves 11. The previous Canva version said 6 of 20 = 20% and 14 = 80%; '
+         'the correct figures for 20 would have been 30% and 70%.')
+
+f = clone_slide(tmpl, 'Client Feedback and Next Steps')
+text(f, 0.69, 1.72, 18.6, 0.4, 'WHAT CLIENTS TOLD US AND WHAT WE DO NEXT', 13, True, BLUE)
+box(f, 0.69, 2.25, 9.15, 6.3, PANEL, PANEL_LINE)
+text(f, 1.0, 2.45, 8.6, 0.4, 'CLIENT FEEDBACK', 14, True, BLUE)
+fb = [('Missing documents: ', "many clients don't have their KYC documents ready at registration, which causes delays or drop-off."),
+      ('KYC feels too long: ', 'verification takes longer than clients expect, and some stop halfway.'),
+      ('Fees: ', 'clients asked about our commissions and fees.'),
+      ('Deposits: ', 'several clients asked how to deposit by bank transfer.'),
+      ('Funding gap: ', '4 onboarded clients need support to fund. One asked about fees; two said they will fund soon.')]
+text(f, 1.0, 2.95, 8.55, 3.4, [[(a, {'bold': True, 'color': NAVY}), (b, {})] for a, b in fb], 15, False, GREY, spacing=7)
+# weekly follow-ups from the tracker (clients with a client type, per week)
+import csv as _csv
+wk = list(_csv.DictReader(open('working/audit-data/cx-tracker-weekly.csv')))
+text(f, 1.0, 6.2, 8.6, 0.4, 'CLIENTS FOLLOWED UP PER WEEK (TRACKER)', 12, True, BLUE)
+base, top, bw_, gap_ = 8.0, 6.75, 0.72, 0.21
+mx = max(int(w['clients']) for w in wk)
+for i, w in enumerate(wk):
+    n = int(w['clients'])
+    x = 1.05 + i * (bw_ + gap_)
+    hgt = (base - top - 0.3) * n / mx
+    col = BLUE if i >= len(wk) - 2 else 'A9B6D6'
+    if n:
+        box(f, x, base - hgt, bw_, hgt, col)
+    text(f, x - 0.1, base - hgt - 0.3, bw_ + 0.2, 0.28, str(n), 11, True, NAVY, PP_ALIGN.CENTER)
+    d = w['week_ending'][8:10].lstrip('0') + (' Aug' if w['week_ending'][5:7] == '08' else ' Sep' if w['week_ending'][5:7] == '09' else ' Oct')
+    text(f, x - 0.15, base + 0.05, bw_ + 0.3, 0.28, d, 10, False, GREY, PP_ALIGN.CENTER)
+box(f, 1.05, base, 8.4, 0.02, RULE)
+text(f, 1.0, 8.28, 8.6, 0.28, 'Week ending. Dark bars = this update (21). Early August weeks were mostly spam numbers.', 10, False, MUTED)
+box(f, 10.16, 2.25, 9.15, 6.3, PANEL, PANEL_LINE)
+text(f, 10.47, 2.45, 8.6, 0.4, 'PROPOSED NEXT STEPS, BY GROUP', 14, True, BLUE)
+steps = [('Funding gap (4)', 'Send the fee schedule and bank transfer steps, then a follow-up call.', BLUE),
+         ('Not onboarded (11)', 'Onboarding email with the document checklist, then a second call on day 3.', AMBER),
+         ('Onboarded (6)', 'Guide the first deposit by bank transfer so the account gets funded.', GREEN)]
+for i, (h_, b_, col) in enumerate(steps):
+    y = 3.0 + i * 1.8
+    box(f, 10.47, y, 8.53, 1.55, 'FFFFFF', PANEL_LINE)
+    box(f, 10.47, y, 0.08, 1.55, col)
+    text(f, 10.8, y + 0.2, 8.0, 0.45, h_, 18, True, col)
+    text(f, 10.8, y + 0.72, 8.0, 0.8, b_, 15, False, GREY)
+box(f, 0.69, 8.8, 18.62, 1.05, 'EEF1F8')
+text(f, 1.0, 8.8, 18.1, 1.05, [[('To make the weekly update faster: ', {'bold': True, 'color': NAVY}),
+     ('log the result of every call (7 of 21 have none yet), and give each open client an owner, a due date and a next '
+      'follow-up (none set in the last two weeks).', {})]], 15, False, GREY, anchor=MSO_ANCHOR.MIDDLE)
+notes(f, 'Feedback from the current Canva version of the Overview slide, plus the funding-gap point asked for in the '
+         'review comments. Funding-gap notes from the tracker (week 8): one asked about fees, two will fund soon, one '
+         'with no note. Next steps are proposals that follow the Client Interaction Journey in the appendix. Tracker '
+         'check: weeks 8-9 have no owner, due date, next follow-up or funding value filled in, and 7 week-9 rows '
+         'have no stage.')
+
+set_text(find(slides[1], 140), '6 of 21 clients called onboarded (28.6%); Helpdesk live 17 Sep; Android security update live 29 Sep; Next App v1 due 08 Oct.', 1)
+
 # ---------- order ----------
 lst = prs.slides._sldIdLst
 ids = list(lst)
-old, new = ids[:19], ids[19:]            # new = [A, B, C, D]
-order = old[:4] + new[:3] + [old[4]] + old[5:13] + [new[3]] + old[13:]
+old, new = ids[:19], ids[19:]            # new = [A, B, C, D, E, F]
+order = old[:4] + new[:3] + [old[4]] + [old[5]] + new[4:6] + old[7:13] + [new[3]] + old[13:]
+drop = old[6]                            # old Overview slide, replaced by E and F
+prs.part.drop_rel(drop.get(qn('r:id')))
 for e in ids:
     lst.remove(e)
 for e in order:
