@@ -1,7 +1,7 @@
 """Make the CEO Progress Update (the Canva export of 01.10.2026) consistent and Canva-safe.
 
-1. Marketing slides with the navy header band get the same header as the rest of the deck
-   (blue bar, blue title, small caps subtitle, Ajyad logo top right, eMYAA logo bottom right).
+1. Every content slide gets the same header: navy gradient band with a gold rule, gold section
+   label, white title and white Ajyad logo; a small blue subtitle line under the band; eMYAA logo bottom right.
 2. Every SVG logo or icon is replaced with a high-resolution PNG (Canva shows SVG image fills as a blue box).
 3. Every gradient fill on a shape is replaced with a PNG of the same gradient (Canva turns them light blue);
    gradient text becomes solid blue.
@@ -55,6 +55,11 @@ def set_group_text(el, text):
     for r in runs[1:]:
         r.getparent().remove(r)
 
+
+# band header (navy gradient band, gold rule, gold kicker, white title, white Ajyad logo), from slide 18
+BAND_SRC = slides[17]
+BAND_EL = {k: copy.deepcopy(shape_by_id(BAND_SRC, i)._element)
+           for k, i in {'band': 2, 'rule': 4, 'title': 6, 'ajyad': 9, 'kicker': 13}.items()}
 
 # ---------- 1. one header style ----------
 BAND = {  # slide number: (title, subtitle)
@@ -142,6 +147,41 @@ for s in slides:
             for para in sh.text_frame.paragraphs:
                 for r in para.runs:
                     r.font.size = shape_by_id(REF, REF_IDS['sub']).text_frame.paragraphs[0].runs[0].font.size
+    renumber_ids(s)
+
+
+# ---------- 1c. navy band header on every content slide ----------
+SECTION = {2: 'PERFORMANCE', 3: 'PERFORMANCE', 4: 'PERFORMANCE',
+           6: 'IT UPDATE', 7: 'IT UPDATE', 8: 'IT UPDATE',
+           10: 'CLIENT EXPERIENCE', 11: 'CLIENT EXPERIENCE', 12: 'CLIENT EXPERIENCE',
+           14: 'MARKETING', 15: 'MARKETING', 16: 'MARKETING', 17: 'MARKETING', 18: 'MARKETING',
+           21: 'APPENDIX  |  IT', 22: 'APPENDIX  |  IT', 23: 'APPENDIX  |  IT', 24: 'APPENDIX  |  MARKETING',
+           25: 'APPENDIX  |  IT', 26: 'APPENDIX  |  IT', 27: 'APPENDIX  |  CLIENT EXPERIENCE'}
+for n, s in enumerate(slides, 1):
+    if n not in SECTION:
+        continue
+    tree = s.shapes._spTree
+    title_txt = None
+    for sh in list(s.shapes):
+        top, left = sh.top / EMU, sh.left / EMU
+        if sh.shape_type == 6 and top < 1.3 and left < 1.2:          # title, its companion layer, accent bar
+            t = ' '.join(x.text_frame.text.strip() for x in sh.shapes if x.has_text_frame and x.text_frame.text.strip())
+            if t:
+                title_txt = t
+            tree.remove(sh._element)
+        elif left > 16 and top < 1.2:                                 # dark Ajyad logo
+            tree.remove(sh._element)
+        elif left < 1.2 and top < 1.3 and sh.width / EMU < 0.3:       # loose accent bar
+            tree.remove(sh._element)
+    first = tree[2] if len(tree) > 2 else None                        # band goes to the back
+    for key in ('band', 'rule', 'title', 'ajyad', 'kicker'):
+        el = copy_into(BAND_SRC, s, BAND_EL[key])
+        if key == 'title':
+            set_group_text(el, title_txt)
+        if key == 'kicker':
+            el.find('.//' + qn('a:t')).text = SECTION[n]
+        if key in ('band', 'rule') and first is not None:
+            first.addprevious(el)
     renumber_ids(s)
 
 
