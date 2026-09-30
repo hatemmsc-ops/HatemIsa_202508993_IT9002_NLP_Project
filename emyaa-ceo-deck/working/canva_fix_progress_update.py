@@ -102,6 +102,49 @@ for n, (title, sub) in BAND.items():
     renumber_ids(s)
 
 
+# ---------- 1b. identical title, accent bar and subtitle on every content slide ----------
+ref_title = shape_by_id(REF, REF_IDS['title'])._element
+ref_bar = shape_by_id(REF, REF_IDS['bar'])._element
+for s in slides:
+    if s is REF:
+        continue
+    tree = s.shapes._spTree
+    title = bar = None
+    for sh in s.shapes:
+        top = sh.top / EMU
+        if sh.shape_type == 6 and top < 1.3 and sh.left / EMU < 1.2:
+            if sh.width / EMU < 0.3:
+                bar = sh
+            elif any(x.has_text_frame and x.text_frame.text.strip() for x in sh.shapes):
+                title = sh
+    if title is None:
+        continue                                   # title slide and section dividers
+    text_ = ' '.join(x.text_frame.text.strip() for x in title.shapes if x.has_text_frame and x.text_frame.text.strip())
+    new = copy_into(REF, s, ref_title)
+    set_group_text(new, text_)
+    title._element.addprevious(new); tree.remove(title._element)
+    if bar is not None:
+        nb = copy_into(REF, s, ref_bar)
+        bar._element.addprevious(nb); tree.remove(bar._element)
+    for sh in list(s.shapes):                      # subtitle drawn as a pill: make it the plain subtitle line
+        if sh.shape_type == 6 and 1.4 < sh.top / EMU < 2.0 and sh.left / EMU < 1.5 and sh.width / EMU < 9:
+            t = ' '.join(x.text_frame.text.strip() for x in sh.shapes if x.has_text_frame and x.text_frame.text.strip())
+            if t and t.isupper():
+                ns = copy_into(REF, s, shape_by_id(REF, REF_IDS['sub'])._element)
+                set_group_text(ns, t)
+                box_ = (sh.left, sh.top, sh.width)
+                for other in list(s.shapes):   # the pill's background layers at the same place
+                    if other.shape_type == 6 and abs(other.top - box_[1]) < 0.3 * EMU and abs(other.left - box_[0]) < 0.4 * EMU \
+                            and abs(other.width - box_[2]) < 0.6 * EMU:
+                        tree.remove(other._element)
+    for sh in s.shapes:                            # subtitle line: 13 pt everywhere
+        if sh.has_text_frame and 1.5 < sh.top / EMU < 2.2 and sh.text_frame.text.strip() and sh.text_frame.text.isupper():
+            for para in sh.text_frame.paragraphs:
+                for r in para.runs:
+                    r.font.size = shape_by_id(REF, REF_IDS['sub']).text_frame.paragraphs[0].runs[0].font.size
+    renumber_ids(s)
+
+
 # ---------- 2. SVG images to PNG ----------
 svg_cache = {}
 def svg_png(part, px):
