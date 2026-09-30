@@ -505,12 +505,38 @@ set_text(find(slides[1], 140), '6 of 21 clients called onboarded (28.6%); Helpde
 lst = prs.slides._sldIdLst
 ids = list(lst)
 old, new = ids[:19], ids[19:]            # new = [A, B, C, D, E, F]
-order = old[:4] + new[:3] + [old[4]] + [old[5]] + new[4:6] + old[7:13] + [new[3]] + old[13:]
+# main: title, performance, KPIs | IT | Client Experience | Marketing | thank you
+# appendix grouped in the same section order: IT, Client Experience, Marketing
+appendix = [old[11], old[12], new[3], old[13],          # IT: roadmap, systems planning, Helpdesk backlog, Exante
+            old[18],                                    # Client Experience: client interaction journey
+            old[17], old[14], old[15], old[16]]         # Marketing: website, Instagram, X/LinkedIn/TikTok, artwork
+order = old[:4] + new[:3] + [old[4]] + [old[5]] + new[4:6] + old[7:11] + appendix
+unnumbered = {id(e) for e in (old[0], old[3], old[5], old[7], old[9], old[10])}   # title, dividers, thank you
 drop = old[6]                            # old Overview slide, replaced by E and F
 prs.part.drop_rel(drop.get(qn('r:id')))
 for e in ids:
     lst.remove(e)
 for e in order:
     lst.append(e)
+
+# ---------- footer and page numbers ----------
+first_appx = len(order) - len(appendix) + 1
+for n, (e, sl) in enumerate(zip(order, prs.slides), 1):
+    for sh in list(sl.shapes):
+        if sh.has_text_frame and sh.text_frame.text.startswith('eMYAA Trading Platform  |'):
+            sl.shapes._spTree.remove(sh._element)          # old footer on the Systems Planning slide
+    if id(e) in unnumbered:
+        continue
+    label = 'eMYAA Trading Platform  |  CEO Update  |  01 Oct 2026' + ('  |  Appendix' if n >= first_appx else '')
+    text(sl, 0.69, 10.62, 11.0, 0.3, label, 10, False, MUTED)
+    box(sl, 16.2, 10.55, 0.62, 0.4, NAVY, shape=MSO_SHAPE.ROUNDED_RECTANGLE, radius=0.5)   # visible on light and dark areas
+    text(sl, 16.2, 10.55, 0.62, 0.4, str(n), 13, True, 'FFFFFF', PP_ALIGN.CENTER, MSO_ANCHOR.MIDDLE)
+
+# appendix divider: contents by section
+ap = list(prs.slides)[first_appx - 2]
+it_a, cx_a, mk_a = first_appx, first_appx + 4, first_appx + 5
+text(ap, 1.41, 6.55, 17.17, 0.5,
+     f'IT  |  pages {it_a}-{it_a + 3}          Client Experience  |  page {cx_a}          Marketing  |  pages {mk_a}-{mk_a + 3}',
+     20, False, 'C9D3EE', PP_ALIGN.CENTER)
 prs.save(OUT)
 print('saved', OUT, len(order), 'slides')

@@ -59,7 +59,7 @@ These replace three earlier lines:
 
 **Source:** `input/source/it/IT_Status_Update_CEO_01_10_2026.pptx` (read-only), including the notes written into its table and its five review comments. **Build:** `working/build_ceo_it_update.py` from `working/ceo-update-base-29Sep.pptx`. New slides use plain shapes and tables, so they import into Canva.
 
-**Slide order (24 slides):** 1 Title, 2 Performance Update, 3 KPIs, 4 IT divider, **5 IT Status at a Glance (new)**, **6 Next App (new)**, **7 Android security update (new)**, 8 Product Roadmap, 9 Client Experience divider, **10 Client Experience Overview (new)**, **11 Client Feedback and Next Steps (new)**, 12 Marketing divider, 13 Sponsored Ads, 14 Thank You, 15 Appendix, 16 Platform Initiatives Roadmap, 17 Systems Planning, **18 Helpdesk backlog (new, appendix)**, 19-24 unchanged appendix slides.
+**Slide order:** see "Page numbers and appendix" at the end.
 
 | Comment or note in the IT file | What was done |
 |---|---|
@@ -70,7 +70,7 @@ These replace three earlier lines:
 | Add CRM and the other platform in the same format | WealthTech CRM (29 Oct, Planned) and Reporting Dashboard (TBC, Exploring) added as rows |
 | Add a target date column | "Target / done" column added |
 | Helpdesk slide: remove names and IDs | Removed |
-| Helpdesk slide: appendix | Moved to the appendix (slide 18) |
+| Helpdesk slide: appendix | Moved to the appendix (page 18) |
 
 **Also fixed in the IT content:**
 - The Next App slide said testing starts when v1 arrives "on 09 Oct". Every other place says 08 Oct, so 08 Oct is used.
@@ -119,3 +119,22 @@ The tracker holds client names, phone numbers and emails. It is kept on the mach
 - **Onboarding in the tracker:** none of the 6 completions is marked in the tracker yet.
 - **Error in the old Canva version:** it said 6 of 20 = 20% and 14 = 80%. The right figures were 30% and 70%. With 21 called: 28.6% converted and 15 (71.4%) pending.
 - **Missing tracker fields:** no row in weeks 8-9 has an owner, due date, next follow-up or funding value. 7 rows in week 9 have no stage.
+
+## Page numbers and appendix
+
+**Page numbers** match the slide position in Canva. They appear on every content slide in a small navy tag next to the eMYAA logo, with the footer "eMYAA Trading Platform | CEO Update | 01 Oct 2026". Appendix pages add "| Appendix". The title slide, the section dividers, Thank You and the Appendix divider have no number. The old Board footer and page number on Systems Planning were removed.
+
+| Page | Slide |
+|---|---|
+| 1 | Title |
+| 2-3 | Performance Update, KPIs |
+| 4-8 | IT: divider, IT Status at a Glance, Next App, Android security update, Product Roadmap |
+| 9-11 | Client Experience: divider, Overview, Feedback and Next Steps |
+| 12-13 | Marketing: divider, Sponsored Ads |
+| 14 | Thank You |
+| 15 | Appendix divider, now with a contents line |
+| 16-19 | Appendix, IT: Platform Initiatives Roadmap, Systems Planning, Helpdesk backlog, Exante status |
+| 20 | Appendix, Client Experience: Client Interaction Journey |
+| 21-24 | Appendix, Marketing: Website Analytics, Instagram, X/LinkedIn/TikTok, September Artwork |
+
+The appendix follows the same section order as the main deck. Before this, the IT, marketing and client pages were mixed.
