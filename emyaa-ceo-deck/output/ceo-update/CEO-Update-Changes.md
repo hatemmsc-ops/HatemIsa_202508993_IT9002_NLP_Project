@@ -110,7 +110,7 @@ The tracker holds client names, phone numbers and emails. It is kept on the mach
 | Canva comment | What was done |
 |---|---|
 | From the last CEO meeting until now, update the numbers | Period 17 Sep (last CEO meeting) to 1 Oct; your figures used. In the tracker this is weeks 8 and 9 (21 clients): week 7 has no first calls on 17 Sep, and 18-19 Sep is the weekend |
-| Email contacts and phone called | Boxes read "Clients called" and "Clients emailed" |
+| Email contacts and phone called | Boxes read "Clients called (phone)" and "Email contacts" |
 | Segregate client types: funding gap, not onboarded, onboarded | Split of the 21: 6 / 11 / 4 |
 | Add a point on people needing support to fund | "Funding gap" feedback point and next step |
 

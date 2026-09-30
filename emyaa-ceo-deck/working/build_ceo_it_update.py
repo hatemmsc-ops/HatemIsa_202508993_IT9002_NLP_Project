@@ -414,7 +414,7 @@ def card(slide, x, y, w, h, value, label, vcol='FFFFFF'):
 
 e = clone_slide(tmpl, 'Client Experience Overview')
 text(e, 0.69, 1.72, 18.6, 0.4, 'SINCE THE LAST CEO UPDATE  |  17 SEP TO 1 OCT 2026', 13, True, BLUE)
-kpis = [('21', 'Clients called', 'FFFFFF'), ('72', 'Clients emailed', 'FFFFFF'), ('4', 'WhatsApp clients', 'FFFFFF'),
+kpis = [('21', 'Clients called (phone)', 'FFFFFF'), ('72', 'Email contacts', 'FFFFFF'), ('4', 'WhatsApp clients', 'FFFFFF'),
         ('6', 'Completed onboarding', '4ADE9A'), ('15', 'Still pending', 'FF7A6B'), ('28.6%', 'Conversion (of clients called)', '4ADE9A')]
 kw = (18.62 - 5 * 0.22) / 6
 for i, (v, l, col) in enumerate(kpis):
