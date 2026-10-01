@@ -8,8 +8,8 @@ from pptx import Presentation
 
 SRC = 'input/source/content-calendars/Content_Calendar_OCT_2026_V2_-_eMYAA_-_Eman_comments.pptx'
 OUT = 'output/content-calendar/Content_Calendar_OCT_2026_V3_-_eMYAA.pptx'
-SOURCE_EN = 'Source: SIFMA Capital Markets Fact Book 2026'
-SOURCE_AR = 'المصدر: SIFMA - Capital Markets Fact Book 2026'
+FOOTER_EN = 'Source: SIFMA Capital Markets Fact Book 2026. Data as of 2025. For information only, not investment advice.'
+FOOTER_AR = 'المصدر: SIFMA - Capital Markets Fact Book 2026. البيانات حتى عام 2025. لأغراض توعوية فقط، ولا تُعد نصيحة استثمارية.'
 
 # (slide, shape id, paragraph index, expected current text, new text or None to delete)
 EDITS = [
@@ -28,11 +28,13 @@ EDITS = [
     (6, 79, 5, 'استحوذت أسواق الأسهم', 'شكّلت أسواق الأسهم الأمريكية 43.7% من إجمالي القيمة السوقية للأسهم عالميًا في عام 2025.'),
     (6, 79, 9, 'بلغت القيمة السوقية', 'بلغت القيمة السوقية لأسواق الأسهم الأمريكية 68.9 تريليون دولار في العام الماضي، أي ما يعادل 4.4 أضعاف حجم السوق الصينية، ثاني أكبر سوق أسهم في العالم.'),
     (6, 79, 10, '(ما يعادل 4.4', None),
+    (6, 79, 14, 'أكثر من 5,500', 'أكثر من 5,500 شركة مدرجة في بورصتي نيويورك (NYSE) وناسداك (NASDAQ)، ما يمنحك خيارات واسعة بين القطاعات والشركات.'),
     (7, 90, 1, 'Your quick guide', 'Your quick guide to the U.S. stock market, by the numbers 📊'),
     (7, 90, 4, 'Unrivaled Global #1', "The World's Largest Equity Market 🌐"),
     (7, 90, 5, 'U.S. stock markets account', 'U.S. equity markets represented 43.7% of global equity market capitalization in 2025.'),
     (7, 90, 9, 'The market capitalization', "The market capitalization of U.S. equity markets reached $68.9 trillion last year, 4.4 times the size of China's market, the world's second largest."),
     (7, 90, 10, '(equivalent to 4.4', None),
+    (7, 90, 14, 'More than 5,500', 'More than 5,500 companies are listed on the New York Stock Exchange (NYSE) and NASDAQ, giving you a wide choice of sectors and companies.'),
     # What Happens After You Tap Buy, video (slide 9)
     (9, 115, 2, 'ماذا يحدث بعد', 'ماذا يحدث بعد ما تضغط «Buy»؟'),
     (9, 115, 8, 'من قسم Trade', 'من قسم Trade، تقدر تتابع حركة السعر وتشوف الرسم البياني (Chart) للسهم.'),
@@ -40,8 +42,10 @@ EDITS = [
     (9, 117, 3, 'Head to **Orders**', 'Head to Orders at the bottom of the app to check your order status and see whether the market is open or when it’s scheduled to open.'),
     (9, 117, 5, 'Go to Trade', 'Go to Trade to track the stock’s price movement and view its chart.'),
 ]
-# source line added after Post 2 and Post 3 text (slide, shape id, paragraph index to follow, text)
-SOURCES = [(6, 79, 5, SOURCE_AR), (6, 79, 9, SOURCE_AR), (7, 90, 5, SOURCE_EN), (7, 90, 9, SOURCE_EN)]
+# footer for every slide of the carousel, added after Post 5:
+# (slide, shape id, label paragraph to copy, last paragraph to follow, label, text)
+FOOTERS = [(6, 79, 16, 18, 'الفوتر (على جميع الشرائح):', FOOTER_AR),
+           (7, 90, 16, 18, 'Footer (on every slide):', FOOTER_EN)]
 
 
 def set_para(p, text):
@@ -57,8 +61,12 @@ shape = lambda n, sid: next(sh for sh in slides[n - 1].shapes if sh.shape_id == 
 
 # keep paragraph objects by their original index before any insert or delete
 paras = {}
-for n, sid, i, *_ in EDITS + SOURCES:
+for n, sid, i, *_ in EDITS:
     paras[(n, sid, i)] = shape(n, sid).text_frame.paragraphs[i]
+
+# footer anchors, also taken before the edits shift paragraph positions
+foot = [(shape(n, sid).text_frame, shape(n, sid).text_frame.paragraphs[li - 1], shape(n, sid).text_frame.paragraphs[li],
+         shape(n, sid).text_frame.paragraphs[la], label, text) for n, sid, li, la, label, text in FOOTERS]
 
 for n, sid, i, expect, new in EDITS:
     p = paras[(n, sid, i)]
@@ -68,16 +76,25 @@ for n, sid, i, expect, new in EDITS:
     else:
         set_para(p, new)
 
-for n, sid, i, text in SOURCES:
-    p = paras[(n, sid, i)]
-    src = copy.deepcopy(p._p)
-    p._p.addnext(src)
-    from pptx.text.text import _Paragraph
-    sp = _Paragraph(src, p._parent)
-    set_para(sp, text)
-    sp.runs[0].font.italic = True
+from pptx.text.text import _Paragraph
+for tf, gap_p, label_p, last_p, label, text in foot:
+    gap = copy.deepcopy(gap_p._p)                             # empty line between posts
+    lab, txt = copy.deepcopy(label_p._p), copy.deepcopy(last_p._p)
+    last_p._p.addnext(gap); gap.addnext(lab); lab.addnext(txt)
+    set_para(_Paragraph(lab, tf), label)
+    t = _Paragraph(txt, tf); set_para(t, text); t.runs[0].font.italic = True
+
+# the footer adds three lines: 13 pt to 11.5 pt keeps both carousels inside their text box
+from pptx.util import Pt
+from pptx.enum.text import MSO_ANCHOR
+for n, sid, *_ in FOOTERS:
+    tf = shape(n, sid).text_frame
+    tf.vertical_anchor = MSO_ANCHOR.TOP
+    for para in tf.paragraphs:
+        for r in para.runs:
+            r.font.size = Pt(11.5)
 
 import os
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 prs.save(OUT)
-print('saved', OUT, len(EDITS), 'edits,', len(SOURCES), 'source lines')
+print('saved', OUT, len(EDITS), 'edits,', len(FOOTERS), 'footers')
