@@ -4,6 +4,7 @@ Source (read-only): input/source/content-calendars/Content_Calendar_OCT_2026_V2_
 Run from emyaa-ceo-deck/:  python3 working/apply_october_calendar_edits.py
 """
 import copy
+from lxml import etree as etree_
 from pptx import Presentation
 
 SRC = 'input/source/content-calendars/Content_Calendar_OCT_2026_V2_-_eMYAA_-_Eman_comments.pptx'
@@ -93,6 +94,22 @@ for n, sid, *_ in FOOTERS:
     for para in tf.paragraphs:
         for r in para.runs:
             r.font.size = Pt(11.5)
+
+# remove every review comment (Eman's) so the file can go to the agency
+from pptx.oxml.ns import qn as _qn
+for sl in slides:
+    for rid, rel in list(sl.part.rels.items()):
+        if rel.reltype.endswith('/comments'):
+            sl.part.drop_rel(rid)
+    for ext in list(sl._element.iter(_qn('p:ext'))):
+        if any(etree_.QName(c).localname == 'commentRel' for c in ext):
+            lst = ext.getparent(); lst.remove(ext)
+            if len(lst) == 0:
+                lst.getparent().remove(lst)
+for rid, rel in list(prs.part.rels.items()):
+    if rel.reltype.endswith('/authors') or rel.reltype.endswith('/commentAuthors'):
+        prs.part.drop_rel(rid)
+prs.core_properties.last_modified_by = 'Hatem Isa Hatem'
 
 import os
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
