@@ -1,6 +1,6 @@
 // eMYAA x Vision Bank: introductory deck on eMYAA's Saudi market plans (Board visual language).
-// External audience: no vendor prices (Nadher Media and Jodel quotes are confidential to eMYAA),
-// no budgets and no client or deposit figures. Reach and audience figures are the vendors' own.
+// Includes costs (Google/LinkedIn budget from the Board update; Jodel and outdoor from Nadher Media proposals).
+// No client or deposit figures.
 // Run from emyaa-ceo-deck/: NODE_PATH=<dir with pptxgenjs> node working/build_vision_bank.js
 // then: python3 working/embed_fonts.py output/vision-bank/eMYAA_Saudi_Market_Plan_-_Vision_Bank.pptx
 const path = require("path");
@@ -66,242 +66,160 @@ const B = (text) => ({ text, o: { bold: true, color: C.navy } });
   s.addImage({ path: path.join(IMG, "ajyad_white.png"), x: 10.67, y: 0.75, w: 1.92, h: 0.56 });
   txt(s, "eMYAA in Saudi Arabia", { x: 0.75, y: 2.75, w: 11.9, h: 0.95, fontSize: 42, bold: true, color: C.white });
   txt(s, "MARKET ENTRY PLAN", { x: 0.75, y: 3.75, w: 11, h: 0.45, fontSize: 20, bold: true, color: C.gold, charSpacing: 1 });
-  txt(s, "Introductory meeting with Vision Bank  |  October 2026", { x: 0.75, y: 4.3, w: 11, h: 0.4, fontSize: 16, color: C.white });
+  txt(s, "Channels, timing and cost  |  Vision Bank  |  October 2026", { x: 0.75, y: 4.3, w: 11, h: 0.4, fontSize: 16, color: C.white });
   txt(s, "Confidential. Prepared by eMYAA Marketing, Ajyad Capital.", { x: 0.75, y: 6.75, w: 11, h: 0.3, fontSize: 10, color: C.soft });
 }
 
-// ---------- 2. About eMYAA ----------
-{
-  const s = content("Who we are", "A Shari'ah-compliant trading app built for GCC investors",
-    "Product facts from the eMYAA Board pack (17 and 29 Sep 2026). Ajyad Capital is licensed by the Central Bank of Bahrain as an Islamic investment firm, Category 1.");
-  txt(s, "eMYAA is the digital trading platform of Ajyad Capital, an Islamic investment firm (Category 1) licensed by the Central Bank of Bahrain. It went live in May 2026.",
-    { x: 0.62, y: 1.75, w: 12.1, h: 0.6, fontSize: 13.5, color: C.text });
-  const facts = [
-    ["Shari'ah compliant", "Automated Shari'ah screening and a purification calculator"],
-    ["Bilingual", "Full Arabic and English app, with AI support built in"],
-    ["Easy to start", "No account fees and a minimum deposit of just USD 50"],
-    ["Global and regional markets", "US, Saudi (Tadawul), Dubai (DFM) and Hong Kong in one app"],
-  ];
-  facts.forEach((f, i) => {
-    const x = 0.62 + (i % 2) * 6.1, y = 2.6 + Math.floor(i / 2) * 1.55;
-    card(s, x, y, 5.95, 1.35, i % 2 ? C.gold : C.navy);
-    txt(s, f[0], { x: x + 0.3, y: y + 0.25, w: 5.4, h: 0.4, fontSize: 16, bold: true, color: C.navy });
-    txt(s, f[1], { x: x + 0.3, y: y + 0.72, w: 5.4, h: 0.5, fontSize: 12, color: C.muted });
-  });
-  box(s, 0.62, 5.85, 12.1, 0.75, C.panel);
-  box(s, 0.62, 5.85, 0.06, 0.75, C.gold);
-  txt(s, [{ text: "Products  ", options: { bold: true, color: C.navy } }, { text: "Shari'ah-compliant stocks, Sukuk and ETFs, with a full app experience from onboarding to trading.", options: { color: C.text } }],
-    { x: 0.9, y: 5.85, w: 11.7, h: 0.75, fontSize: 12.5, valign: "middle" });
-}
-
-// ---------- 3. Why Saudi ----------
-{
-  const s = content("Why Saudi Arabia", "Saudi Arabia is our first priority market in the GCC",
-    "Early signal: Google Ads targeted at Saudi residents went live on 22 Sep 2026 and brought 70% of eMYAA website sessions in September (409 of 587, GA4, 1-28 Sep). Budgets are not shown in this external deck.");
-  const cols = [
-    ["The audience", "A young, mobile-first population that is open to investing through apps.", C.navy],
-    ["The demand", "Strong interest in Shari'ah-compliant products, which is where eMYAA starts.", C.gold],
-    ["The fit", "Arabic-first app, Tadawul access and a low USD 50 entry point.", C.green],
-  ];
-  cols.forEach((c, i) => {
-    const x = 0.62 + i * 4.1;
-    card(s, x, 1.8, 3.9, 2.0, c[2]);
-    txt(s, c[0], { x: x + 0.3, y: 2.05, w: 3.3, h: 0.4, fontSize: 16, bold: true, color: C.navy });
-    txt(s, c[1], { x: x + 0.3, y: 2.55, w: 3.3, h: 1.1, fontSize: 12, color: C.text });
-  });
-  txt(s, "WHAT WE HAVE SEEN SO FAR", { x: 0.62, y: 4.15, w: 8, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
-  stat(s, 0.62, 4.55, 3.9, "70%", "of September website visits", "came from Saudi-targeted Google Ads", C.navy);
-  stat(s, 4.72, 4.55, 3.9, "22 Sep", "Saudi paid media went live", "Google Search, Arabic and English", C.goldText);
-  stat(s, 8.82, 4.55, 3.9, "Riyadh", "core city in our targeting", "ads shown to Saudi residents only", C.green);
-}
-
-// ---------- 4. Who we target ----------
-{
-  const s = content("Segments", "Four investor segments, each with its own channel and message",
-    "Segments and hooks from the eMYAA Board pack (29 Sep 2026). Customer acquisition cost targets are internal and not shown.");
-  const segs = [
-    ["Starter", "Under USD 1,000", "21 to 35, salaried, often a first investment product", "Social media, sponsored ads and creators", "Simple bilingual app, no account fees, USD 50 to start"],
-    ["Emerging", "USD 1,000 to 5,000", "Young professionals building a regular saving habit", "Google Search and app install ads", "Low-cost access to US and Saudi markets in one place"],
-    ["Affluent", "USD 5,000 to 50,000", "Professionals and business owners", "LinkedIn lead generation", "Licensed Islamic firm, wide product range, personal service"],
-    ["High net worth", "Over USD 50,000", "Senior decision makers", "Ajyad placement team, in person", "Relationship-led, with the app as the daily tool"],
-  ];
-  const colX = [0.62, 2.55, 4.75, 7.45, 10.0], colW = [1.9, 2.15, 2.65, 2.5, 2.72];
-  const heads = ["Segment", "Deposit size", "Who they are", "How we reach them", "Why eMYAA"];
-  heads.forEach((h, j) => { box(s, colX[j], 1.75, colW[j], 0.45, C.navy); txt(s, h, { x: colX[j] + 0.12, y: 1.75, w: colW[j] - 0.2, h: 0.45, fontSize: 11, bold: true, color: C.white, valign: "middle" }); });
-  segs.forEach((r, i) => {
-    const y = 2.2 + i * 1.08;
+// table helper: rows of cells; first row is the header
+function table(s, x, y, colW, rows, o) {
+  o = o || {};
+  const rh = o.rowH || 0.55, fs = o.fontSize || 11.5;
+  let cx;
+  rows.forEach((r, i) => {
+    cx = x;
+    const yy = y + (i === 0 ? 0 : 0.45 + (i - 1) * rh), h = i === 0 ? 0.45 : rh;
     r.forEach((c, j) => {
-      box(s, colX[j], y, colW[j], 1.08, i % 2 ? C.white : C.panel, C.line);
-      txt(s, c, { x: colX[j] + 0.12, y, w: colW[j] - 0.22, h: 1.08, fontSize: j === 0 ? 13 : 11, bold: j === 0, color: j === 0 ? C.navy : C.text, valign: "middle" });
+      const cell = typeof c === "string" ? { t: c } : c;
+      box(s, cx, yy, colW[j], h, i === 0 ? C.navy : (cell.fill || (i % 2 ? C.white : C.panel)), i === 0 ? null : C.line);
+      txt(s, cell.t, { x: cx + 0.12, y: yy, w: colW[j] - 0.22, h, fontSize: i === 0 ? 10.5 : fs, bold: i === 0 || cell.b || j === 0,
+        color: i === 0 ? C.white : (cell.c || (j === 0 ? C.navy : C.text)), valign: "middle", align: cell.a || "left" });
+      cx += colW[j];
     });
   });
-  txt(s, "WealthTech reaches the first three segments at scale through digital channels. The Ajyad placement team closes high net worth relationships one at a time.",
-    { x: 0.62, y: 6.6, w: 12.1, h: 0.35, fontSize: 10.5, italic: true, color: C.muted });
 }
+const tag = (t, c) => ({ t, b: true, c });
 
-// ---------- 5. Rollout ----------
+// ---------- 2. eMYAA at a glance ----------
 {
-  const s = content("Our approach", "Launch in Saudi Arabia, learn fast, then expand across the GCC",
-    "Rollout phases from the paid media plan with Ignite (Sep 2026) and the Board runway (Sep to Dec 2026).");
-  const phases = [
-    ["Phase 1", "Launch in Saudi Arabia", "Sep to Oct 2026", ["Google Search and app ads live", "LinkedIn lead generation for Affluent investors", "First Saudi creator video", "Arabic and English ads tested side by side"], C.navy],
-    ["Phase 2", "Measure and refine", "Oct to Nov 2026", ["One-month test results by channel", "Keep what converts, cut what does not", "Add brand awareness: outdoor and Jodel bursts", "Tighten onboarding for Saudi users"], C.goldText],
-    ["Phase 3", "Scale and expand", "Nov to Dec 2026", ["Scale the best Saudi channels", "Extend to Qatar, UAE, Kuwait, Bahrain and Oman", "Monthly creator content across the GCC", "Partnerships with regional institutions"], C.green],
+  const s = content("Who we are", "eMYAA: a Shari'ah-compliant trading app for GCC investors",
+    "Ajyad Capital is licensed by the Central Bank of Bahrain as an Islamic investment firm, Category 1. eMYAA went live in May 2026.");
+  const facts = [
+    ["Shari'ah compliant", "Automated Shari'ah screening and purification calculator"],
+    ["Arabic and English", "Full bilingual app with AI support"],
+    ["USD 50 to start", "No account fees"],
+    ["Four markets", "US, Saudi (Tadawul), Dubai (DFM), Hong Kong"],
   ];
-  phases.forEach((p, i) => {
-    const x = 0.62 + i * 4.1;
-    card(s, x, 1.8, 3.9, 4.75, p[4]);
-    txt(s, p[0].toUpperCase(), { x: x + 0.3, y: 2.0, w: 3.3, h: 0.3, fontSize: 10, bold: true, color: p[4], charSpacing: 1 });
-    txt(s, p[1], { x: x + 0.3, y: 2.32, w: 3.3, h: 0.45, fontSize: 17, bold: true, color: C.navy });
-    txt(s, p[2], { x: x + 0.3, y: 2.8, w: 3.3, h: 0.3, fontSize: 11, color: C.muted });
-    box(s, x + 0.3, 3.2, 3.3, 0.02, C.line);
-    bullets(s, p[3], { x: x + 0.3, y: 3.35, w: 3.35, h: 3.0, fontSize: 13.5 });
+  facts.forEach((f, i) => {
+    const x = 0.62 + (i % 2) * 6.1, y = 1.85 + Math.floor(i / 2) * 1.6;
+    card(s, x, y, 5.95, 1.4, i % 2 ? C.gold : C.navy);
+    txt(s, f[0], { x: x + 0.3, y: y + 0.28, w: 5.4, h: 0.45, fontSize: 19, bold: true, color: C.navy });
+    txt(s, f[1], { x: x + 0.3, y: y + 0.8, w: 5.4, h: 0.4, fontSize: 13, color: C.muted });
   });
+  box(s, 0.62, 5.25, 12.1, 0.8, C.panel);
+  box(s, 0.62, 5.25, 0.06, 0.8, C.gold);
+  txt(s, [{ text: "Licensed  ", options: { bold: true, color: C.navy } }, { text: "Powered by Ajyad Capital, an Islamic investment firm (Category 1) regulated by the Central Bank of Bahrain. Live since May 2026.", options: { color: C.text } }],
+    { x: 0.9, y: 5.25, w: 11.7, h: 0.8, fontSize: 13, valign: "middle" });
 }
 
-// ---------- 6. Google Ads and LinkedIn ----------
+// ---------- 3. The Saudi plan and its cost ----------
 {
-  const s = content("Digital performance channels", "Google Ads and LinkedIn: reaching investors when they are looking",
-    "Google Ads live since 22 Sep 2026, targeting Saudi Arabia and Riyadh, restricted to Saudi residents (Ignite). LinkedIn lead generation targets the Affluent segment; launch being confirmed with Ignite in October. GA4: 409 of 587 September sessions from google / cpc; English ads 212 sessions (97.2% engagement), Arabic 176 (86.9%), 1-28 Sep.");
-  const ch = [
-    ["Google Ads", "Live since 22 Sep 2026", C.green, [
-      [B("Who: "), { text: "Starter and Emerging investors searching for ways to invest" }],
-      [B("Where: "), { text: "Saudi Arabia, with Riyadh as the core, Saudi residents only" }],
-      [B("How: "), { text: "Search ads in Arabic and English, plus app install and video ads" }],
-      [B("So far: "), { text: "70% of September website visits, and both languages engaging well" }],
-    ]],
-    ["LinkedIn", "Launching in October 2026", C.goldText, [
-      [B("Who: "), { text: "Affluent professionals, business owners and senior managers" }],
-      [B("Where: "), { text: "Saudi Arabia first, then the wider GCC" }],
-      [B("How: "), { text: "Lead generation forms, so interested investors can ask to be contacted" }],
-      [B("Next: "), { text: "Our sales team follows up every lead personally" }],
-    ]],
-  ];
-  ch.forEach((c, i) => {
-    const x = 0.62 + i * 6.1;
-    card(s, x, 1.8, 5.95, 4.0, c[2]);
-    txt(s, c[0], { x: x + 0.3, y: 2.02, w: 3.5, h: 0.45, fontSize: 20, bold: true, color: C.navy });
-    box(s, x + 3.55, 2.08, 2.1, 0.36, C.panel);
-    txt(s, c[1], { x: x + 3.55, y: 2.08, w: 2.1, h: 0.36, fontSize: 9.5, bold: true, color: c[2], align: "center", valign: "middle" });
-    bullets(s, c[3], { x: x + 0.3, y: 2.75, w: 5.4, h: 2.9, fontSize: 14.5 });
-  });
-  box(s, 0.62, 6.0, 12.1, 0.7, C.panel);
-  box(s, 0.62, 6.0, 0.06, 0.7, C.gold);
-  txt(s, [{ text: "One-month test  ", options: { bold: true, color: C.navy } }, { text: "Results for both channels (traffic, installs, onboarding and cost per client) will guide the November scale-up.", options: { color: C.text } }],
-    { x: 0.9, y: 6.0, w: 11.7, h: 0.7, fontSize: 12, valign: "middle" });
+  const s = content("Saudi market plan", "The Saudi plan at a glance: channels, timing and cost",
+    "Google Ads and LinkedIn: $30,000 approved for Sep to Dec 2026 from the reserved budget (Board update, 17 Sep 2026): Google Search Saudi $9,000, LinkedIn Affluent Saudi $9,000, Google and LinkedIn for Qatar, UAE, Kuwait, Bahrain and Oman $6,000 each. Jodel: Nadher Media proposal, 16 Sep 2026, USD 3,862.50 (SAR 14,496.25) + VAT. Outdoor: Nadher Media proposal, 23 Sep 2026, 8 weeks, SAR 168,000 + VAT (about USD 44,800 at 3.75). Jodel and outdoor are proposals and not yet approved.");
+  table(s, 0.62, 1.75, [3.2, 2.6, 1.9, 2.4, 2.0], [
+    ["Channel", "Target", "Timing", "Cost", "Status"],
+    [{ t: "Google Search ads, Saudi" }, "Starter and Emerging", "Sep to Dec", { t: "USD 9,000", b: true }, tag("Live since 22 Sep", C.green)],
+    [{ t: "LinkedIn lead generation, Saudi" }, "Affluent", "Oct to Dec", { t: "USD 9,000", b: true }, tag("Launching Oct", C.navy)],
+    [{ t: "Google and LinkedIn, rest of GCC" }, "All segments", "Nov to Dec", { t: "USD 12,000", b: true }, tag("Planned", C.navy)],
+    [{ t: "Jodel launch burst, all KSA" }, "Students, ages 21 to 35", "7 days", { t: "USD 3,862.50 + VAT", b: true }, tag("Proposed", C.goldText)],
+    [{ t: "Outdoor and elevator screens, KSA" }, "Professionals, high-end", "8 weeks", { t: "SAR 168,000 + VAT", b: true }, tag("Proposed", C.goldText)],
+    [{ t: "Saudi creator videos" }, "Starter", "Monthly", "Per creator", tag("Live", C.green)],
+  ], { rowH: 0.6, fontSize: 12 });
+  card(s, 0.62, 5.95, 3.9, 0.85, C.green);
+  txt(s, [{ text: "USD 30,000", options: { bold: true, color: C.navy, fontSize: 18, breakLine: true } }, { text: "Approved: Google and LinkedIn, Sep to Dec", options: { color: C.muted, fontSize: 10 } }], { x: 0.85, y: 6.03, w: 3.6, h: 0.75 });
+  card(s, 4.72, 5.95, 3.9, 0.85, C.gold);
+  txt(s, [{ text: "About USD 48,700", options: { bold: true, color: C.navy, fontSize: 18, breakLine: true } }, { text: "Proposed: Jodel and outdoor, before VAT", options: { color: C.muted, fontSize: 10 } }], { x: 4.95, y: 6.03, w: 3.6, h: 0.75 });
+  txt(s, "SAR converted at 3.75 to the USD. Outdoor and Jodel are vendor proposals, not yet approved.", { x: 8.82, y: 6.0, w: 3.9, h: 0.8, fontSize: 10, italic: true, color: C.muted, valign: "middle" });
 }
 
-// ---------- 7. Influencers ----------
+// ---------- 4. Google Ads and LinkedIn ----------
 {
-  const s = content("Creators and community", "Trusted Saudi and GCC voices to explain investing simply",
-    "Creator programme: one creator video a month (24F and eMYAA content calendars). Musheera 5.3M and Ali Sabeel 1.3M views on Instagram (profile screenshot). Abdulelah Al Harbi masterclass posted on Instagram in October and sponsored through Ignite. Manal Talal scheduled for 22 Oct (October calendar V2). Mention & Win: monthly $500 contest across the GCC.");
-  s.addImage({ path: path.join(IMG, "tile9_abdulelah.png"), x: 0.62, y: 1.8, w: 3.3, h: 4.26 });
-  txt(s, [{ text: "Abdulelah Al Harbi", options: { bold: true, color: C.navy, breakLine: true } }, { text: "Saudi creator, investing masterclass, October 2026", options: { color: C.muted } }],
-    { x: 0.62, y: 6.12, w: 3.3, h: 0.6, fontSize: 10.5, align: "center" });
-  txt(s, "HOW WE WORK WITH CREATORS", { x: 4.3, y: 1.8, w: 8, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
-  bullets(s, [
-    [B("One creator a month: "), { text: "short, practical videos on how to start investing the Shari'ah-compliant way" }],
-    [B("Saudi voices first: "), { text: "Saudi creators lead the launch, with GCC creators to follow" }],
-    [B("Paid boost: "), { text: "each video is sponsored to reach the right age groups and cities" }],
-    [B("Community: "), { text: "a monthly Mention & Win contest with a USD 500 prize across the GCC" }],
-  ], { x: 4.3, y: 2.2, w: 8.4, h: 2.3, fontSize: 13 });
-  txt(s, "CREATOR VIDEOS SO FAR (INSTAGRAM VIEWS)", { x: 4.3, y: 4.55, w: 8, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
-  stat(s, 4.3, 4.95, 2.7, "5.3M", "Musheera", "July 2026", C.navy);
-  stat(s, 7.15, 4.95, 2.7, "1.3M", "Ali Sabeel", "August 2026", C.navy);
-  stat(s, 10.0, 4.95, 2.72, "22 Oct", "Manal Talal", "next creator video", C.goldText);
+  const s = content("Digital performance channels", "Google Ads and LinkedIn: USD 30,000, Saudi first",
+    "Google Ads targets Saudi Arabia and Riyadh, Saudi residents only (Ignite). GA4, 1-28 Sep: 409 of 587 site sessions (70%) from google / cpc; English ads 212 sessions (97.2% engagement), Arabic 176 (86.9%).");
+  table(s, 0.62, 1.75, [3.0, 2.5, 3.3, 3.3], [
+    ["Channel and market", "Budget, Sep to Dec", "Target", "Status"],
+    ["Google Search, Saudi", { t: "USD 9,000", b: true }, "Starter and Emerging, Riyadh first", tag("Live since 22 Sep", C.green)],
+    ["LinkedIn, Saudi", { t: "USD 9,000", b: true }, "Affluent, lead generation forms", tag("Launching October", C.navy)],
+    ["Google Search, rest of GCC", { t: "USD 6,000", b: true }, "Qatar, UAE, Kuwait, Bahrain, Oman", tag("After the Saudi test", C.navy)],
+    ["LinkedIn, rest of GCC", { t: "USD 6,000", b: true }, "Qatar, UAE, Kuwait, Bahrain, Oman", tag("After the Saudi test", C.navy)],
+    [{ t: "Total", b: true }, { t: "USD 30,000", b: true, c: C.navy }, "", ""],
+  ], { rowH: 0.58, fontSize: 12.5 });
+  txt(s, "FIRST RESULTS, SEPTEMBER", { x: 0.62, y: 5.25, w: 6, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
+  stat(s, 0.62, 5.6, 3.9, "70%", "of website visits", "came from Saudi Google Ads", C.navy);
+  stat(s, 4.72, 5.6, 3.9, "97% / 87%", "engagement rate", "English ads / Arabic ads", C.navy);
+  box(s, 8.82, 5.6, 3.9, 1.35, C.panel);
+  txt(s, "A one-month test result for each channel will decide where the budget goes next.", { x: 9.0, y: 5.6, w: 3.6, h: 1.35, fontSize: 12, bold: true, color: C.navy, valign: "middle" });
 }
 
-// ---------- 8. Outdoor in Riyadh ----------
+// ---------- 5. Outdoor in Riyadh ----------
 {
-  const s = content("Outdoor and indoor media", "Being seen where Saudi professionals work and spend time",
-    "Options proposed by Nadher Media (Sep 2026): elevator screens in 83 commercial towers in Riyadh and the Eastern Province (e.g. Al Nakhlah Tower, Tamkeen Tower, Faseelah Square, Laysen Valley) and 8 prime LED screens at The Zone, Riyadh. Frequency per Nadher: 2,490 plays an hour, about 1.67 million plays in four weeks (ad plays, not unique viewers). Rates are confidential to eMYAA and not shown. Status: under evaluation.");
-  s.addImage({ path: path.join(IMG, "vb_elevator_gallery.png"), x: 0.62, y: 1.75, w: 7.6, h: 4.28 });
-  txt(s, "Elevator screens in business towers across Riyadh and the Eastern Province", { x: 0.62, y: 6.08, w: 7.6, h: 0.3, fontSize: 10, italic: true, color: C.muted });
-  s.addImage({ path: path.join(IMG, "vb_zone_mockup.png"), x: 8.5, y: 1.75, w: 2.05, h: 2.4 });
-  txt(s, [{ text: "The Zone, Riyadh", options: { bold: true, color: C.navy, breakLine: true } }, { text: "8 prime LED screens at a high-end lifestyle destination (eMYAA mock-up)", options: { color: C.muted } }],
-    { x: 10.7, y: 1.8, w: 2.05, h: 2.3, fontSize: 10.5 });
-  stat(s, 8.5, 4.3, 2.05, "83", "towers", "elevator screens", C.navy);
-  stat(s, 10.67, 4.3, 2.05, "1.67M", "ad plays", "in four weeks", C.goldText);
-  box(s, 8.5, 5.8, 4.22, 0.6, C.panel);
-  txt(s, "Status: under evaluation for Phase 2", { x: 8.6, y: 5.8, w: 4.0, h: 0.6, fontSize: 11, bold: true, color: C.navy, align: "center", valign: "middle" });
+  const s = content("Outdoor and elevator media, Riyadh", "Outdoor options from Nadher Media: 91 screens in Saudi Arabia",
+    "Nadher Media proposals 16 and 23 Sep 2026, Saudi screens only (the Al Liwan Bahrain weekend screens in the 16 Sep offer are left out). Elevator screens in 83 commercial towers (Al Nakhlah, Tamkeen, Faseelah Square, Laysen Valley and others in Riyadh and the Eastern Province) and 8 LED screens at The Zone, Riyadh. Plays per Nadher: 2,490 an hour (ad plays, not unique viewers). 2-week rate has no original price in the offer. USD at 3.75.");
+  s.addImage({ path: path.join(IMG, "vb_elevator_gallery.png"), x: 0.62, y: 1.75, w: 5.1, h: 2.87 });
+  s.addImage({ path: path.join(IMG, "vb_zone_mockup.png"), x: 5.9, y: 1.75, w: 2.45, h: 2.87 });
+  txt(s, "Elevator screens, 83 towers  |  The Zone LED screens, 8 faces (eMYAA mock-up)", { x: 0.62, y: 4.66, w: 7.8, h: 0.28, fontSize: 9.5, italic: true, color: C.muted });
+  table(s, 0.62, 5.0, [1.5, 2.2, 2.2, 1.9], [
+    ["Duration", "Original rate", "eMYAA rate", "Ad plays"],
+    ["2 weeks", "-", { t: "SAR 60,000", b: true }, "0.84M"],
+    ["4 weeks", "SAR 120,000", { t: "SAR 102,000", b: true }, "1.67M"],
+    ["8 weeks", "SAR 240,000", { t: "SAR 168,000", b: true, c: C.goldText }, "3.35M"],
+    ["12 weeks", "SAR 360,000", { t: "SAR 252,000", b: true }, "5.02M"],
+  ], { rowH: 0.38, fontSize: 11 });
+  card(s, 8.6, 1.75, 4.12, 2.2, C.gold);
+  txt(s, "LATEST OFFER, 23 SEP", { x: 8.85, y: 1.95, w: 3.7, h: 0.3, fontSize: 10, bold: true, color: C.goldText, charSpacing: 1 });
+  txt(s, "SAR 168,000 + VAT", { x: 8.85, y: 2.3, w: 3.7, h: 0.55, fontSize: 24, bold: true, color: C.navy });
+  txt(s, "8 weeks, 91 screens. About USD 44,800, 30% below the original rate.", { x: 8.85, y: 2.9, w: 3.7, h: 0.9, fontSize: 12, color: C.text });
+  stat(s, 8.6, 4.15, 2.0, "83", "towers", "elevator screens", C.navy);
+  stat(s, 10.72, 4.15, 2.0, "8", "LED faces", "The Zone, Riyadh", C.navy);
+  box(s, 8.6, 5.7, 4.12, 0.95, C.panel);
+  txt(s, "All prices + VAT. Proposal only, not yet approved.", { x: 8.75, y: 5.7, w: 3.85, h: 0.95, fontSize: 11, bold: true, color: C.navy, valign: "middle" });
 }
 
-// ---------- 9. Jodel ----------
+// ---------- 6. Jodel ----------
 {
-  const s = content("Reaching young Saudis", "Jodel: a short, high-impact burst to build awareness fast",
-    "Jodel facts from Nadher Media's proposal (Sep 2026): 2.5M active users in KSA, 800,000 monthly unique users, 192M monthly ad impressions, average CTR 0.44%, audience students and young professionals aged 21 to 35. Proposed 7-day eMYAA campaign: 525,000 display and video impressions plus a 24-hour takeover poll of about 2M impressions. Peer case: Bahrain Islamic Bank (BISB), 7 days over Saudi National Day: 4.15M impressions, 8,973 clicks (0.43% CTR), poll 2.68M impressions and 6,739 votes, 700+ downloads and 240 accounts. Price confidential, not shown.");
-  txt(s, "JODEL IN SAUDI ARABIA", { x: 0.62, y: 1.75, w: 6, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
-  stat(s, 0.62, 2.12, 2.9, "2.5M", "active users in KSA", "students and young professionals", C.navy);
-  stat(s, 3.65, 2.12, 2.9, "21 to 35", "core age group", "matches our Starter segment", C.navy);
-  txt(s, "A PROPOSED 7-DAY LAUNCH BURST", { x: 0.62, y: 3.75, w: 6, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
-  bullets(s, [
-    [B("Display and video ads: "), { text: "full-screen ads across the Kingdom" }],
-    [B("24-hour takeover poll: "), { text: "an interactive question every user sees for a day" }],
-    [B("About 2.5 million impressions "), { text: "in one week" }],
-  ], { x: 0.62, y: 4.1, w: 5.95, h: 1.7, fontSize: 12.5 });
-  card(s, 6.95, 1.8, 5.77, 4.6, C.gold);
-  txt(s, "PEER EXAMPLE", { x: 7.25, y: 2.0, w: 5, h: 0.3, fontSize: 10, bold: true, color: C.goldText, charSpacing: 1 });
-  txt(s, "Bahrain Islamic Bank in Saudi Arabia, 7 days over National Day", { x: 7.25, y: 2.3, w: 5.2, h: 0.7, fontSize: 15, bold: true, color: C.navy });
+  const s = content("Jodel, Saudi Arabia", "Jodel: 2.5 million impressions in 7 days for USD 3,862.50",
+    "Nadher Media proposal for eMYAA, 16 Sep 2026: USD 3,862.50 (SAR 14,496.25) + VAT, 7 days, all KSA: 525,000 display and video impressions plus a 24-hour takeover poll of 2,000,000 impressions, one round of ad consulting, unlimited creatives. Cost per 1,000 impressions: about USD 1.53. Jodel KSA: 2.5M active users, 800,000 monthly unique users, average CTR 0.44%. BISB case study (Nadher Media, Oct 2025).");
+  card(s, 0.62, 1.8, 5.95, 2.6, C.navy);
+  txt(s, "THE OFFER", { x: 0.9, y: 2.0, w: 5, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
+  txt(s, "USD 3,862.50 + VAT", { x: 0.9, y: 2.35, w: 5.4, h: 0.6, fontSize: 28, bold: true, color: C.navy });
+  txt(s, "SAR 14,496.25  |  7 days  |  all of Saudi Arabia", { x: 0.9, y: 3.0, w: 5.4, h: 0.3, fontSize: 12, color: C.muted });
+  txt(s, "525,000 display and video impressions + 24-hour takeover poll (2,000,000 impressions)", { x: 0.9, y: 3.4, w: 5.4, h: 0.8, fontSize: 12, color: C.text });
+  stat(s, 0.62, 4.6, 1.9, "2.5M", "impressions", "in 7 days", C.navy);
+  stat(s, 2.65, 4.6, 1.9, "USD 1.53", "per 1,000", "impressions", C.goldText);
+  stat(s, 4.68, 4.6, 1.9, "21 to 35", "audience age", "2.5M users in KSA", C.navy);
+  card(s, 6.95, 1.8, 5.77, 4.15, C.gold);
+  txt(s, "PEER RESULT: BAHRAIN ISLAMIC BANK IN KSA", { x: 7.25, y: 2.0, w: 5.3, h: 0.3, fontSize: 10, bold: true, color: C.goldText, charSpacing: 1 });
+  txt(s, "7 days over Saudi National Day", { x: 7.25, y: 2.32, w: 5.2, h: 0.4, fontSize: 15, bold: true, color: C.navy });
   [["4.15M", "impressions"], ["0.43%", "click rate"], ["700+", "app downloads"], ["240", "accounts opened"]].forEach((k, i) => {
-    const x = 7.25 + (i % 2) * 2.7, y = 3.15 + Math.floor(i / 2) * 1.35;
+    const x = 7.25 + (i % 2) * 2.7, y = 2.95 + Math.floor(i / 2) * 1.35;
     txt(s, k[0], { x, y, w: 2.5, h: 0.6, fontSize: 28, bold: true, color: C.navy });
     txt(s, k[1], { x, y: y + 0.6, w: 2.5, h: 0.3, fontSize: 11, color: C.muted });
   });
-  txt(s, "Source: Nadher Media case study, October 2025", { x: 7.25, y: 5.95, w: 5.2, h: 0.3, fontSize: 9, italic: true, color: C.muted });
+  box(s, 0.62, 6.2, 12.1, 0.55, C.panel);
+  txt(s, "Proposal only, not yet approved. Best timed with a salary week, as in the BISB campaign.", { x: 0.85, y: 6.2, w: 11.8, h: 0.55, fontSize: 11.5, bold: true, color: C.navy, valign: "middle" });
 }
 
-// ---------- 10. Timeline ----------
-{
-  const s = content("The plan ahead", "What runs when, October to December 2026",
-    "Live: Google Ads (since 22 Sep). Planned: LinkedIn (October), creator videos (monthly). Proposed and under evaluation: Jodel burst and outdoor media (Phase 2). GCC expansion after the one-month test.");
-  const months = ["October", "November", "December"];
-  const x0 = 3.6, mw = 3.04;
-  months.forEach((m, i) => { box(s, x0 + i * mw, 1.75, mw - 0.06, 0.42, C.navy); txt(s, m, { x: x0 + i * mw, y: 1.75, w: mw - 0.06, h: 0.42, fontSize: 11, bold: true, color: C.white, align: "center", valign: "middle" }); });
-  const rows = [
-    ["Google Ads, Saudi", "Live", 0, 3, C.green],
-    ["LinkedIn, Affluent", "Planned", 0.3, 3, C.navy],
-    ["Saudi creator videos", "Planned", 0, 3, C.navy],
-    ["Jodel launch burst", "Proposed", 1.0, 1.25, C.gold],
-    ["Outdoor media, Riyadh", "Proposed", 1.0, 2.0, C.gold],
-    ["One-month test review", "Planned", 1.0, 1.35, C.blue],
-    ["Expand to the wider GCC", "Planned", 1.6, 3, C.green],
-  ];
-  rows.forEach((r, i) => {
-    const y = 2.35 + i * 0.6;
-    box(s, 0.62, y, 12.1, 0.52, i % 2 ? C.white : C.panel);
-    txt(s, r[0], { x: 0.75, y, w: 2.2, h: 0.52, fontSize: 11, bold: true, color: C.navy, valign: "middle" });
-    txt(s, r[1], { x: 2.75, y, w: 0.8, h: 0.52, fontSize: 9, color: C.muted, valign: "middle" });
-    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: x0 + r[2] * mw, y: y + 0.13, w: (r[3] - r[2]) * mw - 0.08, h: 0.26, fill: { color: r[4] }, line: { color: r[4], width: 0 }, rectRadius: 0.13 });
-  });
-  [["Live", C.green], ["Planned", C.navy], ["Proposed", C.gold]].forEach((l, i) => {
-    box(s, 0.62 + i * 1.6, 6.65, 0.18, 0.18, l[1]);
-    txt(s, l[0], { x: 0.88 + i * 1.6, y: 6.6, w: 1.2, h: 0.28, fontSize: 10, color: C.text, valign: "middle" });
-  });
-}
-
-// ---------- 11. Working together ----------
+// ---------- 7. For discussion ----------
 {
   const s = content("For discussion", "Where eMYAA and Vision Bank could work together",
-    "Discussion topics only; nothing here is agreed. Purpose of the meeting: learn from Vision Bank's experience of the Saudi market and explore areas of collaboration.");
+    "Discussion topics only; nothing here is agreed.");
   const ideas = [
-    ["Market insight", "Your view on what Saudi digital customers expect from an investing app, and what has worked in your own marketing."],
-    ["Easy funding", "Simple ways for Saudi customers to move money between their bank account and their eMYAA account."],
-    ["Joint campaigns", "Co-branded content and offers that help customers start saving and investing the Shari'ah-compliant way."],
-    ["Events and education", "Joint sessions on investing basics for young professionals, in Arabic and English."],
+    ["Market insight", "What Saudi digital customers expect, and what has worked in your marketing."],
+    ["Easy funding", "Simple transfers between Saudi bank accounts and eMYAA."],
+    ["Joint campaigns", "Co-branded content and offers for first-time investors."],
   ];
   ideas.forEach((d, i) => {
-    const x = 0.62 + (i % 2) * 6.1, y = 1.8 + Math.floor(i / 2) * 2.15;
-    card(s, x, y, 5.95, 1.95, i % 2 ? C.gold : C.navy);
-    txt(s, String(i + 1).padStart(2, "0"), { x: x + 0.3, y: y + 0.25, w: 0.8, h: 0.6, fontSize: 26, bold: true, color: i % 2 ? C.goldText : C.blue });
-    txt(s, d[0], { x: x + 1.15, y: y + 0.3, w: 4.5, h: 0.45, fontSize: 17, bold: true, color: C.navy });
-    txt(s, d[1], { x: x + 1.15, y: y + 0.82, w: 4.55, h: 1.0, fontSize: 12, color: C.text });
+    const x = 0.62 + i * 4.1;
+    card(s, x, 1.85, 3.9, 3.0, [C.navy, C.gold, C.green][i]);
+    txt(s, String(i + 1).padStart(2, "0"), { x: x + 0.3, y: 2.1, w: 1, h: 0.6, fontSize: 28, bold: true, color: C.blue });
+    txt(s, d[0], { x: x + 0.3, y: 2.8, w: 3.3, h: 0.45, fontSize: 19, bold: true, color: C.navy });
+    txt(s, d[1], { x: x + 0.3, y: 3.35, w: 3.3, h: 1.3, fontSize: 13, color: C.text });
   });
-  box(s, 0.62, 6.15, 12.1, 0.55, C.panel);
-  box(s, 0.62, 6.15, 0.06, 0.55, C.gold);
-  txt(s, "We would value your advice as we enter the Saudi market, and we are open to ideas on your side.", { x: 0.9, y: 6.15, w: 11.7, h: 0.55, fontSize: 12, italic: true, color: C.navy, valign: "middle" });
+  box(s, 0.62, 5.2, 12.1, 0.7, C.panel);
+  box(s, 0.62, 5.2, 0.06, 0.7, C.gold);
+  txt(s, "We would value your advice as we enter the Saudi market.", { x: 0.9, y: 5.2, w: 11.7, h: 0.7, fontSize: 13, italic: true, color: C.navy, valign: "middle" });
 }
 
-// ---------- 12. Thank you ----------
+// ---------- 8. Thank you ----------
 {
   const s = pres.addSlide();
   s.background = { path: path.join(IMG, "board_title_bg.png") };
