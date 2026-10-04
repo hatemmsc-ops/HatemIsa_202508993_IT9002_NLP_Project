@@ -114,21 +114,21 @@ const tag = (t, c) => ({ t, b: true, c });
 // ---------- 3. The Saudi plan and its cost ----------
 {
   const s = content("Saudi market plan", "The Saudi plan at a glance: channels, timing and cost",
-    "Google Ads and LinkedIn: $30,000 approved for Sep to Dec 2026 from the reserved budget (Board update, 17 Sep 2026): Google Search Saudi $9,000, LinkedIn Affluent Saudi $9,000, Google and LinkedIn for Qatar, UAE, Kuwait, Bahrain and Oman $6,000 each. Jodel: Nadher Media proposal, 16 Sep 2026, USD 3,862.50 (SAR 14,496.25) + VAT. Outdoor: Nadher Media proposal, 23 Sep 2026, 8 weeks, SAR 168,000 + VAT (about USD 44,800 at 3.75). Jodel and outdoor are proposals and not yet approved.");
+    "Google Ads and LinkedIn: $30,000 approved for Sep to Dec 2026 from the reserved budget (Board update, 17 Sep 2026): Google Search Saudi $9,000, LinkedIn Affluent Saudi $9,000, Google and LinkedIn for Qatar, UAE, Kuwait, Bahrain and Oman $6,000 each. Jodel: Nadher Media proposal, 16 Sep 2026, USD 3,862.50 + VAT. Outdoor: Nadher Media proposal, 23 Sep 2026, 8 weeks, USD 44,800 + VAT (quoted in SAR, converted at 3.75). Jodel and outdoor are proposals and not yet approved.");
   table(s, 0.62, 1.75, [3.2, 2.6, 1.9, 2.4, 2.0], [
     ["Channel", "Target", "Timing", "Cost", "Status"],
     [{ t: "Google Search ads, Saudi" }, "Starter and Emerging", "Sep to Dec", { t: "USD 9,000", b: true }, tag("Live since 22 Sep", C.green)],
     [{ t: "LinkedIn lead generation, Saudi" }, "Affluent", "Oct to Dec", { t: "USD 9,000", b: true }, tag("Launching Oct", C.navy)],
     [{ t: "Google and LinkedIn, rest of GCC" }, "All segments", "Nov to Dec", { t: "USD 12,000", b: true }, tag("Planned", C.navy)],
     [{ t: "Jodel launch burst, all KSA" }, "Students, ages 21 to 35", "7 days", { t: "USD 3,862.50 + VAT", b: true }, tag("Proposed", C.goldText)],
-    [{ t: "Outdoor and elevator screens, KSA" }, "Professionals, high-end", "8 weeks", { t: "SAR 168,000 + VAT", b: true }, tag("Proposed", C.goldText)],
+    [{ t: "Outdoor and elevator screens, KSA" }, "Professionals, high-end", "8 weeks", { t: "USD 44,800 + VAT", b: true }, tag("Proposed", C.goldText)],
     [{ t: "Saudi creator videos" }, "Starter", "Monthly", "Per creator", tag("Live", C.green)],
   ], { rowH: 0.6, fontSize: 12 });
   card(s, 0.62, 5.95, 3.9, 0.85, C.green);
   txt(s, [{ text: "USD 30,000", options: { bold: true, color: C.navy, fontSize: 18, breakLine: true } }, { text: "Approved: Google and LinkedIn, Sep to Dec", options: { color: C.muted, fontSize: 10 } }], { x: 0.85, y: 6.03, w: 3.6, h: 0.75 });
   card(s, 4.72, 5.95, 3.9, 0.85, C.gold);
   txt(s, [{ text: "About USD 48,700", options: { bold: true, color: C.navy, fontSize: 18, breakLine: true } }, { text: "Proposed: Jodel and outdoor, before VAT", options: { color: C.muted, fontSize: 10 } }], { x: 4.95, y: 6.03, w: 3.6, h: 0.75 });
-  txt(s, "SAR converted at 3.75 to the USD. Outdoor and Jodel are vendor proposals, not yet approved.", { x: 8.82, y: 6.0, w: 3.9, h: 0.8, fontSize: 10, italic: true, color: C.muted, valign: "middle" });
+  txt(s, "All prices in USD (SAR converted at 3.75). Outdoor and Jodel are vendor proposals, not yet approved.", { x: 8.82, y: 6.0, w: 3.9, h: 0.8, fontSize: 10, italic: true, color: C.muted, valign: "middle" });
 }
 
 // ---------- 4. Google Ads and LinkedIn ----------
@@ -152,36 +152,36 @@ const tag = (t, c) => ({ t, b: true, c });
 
 // ---------- 5. Outdoor in Riyadh ----------
 {
-  const s = content("Outdoor and elevator media, Riyadh", "Outdoor options from Nadher Media: 91 screens in Saudi Arabia",
+  const s = content("Outdoor and elevator media, Saudi Arabia", "Outdoor options from Nadher Media: 91 screens in Saudi Arabia",
     "Nadher Media proposals 16 and 23 Sep 2026, Saudi screens only (the Al Liwan Bahrain weekend screens in the 16 Sep offer are left out). Elevator screens in 83 commercial towers (Al Nakhlah, Tamkeen, Faseelah Square, Laysen Valley and others in Riyadh and the Eastern Province) and 8 LED screens at The Zone, Riyadh. Plays per Nadher: 2,490 an hour (ad plays, not unique viewers). 2-week rate has no original price in the offer. USD at 3.75.");
   s.addImage({ path: path.join(IMG, "vb_elevator_gallery.png"), x: 0.62, y: 1.75, w: 5.1, h: 2.87 });
   s.addImage({ path: path.join(IMG, "vb_zone_mockup.png"), x: 5.9, y: 1.75, w: 2.45, h: 2.87 });
   txt(s, "Elevator screens, 83 towers  |  The Zone LED screens, 8 faces (eMYAA mock-up)", { x: 0.62, y: 4.66, w: 7.8, h: 0.28, fontSize: 9.5, italic: true, color: C.muted });
   table(s, 0.62, 5.0, [1.5, 2.2, 2.2, 1.9], [
     ["Duration", "Original rate", "eMYAA rate", "Ad plays"],
-    ["2 weeks", "-", { t: "SAR 60,000", b: true }, "0.84M"],
-    ["4 weeks", "SAR 120,000", { t: "SAR 102,000", b: true }, "1.67M"],
-    ["8 weeks", "SAR 240,000", { t: "SAR 168,000", b: true, c: C.goldText }, "3.35M"],
-    ["12 weeks", "SAR 360,000", { t: "SAR 252,000", b: true }, "5.02M"],
+    ["2 weeks", "-", { t: "USD 16,000", b: true }, "0.84M"],
+    ["4 weeks", "USD 32,000", { t: "USD 27,200", b: true }, "1.67M"],
+    ["8 weeks", "USD 64,000", { t: "USD 44,800", b: true, c: C.goldText }, "3.35M"],
+    ["12 weeks", "USD 96,000", { t: "USD 67,200", b: true }, "5.02M"],
   ], { rowH: 0.38, fontSize: 11 });
   card(s, 8.6, 1.75, 4.12, 2.2, C.gold);
   txt(s, "LATEST OFFER, 23 SEP", { x: 8.85, y: 1.95, w: 3.7, h: 0.3, fontSize: 10, bold: true, color: C.goldText, charSpacing: 1 });
-  txt(s, "SAR 168,000 + VAT", { x: 8.85, y: 2.3, w: 3.7, h: 0.55, fontSize: 24, bold: true, color: C.navy });
-  txt(s, "8 weeks, 91 screens. About USD 44,800, 30% below the original rate.", { x: 8.85, y: 2.9, w: 3.7, h: 0.9, fontSize: 12, color: C.text });
+  txt(s, "USD 44,800 + VAT", { x: 8.85, y: 2.3, w: 3.7, h: 0.55, fontSize: 24, bold: true, color: C.navy });
+  txt(s, "8 weeks, 91 screens, 30% below the original rate of USD 64,000.", { x: 8.85, y: 2.9, w: 3.7, h: 0.9, fontSize: 12, color: C.text });
   stat(s, 8.6, 4.15, 2.0, "83", "towers", "elevator screens", C.navy);
   stat(s, 10.72, 4.15, 2.0, "8", "LED faces", "The Zone, Riyadh", C.navy);
   box(s, 8.6, 5.7, 4.12, 0.95, C.panel);
-  txt(s, "All prices + VAT. Proposal only, not yet approved.", { x: 8.75, y: 5.7, w: 3.85, h: 0.95, fontSize: 11, bold: true, color: C.navy, valign: "middle" });
+  txt(s, "All prices in USD + VAT. Proposal only, not yet approved.", { x: 8.75, y: 5.7, w: 3.85, h: 0.95, fontSize: 11, bold: true, color: C.navy, valign: "middle" });
 }
 
 // ---------- 6. Jodel ----------
 {
   const s = content("Jodel, Saudi Arabia", "Jodel: 2.5 million impressions in 7 days for USD 3,862.50",
-    "Nadher Media proposal for eMYAA, 16 Sep 2026: USD 3,862.50 (SAR 14,496.25) + VAT, 7 days, all KSA: 525,000 display and video impressions plus a 24-hour takeover poll of 2,000,000 impressions, one round of ad consulting, unlimited creatives. Cost per 1,000 impressions: about USD 1.53. Jodel KSA: 2.5M active users, 800,000 monthly unique users, average CTR 0.44%. BISB case study (Nadher Media, Oct 2025).");
+    "Nadher Media proposal for eMYAA, 16 Sep 2026: USD 3,862.50 + VAT, 7 days, all KSA: 525,000 display and video impressions plus a 24-hour takeover poll of 2,000,000 impressions, one round of ad consulting, unlimited creatives. Cost per 1,000 impressions: about USD 1.53. Jodel KSA: 2.5M active users, 800,000 monthly unique users, average CTR 0.44%. BISB case study (Nadher Media, Oct 2025).");
   card(s, 0.62, 1.8, 5.95, 2.6, C.navy);
   txt(s, "THE OFFER", { x: 0.9, y: 2.0, w: 5, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
   txt(s, "USD 3,862.50 + VAT", { x: 0.9, y: 2.35, w: 5.4, h: 0.6, fontSize: 28, bold: true, color: C.navy });
-  txt(s, "SAR 14,496.25  |  7 days  |  all of Saudi Arabia", { x: 0.9, y: 3.0, w: 5.4, h: 0.3, fontSize: 12, color: C.muted });
+  txt(s, "7 days  |  all of Saudi Arabia", { x: 0.9, y: 3.0, w: 5.4, h: 0.3, fontSize: 12, color: C.muted });
   txt(s, "525,000 display and video impressions + 24-hour takeover poll (2,000,000 impressions)", { x: 0.9, y: 3.4, w: 5.4, h: 0.8, fontSize: 12, color: C.text });
   stat(s, 0.62, 4.6, 1.9, "2.5M", "impressions", "in 7 days", C.navy);
   stat(s, 2.65, 4.6, 1.9, "USD 1.53", "per 1,000", "impressions", C.goldText);
