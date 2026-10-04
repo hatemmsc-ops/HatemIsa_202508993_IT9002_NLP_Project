@@ -178,22 +178,30 @@ const tag = (t, c) => ({ t, b: true, c });
 {
   const s = content("Jodel, Saudi Arabia", "Jodel: 2.5 million impressions in 7 days for USD 3,862.50",
     "Nadher Media proposal for eMYAA, 16 Sep 2026: USD 3,862.50 + VAT, 7 days, all KSA: 525,000 display and video impressions plus a 24-hour takeover poll of 2,000,000 impressions, one round of ad consulting, unlimited creatives. Cost per 1,000 impressions: about USD 1.53. Jodel KSA: 2.5M active users, 800,000 monthly unique users, average CTR 0.44%. BISB case study (Nadher Media, Oct 2025).");
-  card(s, 0.62, 1.8, 5.95, 2.6, C.navy);
-  txt(s, "THE OFFER", { x: 0.9, y: 2.0, w: 5, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
-  txt(s, "USD 3,862.50 + VAT", { x: 0.9, y: 2.35, w: 5.4, h: 0.6, fontSize: 28, bold: true, color: C.navy });
-  txt(s, "7 days  |  all of Saudi Arabia", { x: 0.9, y: 3.0, w: 5.4, h: 0.3, fontSize: 12, color: C.muted });
-  txt(s, "525,000 display and video impressions + 24-hour takeover poll (2,000,000 impressions)", { x: 0.9, y: 3.4, w: 5.4, h: 0.8, fontSize: 12, color: C.text });
-  stat(s, 0.62, 4.6, 1.9, "2.5M", "impressions", "in 7 days", C.navy);
-  stat(s, 2.65, 4.6, 1.9, "USD 1.53", "per 1,000", "impressions", C.goldText);
-  stat(s, 4.68, 4.6, 1.9, "21 to 35", "audience age", "2.5M users in KSA", C.navy);
-  card(s, 6.95, 1.8, 5.77, 4.15, C.gold);
-  txt(s, "PEER RESULT: BAHRAIN ISLAMIC BANK IN KSA", { x: 7.25, y: 2.0, w: 5.3, h: 0.3, fontSize: 10, bold: true, color: C.goldText, charSpacing: 1 });
-  txt(s, "7 days over Saudi National Day", { x: 7.25, y: 2.32, w: 5.2, h: 0.4, fontSize: 15, bold: true, color: C.navy });
+  function phone(img, x, y, h, ratio) {     // screenshot in a dark phone frame
+    const w = h * ratio, pad = 0.07;
+    s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: x - pad, y: y - pad, w: w + 2 * pad, h: h + 2 * pad, fill: { color: "1B1B2A" }, line: { color: "1B1B2A", width: 0 }, rectRadius: 0.18 });
+    s.addImage({ path: path.join(IMG, img), x, y, w, h });
+  }
+  card(s, 0.62, 1.8, 4.3, 2.6, C.navy);
+  s.addImage({ path: path.join(IMG, "vb_jodel_icon.png"), x: 4.05, y: 1.98, w: 0.65, h: 0.65 });
+  txt(s, "THE OFFER", { x: 0.9, y: 2.0, w: 3, h: 0.3, fontSize: 10, bold: true, color: C.blue, charSpacing: 1 });
+  txt(s, "USD 3,862.50 + VAT", { x: 0.9, y: 2.35, w: 3.9, h: 0.6, fontSize: 25, bold: true, color: C.navy });
+  txt(s, "7 days  |  all of Saudi Arabia  |  ages 21 to 35", { x: 0.9, y: 3.0, w: 3.9, h: 0.3, fontSize: 11, color: C.muted });
+  txt(s, "525,000 display and video impressions + 24-hour takeover poll (2,000,000 impressions)", { x: 0.9, y: 3.4, w: 3.85, h: 0.8, fontSize: 11.5, color: C.text });
+  stat(s, 0.62, 4.6, 2.08, "2.5M", "impressions", "in 7 days", C.navy);
+  stat(s, 2.84, 4.6, 2.08, "USD 1.53", "per 1,000", "impressions", C.goldText);
+  phone("vb_jodel_phone_riyadh.png", 5.2, 1.88, 3.95, 296 / 640);
+  txt(s, "Jodel feed, Riyadh", { x: 5.0, y: 5.93, w: 2.2, h: 0.25, fontSize: 9, italic: true, color: C.muted, align: "center" });
+  card(s, 7.35, 1.8, 5.37, 4.15, C.gold);
+  txt(s, "PEER RESULT: BAHRAIN ISLAMIC BANK", { x: 7.6, y: 2.0, w: 3.3, h: 0.5, fontSize: 10, bold: true, color: C.goldText, charSpacing: 1 });
+  txt(s, "7 days in KSA over Saudi National Day", { x: 7.6, y: 2.5, w: 3.2, h: 0.65, fontSize: 13.5, bold: true, color: C.navy });
   [["4.15M", "impressions"], ["0.43%", "click rate"], ["700+", "app downloads"], ["240", "accounts opened"]].forEach((k, i) => {
-    const x = 7.25 + (i % 2) * 2.7, y = 2.95 + Math.floor(i / 2) * 1.35;
-    txt(s, k[0], { x, y, w: 2.5, h: 0.6, fontSize: 28, bold: true, color: C.navy });
-    txt(s, k[1], { x, y: y + 0.6, w: 2.5, h: 0.3, fontSize: 11, color: C.muted });
+    const x = 7.6 + (i % 2) * 1.62, y = 3.3 + Math.floor(i / 2) * 1.2;
+    txt(s, k[0], { x, y, w: 1.6, h: 0.5, fontSize: 22, bold: true, color: C.navy });
+    txt(s, k[1], { x, y: y + 0.5, w: 1.6, h: 0.3, fontSize: 10, color: C.muted });
   });
+  phone("vb_jodel_phone_bisb.png", 10.95, 2.05, 3.55, 332 / 717);
   box(s, 0.62, 6.2, 12.1, 0.55, C.panel);
   txt(s, "Proposal only, not yet approved. Best timed with a salary week, as in the BISB campaign.", { x: 0.85, y: 6.2, w: 11.8, h: 0.55, fontSize: 11.5, bold: true, color: C.navy, valign: "middle" });
 }
