@@ -248,11 +248,47 @@ soc.notes_slide.notes_text_frame.text = ('Sources: Instagram Professional Dashbo
     'App Screens Saudi tests (Jeddah, Dammam and Khobar) 4-13 Jun, paid support lapsed July; TikTok: 15 followers, 176 likes, '
     'Pangle bot clicks 706,445 in May, paid TikTok removed 22 Jun, zero Pangle clicks July and August.')
 
+# ---------- 4. Marketing activity so far (table) ----------
+act = clone('WHAT WE HAVE DONE SO FAR', 'Marketing Activity Since Launch, May to October 2026')
+arows = [
+    ['Campaign', 'Platform', 'When', 'Spend (USD)', 'Result'],
+    ['Long Form Launch', 'Instagram, LinkedIn', '19 May to 1 Jun', '1,700', '231,850 impressions and 3,471 clicks across KSA, Bahrain, Oman, Kuwait'],
+    ['Astronaut (animation)', 'Instagram, TikTok, X', '19 May to 1 Jun', '3,700', 'Highest reach in May, but TikTok traffic was bots'],
+    ['App Screens', 'X, Saudi only', '4 to 13 Jun', '500', 'Product test in Jeddah, Dammam and Khobar'],
+    ['GCC Relaunch', 'Instagram, X, LinkedIn', '8 Jun to 8 Jul', '6,700', 'Followers grew on every channel in June'],
+    ['Mention & Win', 'Instagram, GCC', 'Monthly since Jun', '500 prize + ads', 'Pilot: 266K views, 22,580 clicks, 6 new accounts for USD 600'],
+    ['Creator videos', 'Instagram', 'Jul to Oct', '9,037', 'Musheera 5.3M and Ali Sabeel 1.3M views; Abdulelah in October'],
+    ['USD 5,000 Prize Campaign', 'Instagram, landing pages', '1 Aug to 31 Dec', 'Prizes up to 5,000', 'Live; draw on 10 Jan 2027'],
+    ['Google Ads and LinkedIn', 'Saudi, then GCC', 'From 22 Sep', '30,000', '70% of September website visits (see next slides)'],
+]
+aw = [3.6, 3.0, 2.6, 2.35, 6.62]
+y = 2.55
+for i, r in enumerate(arows):
+    h = 0.62 if i == 0 else 0.8
+    x = 0.92
+    for j, c in enumerate(r):
+        fill = NAVY if i == 0 else ('FFFFFF' if i % 2 else PANEL)
+        box(act, x, y, aw[j], h, fill, None if i == 0 else LINE)
+        if i == 0:
+            text(act, x + 0.18, y, aw[j] - 0.3, h, c, 15, True, 'FFFFFF', anchor=MSO_ANCHOR.MIDDLE)
+        else:
+            text(act, x + 0.18, y, aw[j] - 0.3, h, c, 15.5 if j < 4 else 14.5, j in (0, 3), NAVY if j in (0, 3) else TEXT, anchor=MSO_ANCHOR.MIDDLE)
+        x += aw[j]
+    y += h
+box(act, 0.92, 9.75, 18.17, 0.6, PANEL)
+box(act, 0.92, 9.75, 0.11, 0.6, GOLD)
+text(act, 1.3, 9.75, 17.6, 0.6, [[('Spent to date: USD 34,482 ', {'bold': True, 'color': NAVY}), ('(14 May to 6 Sep, from a USD 80,000 allocated budget), plus USD 30,000 for Google Ads and LinkedIn from Sep to Dec.', {})]],
+     14.5, False, TEXT, anchor=MSO_ANCHOR.MIDDLE)
+act.notes_slide.notes_text_frame.text = ('Sources: July 2026 monthly report (sponsored ads May to July: Long Form Launch, Astronaut, App Screens, '
+    'GCC Relaunch, Mention & Win pilot); Board update 17 Sep 2026 (marketing budget: USD 80,000 allocated, USD 34,482 spent '
+    '14 May to 6 Sep, influencer programme USD 9,037; USD 30,000 Google Ads and LinkedIn Sep to Dec); USD 5,000 campaign T&Cs; '
+    'GA4 1-28 Sep. GCC Relaunch results were not reported separately.')
+
 # ---------- order and page numbers ----------
 lst = prs.slides._sldIdLst
 ids = list(lst)
-old, new = ids[:7], ids[7:]          # new = [social, poll]
-order = old[:2] + [new[0]] + old[2:5] + [new[1]] + old[5:]
+old, new = ids[:7], ids[7:]          # new = [social, poll, activity]
+order = old[:2] + [new[0], new[2]] + old[2:5] + [new[1]] + old[5:]
 for e in ids:
     lst.remove(e)
 for e in order:
