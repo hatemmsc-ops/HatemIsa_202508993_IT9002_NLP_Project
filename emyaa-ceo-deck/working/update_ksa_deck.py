@@ -146,11 +146,23 @@ for i, (name, verdict, col, items) in enumerate(cols):
 box(soc, 0.92, 7.85, 18.2, 2.45, PANEL)
 box(soc, 0.92, 7.85, 0.11, 2.45, GOLD)
 text(soc, 1.35, 8.05, 6, 0.4, 'WHY INSTAGRAM OUTPERFORMED', 14, True, BLUE)
-text(soc, 1.35, 8.55, 17.5, 1.7, [
+text(soc, 1.35, 8.55, 10.5, 1.7, [
     [('Real people, not animation: ', {'bold': True, 'color': NAVY}), ('presenter-led creator videos built more trust than graphic explainers.', {})],
     [('Paid boost on every key video: ', {'bold': True, 'color': NAVY}), ('reach came from sponsoring creator content to the right GCC cities and ages.', {})],
     [('Contests that ask for action: ', {'bold': True, 'color': NAVY}), ('Mention & Win turns views into follows and new accounts.', {})],
-], 17.5, False, TEXT, space=8)
+], 15.5, False, TEXT, space=8)
+
+# reel thumbnails inside the "why" panel
+reels = [('tile9_musheera.png', 'Musheera', '5.3M views'), ('tile9_ali.png', 'Ali Sabeel', '1.3M views'),
+         ('ksa_reel_mw.png', 'Mention & Win', '186K views'), ('tile9_abdulelah.png', 'Abdulelah Al Harbi', 'October')]
+th = 2.15
+tw = th * 488 / 628
+for k, (img, who, views) in enumerate(reels):
+    rx = 19.0 - (4 - k) * tw - (3 - k) * 0.12
+    soc.shapes.add_picture('working/charts/' + img, Inches(rx), Inches(7.98), Inches(tw), Inches(th))
+    box(soc, rx, 7.98 + th - 0.55, tw, 0.55, NAVY)
+    text(soc, rx + 0.08, 7.98 + th - 0.55, tw - 0.16, 0.55, [[(who, {'bold': True, 'size': 10.5, 'color': 'FFFFFF'})], [(views, {'size': 10, 'color': GOLD})]],
+         10, False, 'FFFFFF', PP_ALIGN.CENTER, MSO_ANCHOR.MIDDLE)
 
 # ---------- 2. Channels slide: table with a Dates column ----------
 ch = slides[2]
